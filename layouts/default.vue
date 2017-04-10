@@ -7,53 +7,26 @@
 
 <script>
 import MyFooter from '~components/Footer.vue'
+import { throttle } from '~plugins/utils'
 export default {
   components: {
     MyFooter
   },
-  mounted(){
-    const url = this.$route.fullPath
-    const name = this.$route.name
-    const currentPage = this.$store.state.page[url]
-    if(currentPage){
-      console.info(`${name}页初始化数据为`,JSON.parse(JSON.stringify(currentPage.cache)))
+  methods: {
+    setTop() {
+      this.$store.commit('SET_SCROLL_TOP', document.body.scrollTop)
     }
+  },
+  mounted() {
+    const serverAjaxErrors = this.$store.state.server.ajaxErrors
+    if (serverAjaxErrors.length) {
+      Object.keys(serverAjaxErrors).forEach(k => {
+        console.error('[server-ajax_error]', k, serverAjaxErrors[k])
+      })
+    }
+    window.addEventListener('scroll', () => {
+      throttle(this.setTop, 50)
+    }, false)
   }
 }
 </script>
-
-<style>
-.container
-{
-  margin: 0;
-  width: 100%;
-  padding: 100px 0;
-  text-align: center;
-}
-
-.button, .button:visited
-{
-  display: inline-block;
-  color: black;
-  letter-spacing: 1px;
-  background-color: #fff;
-  border: 2px solid #000;
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 15px 45px;
-}
-
-.button:hover, .button:focus
-{
-  color: #fff;
-  background-color: #000;
-}
-
-.title
-{
-  color: #000;
-  font-weight: 300;
-  font-size: 2.5em;
-  margin: 0;
-}
-</style>

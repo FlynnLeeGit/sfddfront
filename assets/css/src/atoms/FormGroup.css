@@ -1,0 +1,18 @@
+/*
+@styleguide
+
+@title FormGroup
+
+使用FormGroup来控制表单行为
+
+
+*/
+
+.FormGroup{
+  &__label{
+
+  }
+  &__input{
+    
+  }
+}

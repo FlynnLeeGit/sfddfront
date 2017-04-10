@@ -1,12 +1,24 @@
-export const state = {}
+import Vue from 'vue'
 
-export const mutations = {}
+import Vuex from 'vuex'
 
-export const actions = {
-  init_index_page ({ commit }, data) {
-    commit('post/init_posts', data.posts || [])
-  },
-  init_test_page ({ commit }, data) {
-    commit('post/init_hello', data.hello || '')
+Vue.use(Vuex)
+
+import server from './server'
+import pm from './pm'
+import user from './user'
+import ui from './ui'
+
+const store = new Vuex.Store({
+  state: {},
+  mutations: {},
+  actions: {},
+  modules: {
+    pm,
+    server,
+    user,
+    ui
   }
-}
+})
+
+export default store

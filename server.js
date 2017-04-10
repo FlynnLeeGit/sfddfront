@@ -3,25 +3,22 @@ const Nuxt = require('nuxt')
 const express = require('express')
 const app = express()
 const nuxtConfig = require('./nuxt.config.js')
-// const logger = require('morgan')
-const host = process.env.HOST || '0.0.0.0'
-const port = process.env.PORT || 3000
+const logger = require('morgan')
 
-const bodyParser = require('body-parser')
+const proxy = require('http-proxy-middleware')
 
-app.set('port', port)
-// Import API Routes
+// const config = require('./config')
+const npmPackageConfig = require('./package.json').config
+const host = npmPackageConfig.nuxt.host
+const port = npmPackageConfig.nuxt.port
 
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: false }))
+process.env.PORT = port
+process.env.HOST = host
 
-// app.use(logger('dev'))
-
-// Import and Set Nuxt.js options
+app.use(logger('dev'))
 
 // Init Nuxt.js
 const nuxt = new Nuxt(nuxtConfig)
-app.use(nuxt.render)
 
 // Build only in dev mode
 if (nuxtConfig.dev) {
@@ -29,9 +26,18 @@ if (nuxtConfig.dev) {
     console.error(error) // eslint-disable-line no-console
     process.exit(1)
   })
+
+  const fapiProxy = proxy('/_fapi', {
+    target: 'http://localhost:8000',
+    changeOrigin: true
+  })
+
+  app.use(fapiProxy)
 }
+
+app.use(nuxt.render)
 
 // Listen the server
 app.listen(port, host, function () {
-  console.log('Server listening on ' + host + ':' + port) // eslint-disable-line no-console
+  console.log('Server listening on ' + port) // eslint-disable-line no-console
 })

@@ -5,36 +5,44 @@
   "author": "flynnlee <5930029372@qq.com>",
   "private": true,
   "scripts": {
-    "dev": "rm -rf .nuxt && nodemon --exec babel-node -w server.js -w nuxt.config.js -w api/ server.js",
-    "build": "cross-env NODE_ENV=production nuxt build && babel server.js --out-file server.prod.js",
-    "start": "cross-env NODE_ENV=production node server.prod.js",
-    "precommit": "npm run lint",
+    "dev": "nodemon -w nuxt.config.js -w server.js -w config.js server.js",
+    "css": "nodemon -w gulpfile.js --exec \"gulp css\"",
+    "build": "cross-env NODE_ENV=production nuxt build",
+    "s": "cross-env NODE_ENV=production node server.js",
+    "loadtest": "loadtest -n 2000 http://localhost:8080",
+    "start": "cross-env NODE_ENV=production pm2 start server.js --name \"render\"",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
-  },
-  "babel": {
-    "presets": [
-      "es2015",
-      "stage-2"
-    ]
   },
   "dependencies": {
     "axios": "^0.15.3",
     "cross-env": "^3.1.4",
     "express": "^4.14.0",
+    "lru-cache": "^4.0.2",
     "nuxt": "latest"
   },
   "devDependencies": {
-    "babel-cli": "^6.22.2",
-    "babel-eslint": "^7.1.1",
-    "babel-preset-es2015": "^6.22.0",
-    "babel-preset-stage-2": "^6.22.0",
-    "body-parser": "^1.17.1",
+    "cssnano": "^3.10.0",
     "eslint": "^3.13.1",
     "eslint-config-standard": "^6.2.1",
     "eslint-plugin-html": "^1.7.0",
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^2.0.1",
+    "eslint-plugin-vue": "^2.0.1",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^6.4.0",
     "http-proxy-middleware": "^0.17.4",
-    "nodemon": "^1.11.0"
+    "morgan": "^1.8.1",
+    "nodemon": "^1.11.0",
+    "pm2": "^2.4.4",
+    "postcss-advanced-variables": "^1.2.2",
+    "postcss-cssnext": "^2.10.0",
+    "postcss-easy-import": "^2.0.0",
+    "postcss-mixins": "^5.4.1"
+  },
+  "config": {
+    "nuxt": {
+      "host": "0.0.0.0",
+      "port": "8080"
+    }
   }
 }

@@ -1,16 +1,13 @@
 <template>
-  <section class="container">
-    <img src="~assets/img/logo.png" alt="Nuxt.js Logo" class="logo" />
+  <section container>
+    <h1 v-for='n in 20'>{{n}}</h1>
+    <!--<transition name='slide-top'
+                  @before-enter='beforeEnter'
+                  @enter='enter'>-->
+    <p class='test' v-lazy.animate>i am a text</p>
+    <!--</transition>-->
 
-      <nuxt-link to='/test'>test</nuxt-link>
-      <ul>
-        <li v-for='item in posts'>
-          {{item.title}}
-        </li>
-      </ul>
-
-
-
+    <button @click='show=!show'> toggle</button>
 
   </section>
 </template>
@@ -19,33 +16,26 @@
 import axios from '~plugins/axios'
 
 export default {
-  middleware:'init_store',
-  computed:{
-    posts(){
-      return this.$store.state.post.posts
+  asyncData({ store }) {
+    return store.dispatch('getPms')
+  },
+  data() {
+    return {
+      show: false
     }
   },
-  head () {
+  head() {
     return {
       title: 'Users'
     }
+  },
+  methods: {
+  },
+  mounted() {
   }
 }
 </script>
 
 <style>
-.title
-{
-  margin: 30px 0;
-}
-.users
-{
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.user
-{
-  margin: 10px 0;
-}
+
 </style>

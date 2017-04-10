@@ -1,0 +1,43 @@
+.Btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: var(--size-2);
+  line-height: 1.5;
+  position: relative;
+  vertical-align: middle;
+  white-space: nowrap;
+  user-select: none;
+  padding:1em;
+
+  &.-primary {
+    background-color: var(--color-primary);
+  }
+  &.-secondary {
+    background-color: var(--color-secondary);
+  }
+  &:disabled {}
+  &[loading]:after {
+    content: "";
+    animation: spin .5s infinite linear;
+  }
+  &.-sm {
+    font-size: var(--size-1);
+  }
+  &.-md {
+    font-size: var(--size-3);
+  }
+  &.-lg {
+    font-size: var(--size-4);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

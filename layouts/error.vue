@@ -1,14 +1,11 @@
 <template>
   <section class="container">
-    <img src="~assets/img/logo.png" alt="Nuxt.js Logo" class="logo" />
+    <img src="~assets/imgs/logo.png" alt="Nuxt.js Logo" class="logo" />
     <h1 class="title">
-      <span class='show-on-node'>{{ error.statusCode }}</span>
-      <span class='show-on-php'>[[error.statusCode]]</span>
+      {{ error.statusCode }}
     </h1>
     <h2 class="info">
-      <span class='show-on-node'> {{ error.message }}</span>
-      <span class='show-on-php'>[[error.message]]</span>
-
+      {{ error.message }}
     </h2>
     <nuxt-link class="button" to="/" v-if="error.statusCode === 404">
       Homepage
@@ -22,9 +19,6 @@ export default {
 </script>
 
 <style scoped>
-.show-on-php{
-  display:none;
-}
 .title
 {
   margin-top: 15px;
