@@ -1,5 +1,6 @@
 module.exports = {
   proxyTable: {
-    '/': 'http://localhost:8080'
+    '/_fapi': 'http://develop.sfdd.lab/',
+    '/_common': 'http://develop.sfdd.lab/'
   }
 }

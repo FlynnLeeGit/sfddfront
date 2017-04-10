@@ -2,17 +2,12 @@ const gulp = require('gulp')
 const postcss = require('gulp-postcss')
 
 const easyImport = require('postcss-easy-import')
-const advancedVariables = require('postcss-advanced-variables')
-const mixins = require('postcss-mixins')
-const cssNext = require('postcss-cssnext')
-// const styleguide = require('postcss-style-guide')
+const salad = require('postcss-salad')
 
 const cssnano = require('cssnano')
 const plugins = [
   easyImport(),
-  advancedVariables(),
-  mixins(),
-  cssNext()
+  salad()
 ]
 
 const prodPlugins = [cssnano()]

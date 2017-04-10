@@ -2,10 +2,12 @@ const Nuxt = require('nuxt')
 
 const express = require('express')
 const app = express()
-const nuxtConfig = require('./nuxt.config.js')
-const logger = require('morgan')
 
+const logger = require('morgan')
 const proxy = require('http-proxy-middleware')
+
+const nuxtConfig = require('./nuxt.config.js')
+const config = require('./config')
 
 // const config = require('./config')
 const npmPackageConfig = require('./package.json').config
@@ -27,12 +29,16 @@ if (nuxtConfig.dev) {
     process.exit(1)
   })
 
-  const fapiProxy = proxy('/_fapi', {
-    target: 'http://localhost:8000',
-    changeOrigin: true
-  })
+  const proxyTable = config.proxyTable
 
-  app.use(fapiProxy)
+  Object.keys(proxyTable).forEach(from => {
+    const target = proxyTable[from]
+    const proxyMid = proxy(from, {
+      target: target,
+      changeOrigin: true
+    })
+    app.use(proxyMid)
+  })
 }
 
 app.use(nuxt.render)
