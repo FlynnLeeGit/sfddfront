@@ -1,8 +1,25 @@
-[container]{
-  position:relative;
-  max-width:1180px;
-  margin-left:auto;
-  margin-right:auto;
-  padding-left:10px;
-  padding-right:10px;
+[container] {
+  position: relative;
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+[grid] {
+  display: flex;
+}
+
+[col],
+[col*='1'] {
+  flex: 1;
+}
+
+[col*='2'] {
+  flex: 2;
+}
+
+[col*='3'] {
+  flex: 3;
 }

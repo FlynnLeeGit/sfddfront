@@ -22,12 +22,7 @@ html {
  * Add the correct display in IE 9-.
  */
 
-article,
-aside,
-footer,
-header,
-nav,
-section {
+article, aside, footer, header, nav, section {
   display: block;
 }
 
@@ -49,9 +44,7 @@ h1 {
  * 1. Add the correct display in IE.
  */
 
-figcaption,
-figure,
-main { /* 1 */
+figcaption, figure, main { /* 1 */
   display: block;
 }
 
@@ -112,8 +105,7 @@ abbr[title] {
  * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
  */
 
-b,
-strong {
+b, strong {
   font-weight: inherit;
 }
 
@@ -121,8 +113,7 @@ strong {
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
 
-b,
-strong {
+b, strong {
   font-weight: bolder;
 }
 
@@ -131,9 +122,7 @@ strong {
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 
-code,
-kbd,
-samp {
+code, kbd, samp {
   font-family: monospace, monospace; /* 1 */
   font-size: 1em; /* 2 */
 }
@@ -168,8 +157,7 @@ small {
  * all browsers.
  */
 
-sub,
-sup {
+sub, sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
@@ -191,8 +179,7 @@ sup {
  * Add the correct display in IE 9-.
  */
 
-audio,
-video {
+audio, video {
   display: inline-block;
 }
 
@@ -228,11 +215,7 @@ svg:not(:root) {
  * Remove the margin in Firefox and Safari.
  */
 
-button,
-input,
-optgroup,
-select,
-textarea {
+button, input, optgroup, select, textarea {
   margin: 0;
 }
 
@@ -241,8 +224,7 @@ textarea {
  * 1. Show the overflow in Edge.
  */
 
-button,
-input { /* 1 */
+button, input { /* 1 */
   overflow: visible;
 }
 
@@ -251,8 +233,7 @@ input { /* 1 */
  * 1. Remove the inheritance of text transform in Firefox.
  */
 
-button,
-select { /* 1 */
+button, select { /* 1 */
   text-transform: none;
 }
 
@@ -262,10 +243,7 @@ select { /* 1 */
  * 2. Correct the inability to style clickable types in iOS and Safari.
  */
 
-button,
-html [type="button"], /* 1 */
-[type="reset"],
-[type="submit"] {
+button, html [type="button"], [type="reset"], [type="submit"] {
   -webkit-appearance: button; /* 2 */
 }
 
@@ -273,10 +251,7 @@ html [type="button"], /* 1 */
  * Remove the inner border and padding in Firefox.
  */
 
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
@@ -285,10 +260,7 @@ button::-moz-focus-inner,
  * Restore the focus styles unset by the previous rule.
  */
 
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
+button:-moz-focusring, [type="button"]:-moz-focusring, [type="reset"]:-moz-focusring, [type="submit"]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -331,8 +303,7 @@ textarea {
  * 2. Remove the padding in IE 10-.
  */
 
-[type="checkbox"],
-[type="radio"] {
+[type="checkbox"], [type="radio"] {
   box-sizing: border-box; /* 1 */
   padding: 0; /* 2 */
 }
@@ -341,8 +312,7 @@ textarea {
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
 
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
+[type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -360,8 +330,7 @@ textarea {
  * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
  */
 
-[type="search"]::-webkit-search-cancel-button,
-[type="search"]::-webkit-search-decoration {
+[type="search"]::-webkit-search-cancel-button, [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -383,8 +352,7 @@ textarea {
  * 1. Add the correct display in Edge, IE, and Firefox.
  */
 
-details, /* 1 */
-menu {
+details, menu {
   display: block;
 }
 
@@ -426,31 +394,27 @@ template {
   display: none;
 }
 
-*,*:before,*:after{
+*, *:before, *:after{
   box-sizing:inherit;
 }
 
 /*页面过渡*/
 
-.page-leave-active,
-.page-enter-active {
+.page-leave-active, .page-enter-active {
   -webkit-transition: all .5s;
   transition: all .5s;
 }
 
-.page-enter,
-.page-leav-active {
+.page-enter, .page-leav-active {
   opacity: 0;
 }
 
-.fade-enter-active,
-.fade-leave-active {
+.fade-enter-active, .fade-leave-active {
   -webkit-transition: all .3s;
   transition: all .3s;
 }
 
-.fade-enter,
-.fade-leave-active {
+.fade-enter, .fade-leave-active {
   opacity: 0;
 }
 
@@ -464,11 +428,35 @@ template {
   transition:all .3s;
 }
 
-[container]{
-  position:relative;
-  max-width:1180px;
-  margin-left:auto;
-  margin-right:auto;
-  padding-left:10px;
-  padding-right:10px;
+[container] {
+  position: relative;
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+[grid] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+[col], [col*='1'] {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+[col*='2'] {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+[col*='3'] {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
 }

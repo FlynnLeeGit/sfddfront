@@ -52,7 +52,7 @@ module.exports = {
       app: 'app.js?[hash:5]',
       manifest: 'manifest.js?[hash:5]'
     },
-    publicPath: '/compiled/_nuxt/',
+    // publicPath: '/compiled/_nuxt/',
     loaders: [{
       test: /\.(png|jpe?g|gif|svg)$/,
       loader: 'url-loader',
