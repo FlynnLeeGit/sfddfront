@@ -3,11 +3,12 @@ const postcss = require('gulp-postcss')
 
 const easyImport = require('postcss-easy-import')
 const salad = require('postcss-salad')
+const saladConf = require('./config')
 
 const cssnano = require('cssnano')
 const plugins = [
   easyImport(),
-  salad()
+  salad(saladConf)
 ]
 
 const prodPlugins = [cssnano()]

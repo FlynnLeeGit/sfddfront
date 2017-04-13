@@ -1,0 +1,40 @@
+:root {
+  --color-border: #e1e1e1;
+}
+
+@b header {
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid var(--color-border);
+  line-height: 80px;
+  vertical-align: top;
+  @e logo {
+    line-height: 1;
+    vertical-align: middle;
+  }
+  @e nav {
+    float: right;
+  }
+  @e links {
+    li {
+      position: relative;
+      font-size: 14px;
+      display: inline-block;
+      padding: 0 15px;
+      &:not(:first-child) {
+        margin-left: 20px;
+      }
+      &:hover {
+        box-shadow: 0 0 18px rgba(0, 0, 0, .2);
+      }
+      a.active {
+        color: rgba(0, 0, 0, .4);
+      }
+    }
+  }
+}
+
