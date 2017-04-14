@@ -1,0 +1,11 @@
+@b footer {
+  padding-top: 38px;
+  background-color: #2c2c2f;
+  @e list {
+    display: inline-block;
+    vertical-align: top;
+  }
+  @e list-title{
+    color:white;
+  }
+}

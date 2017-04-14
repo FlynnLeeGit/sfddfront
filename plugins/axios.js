@@ -12,7 +12,7 @@ export default {
     }
     return axios({
       method: 'get',
-      url: configApi.apiServer + url
+      url: url
     }).then(res => {
       if (configApi.cached) configApi.cached.set(key, res)
       return res

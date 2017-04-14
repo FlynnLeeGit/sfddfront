@@ -42,12 +42,14 @@ module.exports = {
     }
   ],
   router: {
+    base: '/',
     linkActiveClass: 'active'
   },
   /*
    ** Add axios globally
    */
   build: {
+    publicPath: '/static/',
     postcss: [
       require('postcss-easy-import')(),
       require('postcss-salad')(saladConf)
