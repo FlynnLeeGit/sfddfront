@@ -4,10 +4,8 @@ const express = require('express')
 const app = express()
 
 const logger = require('morgan')
-const proxy = require('http-proxy-middleware')
 
 const nuxtConfig = require('./nuxt.config.js')
-const config = require('./config')
 
 // const config = require('./config')
 const npmPackageConfig = require('./package.json').config
@@ -27,17 +25,6 @@ if (nuxtConfig.dev) {
   nuxt.build().catch(error => {
     console.error(error) // eslint-disable-line no-console
     process.exit(1)
-  })
-
-  const proxyTable = config.proxyTable
-
-  Object.keys(proxyTable).forEach(from => {
-    const target = proxyTable[from]
-    const proxyMid = proxy(from, {
-      target: target,
-      changeOrigin: true
-    })
-    app.use(proxyMid)
   })
 }
 
