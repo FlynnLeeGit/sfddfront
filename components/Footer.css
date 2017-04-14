@@ -1,11 +1,37 @@
+:root {
+  --color-white: #fff;
+}
+
 @b footer {
-  padding-top: 38px;
   background-color: #2c2c2f;
+  color: var(--color-white);
+  font-size: 12px;
+  @e nav {
+    padding-top: 32px;
+    padding-bottom: 22px;
+  }
   @e list {
     display: inline-block;
     vertical-align: top;
+    width: 25%;
+    line-height: 25px;
   }
-  @e list-title{
-    color:white;
+  @e list-title {
+    color: var(--color-white);
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  @e item {
+
+  }
+  @e phone {
+    font-size: 24px;
+  }
+  @e copy-right {
+    padding: 12px 0;
+    border-top: 1px solid color(var(--color-white) alpha(.1));
+    span {
+      opacity: .5;
+    }
   }
 }

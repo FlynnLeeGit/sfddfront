@@ -8,10 +8,9 @@
     "dev": "nodemon -w nuxt.config.js -w server.js -w config.js server.js",
     "css": "nodemon -w gulpfile.js --exec \"gulp css\"",
     "build": "cross-env NODE_ENV=production nuxt build",
-    "s": "cross-env NODE_ENV=production node server.js",
-    "loadtest": "loadtest -n 2000 http://localhost:8080",
     "start": "cross-env NODE_ENV=production node server.js",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "depoly":"pm2 startOrRestart ecosystem.json --env production"
   },
   "dependencies": {
     "axios": "^0.15.3",

@@ -1,0 +1,9 @@
+.Link {
+  color: var(--color-white);
+  opacity: 0.5;
+  transition: all .3s;
+  &:hover {
+    text-decoration:underline;
+    opacity:1;
+  }
+}
