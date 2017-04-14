@@ -1,0 +1,56 @@
+@define-mixin overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@b banner {
+  position: relative;
+  @e placeholder {
+    width: 100%;
+  }
+  @e slide {
+    @mixin overlay;
+    background-color: color(#000 alpha(.3));
+  }
+  @e slide-item {
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    h1 {
+      font-size: 56px;
+      margin-bottom: 60px;
+    }
+    h3 {
+      font-size: 22px;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+    a {
+      margin-top: 44px;
+    }
+  }
+}
+
+@b feature {
+  margin: 140px auto;
+  text-align: center;
+  h1 {
+    font-size: 48px;
+    margin-bottom: 30px;
+  }
+  h3 {
+    font-size: 18px;
+    line-height: 2;
+  }
+}
+
+@b video {
+  @e wrap {
+    transform-origin: center top;
+    transition: transform .3s;
+  }
+  @e el {}
+}

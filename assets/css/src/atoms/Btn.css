@@ -1,0 +1,23 @@
+.Btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .5em 1.5em;
+  transition: all .3s;
+  &.-white {
+    border: 1px solid var(--color-white);
+    &:hover {
+      background-color: var(--color-white);
+      color: var(--color-black);
+    }
+  }
+  &.-black {
+    border: 1px solid #747474;
+    color: var(--color-heading);
+    &:hover {
+      background-color:rgba(0,0,0,.9);
+      border-color:rgba(0.0,0,.9);
+      color:var(--color-white);
+    }
+  }
+}
