@@ -5,12 +5,15 @@
   "author": "flynnlee <5930029372@qq.com>",
   "private": true,
   "scripts": {
-    "dev": "nodemon -w nuxt.config.js -w server.js -w config.js server.js",
+    "dev": "cross-env NODE_ENV=development nodemon -w nuxt.config.js -w server.js -w config.js server.js",
     "css": "nodemon -w gulpfile.js --exec \"gulp css\"",
-    "build": "cross-env NODE_ENV=production nuxt build",
-    "start": "cross-env NODE_ENV=production node server.js",
+    "build": "cross-env NODE_ENV=staging nuxt build",
+    "start": "cross-env NODE_ENV=staging node server.js",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "deploy":"pm2 startOrRestart ecosystem.json --env production"
+    "staging": "cnpm install && npm run build && pm2 startOrRestart eco-staging.json --env staging",
+    "prod": "pm2 startOrRestart eco-prod.json --env production",
+    "deploy:setup": "pm2 deploy eco-staging.json staging setup",
+    "deploy:staging": "pm2 deploy eco-staging.json staging"
   },
   "dependencies": {
     "axios": "^0.15.3",
@@ -33,14 +36,7 @@
     "http-proxy-middleware": "^0.17.4",
     "morgan": "^1.8.1",
     "nodemon": "^1.11.0",
-    "pm2": "^2.4.4",
     "postcss-easy-import": "^2.0.0",
     "postcss-salad": "^1.0.8"
-  },
-  "config": {
-    "nuxt": {
-      "host": "0.0.0.0",
-      "port": "5180"
-    }
   }
 }

@@ -75,7 +75,7 @@
   }
   @e control {}
   @e timeline {
-    margin-top: 40px;
+    margin-top: 30px;
     position: relative;
     img {
       width: 100%;
@@ -90,5 +90,35 @@
     img {
       width: 1180px;
     }
+  }
+  @e pins {
+    width: 1280px;
+    margin-left: -50px;
+    padding: 20px 0;
+  }
+  @e pin {
+    width: 100px;
+    margin: 0 68px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    &:hover {
+      .video__pin-img {
+        transition: opacity .3s;
+        opacity: 0.65;
+      }
+    }
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+      cursor: default;
+    }
+  }
+  @e pin-img {
+    width: auto;
+    height: 36px;
+    margin-bottom: 10px;
   }
 }

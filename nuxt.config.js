@@ -1,13 +1,13 @@
-const isProd = process.env.NODE_ENV === 'production'
-const isDev = !isProd
-console.log(`${isDev ? '开发环境' : '生产环境'}`); // eslint-disable-line
+const ENV = process.env.NODE_ENV
+const isDev = ENV === 'development'
+console.log(`[ENV] ${ENV}`); // eslint-disable-line
 const { saladConf } = require('./config')
 module.exports = {
   /*
    ** Headers of the page
    */
   dev: isDev,
-  cache: isProd,
+  cache: !isDev,
   head: {
     title: 'starter',
     meta: [

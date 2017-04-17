@@ -8,12 +8,9 @@ const logger = require('morgan')
 const nuxtConfig = require('./nuxt.config.js')
 
 // const config = require('./config')
-const npmPackageConfig = require('./package.json').config
-const host = npmPackageConfig.nuxt.host
-const port = npmPackageConfig.nuxt.port
+const { PORT } = require('./config')
 
-process.env.PORT = port
-process.env.HOST = host
+process.env.PORT = PORT
 
 app.use(logger('dev'))
 
@@ -31,6 +28,6 @@ if (nuxtConfig.dev) {
 app.use(nuxt.render)
 
 // Listen the server
-app.listen(port, host, function () {
-  console.log('Server listening on ' + port) // eslint-disable-line no-console
+app.listen(PORT, '0.0.0.0', function () {
+  console.log(`[Frontend Server] is on ${PORT}!`) // eslint-disable-line no-console
 })
