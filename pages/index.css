@@ -130,8 +130,7 @@
   min-width: 1200px;
   @e desc {
     color: #fff;
-    position: relative;
-    left: 125px;
+    padding-left: 120px;
     h1 {
       font-size: 48px;
       margin-bottom: 60px;
@@ -157,11 +156,11 @@
     width: 330px;
     h2 {
       font-size: 36px;
-      font-weight: 500;
       margin-bottom: 65px;
     }
     p {
       line-height: 1.7;
+      color: #666;
     }
     a {
       margin-top: 55px;
@@ -202,12 +201,28 @@
     }
     .standard__mask {
       left: 200px;
-      top: -50px;
+      top: -60px;
     }
     .standard__content {
       text-align: left;
       left: 40px;
       top: 10px;
+    }
+  }
+  &.-material {
+    margin-top: 400px;
+    .standard__img {}
+    .standard__number {
+      left: 0;
+      top: -200px;
+    }
+    .standard__mask {
+      left: 500px;
+      top: -80px;
+    }
+    .standard__content {
+      left: 820px;
+      top: -20px;
     }
   }
 }
@@ -217,6 +232,7 @@
   display: inline-block;
   color: #999;
   width: 40%;
+  min-width: 375px;
   &:before,
   &:after {
     content: "";
@@ -242,5 +258,63 @@
   }
   &.-first {
     margin-top: 90px;
+  }
+  &.-second {
+    margin-top: 53px;
+  }
+  &.-third {
+    margin-top: 200px;
+  }
+}
+
+@b service {
+  margin-top: 400px;
+  background-color: #f7f7f7;
+  position: relative;
+  overflow: hidden;
+  padding-top: 185px;
+  padding-bottom: 140px;
+  text-align: center;
+  &:before {
+    content: "SINO FO";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    padding-top: 100px;
+    transform: translateX(-50%);
+    font-weight: 800;
+    color: #f2f2f2;
+    font-size: 500px;
+    white-space: nowrap;
+  }
+  h1 {
+    font-size: 48px;
+    font-weight: 500;
+  }
+  @e list {
+    margin-top: 110px;
+  }
+  @e item {
+    width: 260px;
+    background-color: #fff;
+    margin: 0 12px;
+    padding: 48px 30px 55px;
+    h3 {
+      font-size: 24px;
+      margin-top: 28px;
+    }
+    p {
+      margin-top: 20px;
+      color: #999;
+      line-height: 1.7;
+      min-height: 70px;
+    }
+  }
+  @e icon {
+    @mixin size 90px;
+  }
+  @e arrow {
+    margin-top: 40px;
+    @mixin size 40px;
   }
 }

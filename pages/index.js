@@ -11,6 +11,11 @@ import icon5Active from '~assets/img/index/icon5_active.png'
 import icon6 from '~assets/img/index/icon6.png'
 import icon6Active from '~assets/img/index/icon6_active.png'
 
+import sIcon1 from '~assets/img/index/s_icon1.png'
+import sIcon2 from '~assets/img/index/s_icon2.png'
+import sIcon3 from '~assets/img/index/s_icon3.png'
+import sIcon4 from '~assets/img/index/s_icon4.png'
+
 export default {
   data () {
     return {
@@ -50,7 +55,25 @@ export default {
           title: '整家'
         }
       ],
-      videoPinActive: 0
+      videoPinActive: 0,
+      serviceList: [
+        {
+          icon: sIcon1,
+          title: '所见即所得',
+          txt: '中孚通过全套预案深化图纸，全尺寸现场放线以确保精确施工后的所见即所得。'
+        },
+        {
+          icon: sIcon2,
+          title: '闭口合同零增项',
+          txt: '精算每个整装产品的成本后执行平方米报价，不额外增项，执行闭口合同。'
+        },
+        {
+          icon: sIcon3,
+          title: '先施工后付款',
+          txt: '5000元开工定金，各阶段验收通过后方支付本阶段款项，装不好，不付款。'
+        },
+        { icon: sIcon4, title: '装修贷款', txt: '联合建设银行装修分期业务，高额度，放心贷。' }
+      ]
     }
   },
   computed: {

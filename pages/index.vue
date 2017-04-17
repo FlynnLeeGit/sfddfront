@@ -23,10 +23,10 @@
              container>
       <h1>中孚空间 · 预案式成品整装</h1>
       <h3>
-                        <p>已为您规划好完整的设计预案，从硬装到软装的造价清单，从制图到全景展示，预案中一应俱全。</p>
-                        <p>帮你把关选材搭配，预算控制，氛围意境。选择我们的当季预案，</p>
-                        <p>来匹配您的房型，设计费仅以2折收取</p>
-                      </h3>
+                              <p>已为您规划好完整的设计预案，从硬装到软装的造价清单，从制图到全景展示，预案中一应俱全。</p>
+                              <p>帮你把关选材搭配，预算控制，氛围意境。选择我们的当季预案，</p>
+                              <p>来匹配您的房型，设计费仅以2折收取</p>
+                            </h3>
     </section>
 
     <section class="video"
@@ -119,7 +119,40 @@
     </section>
 
     <div class="idx-line -right -second">02</div>
-    <section></section>
+
+    <section class="standard -material"
+             container>
+      <img class="standard__img"
+           src="~assets/img/index/wood.png"
+           alt="wood">
+      <img class="standard__number"
+           src="~assets/img/index/03.png"
+           alt="03">
+      <div class="standard__mask"></div>
+      <div class="standard__content">
+        <h2>材料选择标准</h2>
+        <p>我们拥有强大的供应链跟严格的供应链考评机制，精选符合设计的国内外一线品牌，从质量稳定、环保、价格、配送及时、安装合规、产能稳定这七个维度，以季度为单位进行评测。采用集采预定的方式对供应商下单，确保我们的采购成本优势能体现在整装预案之内。</p>
+        <nuxt-link class="Btn -black" to='/3'>深入了解</nuxt-link>
+      </div>
+    </section>
+
+    <div class="idx-line -left -third">03</div>
+
+    <section class="service">
+      <div container>
+        <h1>中孚空间服务</h1>
+        <ul class="service__list" grid>
+          <li class="service__item" v-for='s in serviceList'>
+            <img class="service__icon" :src='s.icon' :alt="s.title">
+            <h3>{{s.title}}</h3>
+            <p>{{s.txt}}</p>
+            <img class="service__arrow" src="~assets/img/index/arrow-right.png" alt="arrow">
+          </li>
+        </ul>
+      </div>
+
+
+    </section>
   </div>
 </template>
 

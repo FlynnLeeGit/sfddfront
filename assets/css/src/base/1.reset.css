@@ -4,6 +4,10 @@
   box-sizing: inherit;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 html,
 body,
 div,
@@ -92,5 +96,3 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
-
-
