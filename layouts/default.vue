@@ -30,6 +30,7 @@ export default {
     window.addEventListener('scroll', () => {
       throttle(this.setTop, 50)
     }, false)
+    this.setTop()
   }
 }
 </script>

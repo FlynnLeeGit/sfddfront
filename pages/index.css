@@ -1,11 +1,4 @@
-@define-mixin overlay {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-
+@import '../assets/css/src/tools/mixins.css';
 @b banner {
   position: relative;
   @e placeholder {
@@ -49,8 +42,53 @@
 
 @b video {
   @e wrap {
-    transform-origin: center top;
+    transform-origin: top center;
     transition: transform .3s;
+    position: relative;
+    cursor: pointer;
   }
-  @e el {}
+  @e placeholder {
+    @mixin overlay;
+    &[active]:before,
+    &[active]:after {
+      opacity: 0;
+    }
+    &:after {
+      content: "";
+      @mixin rightTriangle 25,
+      40,
+      #fff;
+      @mixin absCenter;
+      left: 12px;
+      transition: opacity .5s;
+    }
+    &:before {
+      content: "";
+      @mixin absCenter;
+      @mixin circle 85px;
+      background-color: rgba(0, 0, 0, .5);
+      transition: opacity .5s;
+    }
+  }
+  @e el {
+    width: 100%;
+  }
+  @e control {}
+  @e timeline {
+    margin-top: 40px;
+    position: relative;
+    img {
+      width: 100%;
+    }
+  }
+  @e timeline-progress {
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    min-width: 1%;
+    img {
+      width: 1180px;
+    }
+  }
 }
