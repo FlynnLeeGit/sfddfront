@@ -1,6 +1,7 @@
 @import '../assets/css/src/tools/mixins.css';
 @b banner {
   position: relative;
+  min-width: 1200px;
   @e placeholder {
     width: 100%;
   }
@@ -120,5 +121,126 @@
     width: auto;
     height: 36px;
     margin-bottom: 10px;
+  }
+}
+
+@b beauty {
+  margin-top: 190px;
+  background-color: #a0b3b7;
+  min-width: 1200px;
+  @e desc {
+    color: #fff;
+    position: relative;
+    left: 125px;
+    h1 {
+      font-size: 48px;
+      margin-bottom: 60px;
+    }
+    p {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}
+
+@b standard {
+  position: relative;
+  @e mask {
+    position: absolute;
+    width: 428px;
+    height: 480px;
+    background-color: #f8f8f8;
+    z-index: -1;
+  }
+  @e content {
+    position: absolute;
+    width: 330px;
+    h2 {
+      font-size: 36px;
+      font-weight: 500;
+      margin-bottom: 65px;
+    }
+    p {
+      line-height: 1.7;
+    }
+    a {
+      margin-top: 55px;
+    }
+  }
+  @e number {
+    position: absolute;
+    z-index: -1;
+  }
+  &.-design {
+    margin-top: 300px;
+    .standard__img {
+      margin-left: -140px;
+    }
+    .standard__number {
+      left: 40px;
+      top: -120px;
+    }
+    .standard__mask {
+      left: 550px;
+      top: -15px;
+    }
+    .standard__content {
+      left: 835px;
+      top: 65px;
+    }
+  }
+  &.-quality {
+    margin-top: 379px;
+    text-align: right;
+    .standard__img {
+      position: relative;
+      left: 40px;
+    }
+    .standard__number {
+      right: 50px;
+      top: -180px;
+    }
+    .standard__mask {
+      left: 200px;
+      top: -50px;
+    }
+    .standard__content {
+      text-align: left;
+      left: 40px;
+      top: 10px;
+    }
+  }
+}
+
+@b idx-line {
+  position: absolute;
+  display: inline-block;
+  color: #999;
+  width: 40%;
+  &:before,
+  &:after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #999;
+  }
+  &.-left {
+    left: 0;
+    &:before {
+      width: 90%;
+      height: 1px;
+      margin-right: 10px;
+    }
+  }
+  &.-right {
+    right: 0;
+    &:after {
+      width: 90%;
+      height: 1px;
+      margin-left: 10px;
+    }
+  }
+  &.-first {
+    margin-top: 90px;
   }
 }

@@ -20,12 +20,14 @@
   }
 }
 
-[grid*='middle'] {
-  &>* {
-    vertical-align: middle;
-  }
+[grid*='middle']>* {
+  vertical-align: middle;
 }
 
 [grid*='center'] {
   text-align: center;
+}
+
+[grid*='2']>[col] {
+  width: 50%;
 }
