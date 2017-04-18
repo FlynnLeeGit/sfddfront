@@ -8,22 +8,32 @@
       </a>
       <nav class='header__nav'>
         <ul class="header__links">
-          <li>
-            <nuxt-link :to="{name:'index'}" exact>首页</nuxt-link>
+          <li class="header__link">
+            <nuxt-link :to="{name:'index'}"
+                       exact>首页</nuxt-link>
           </li>
-          <li>
+          <li class="header__link">
             <nuxt-link to='/all'>成品整装 · 2017春季</nuxt-link>
           </li>
-          <li>
+          <li class="header__link">
             <nuxt-link to="/onebyone">一对一定制设计</nuxt-link>
           </li>
-          <li>
+          <li class="header__link">
             <nuxt-link to='/feedback'>用户回访</nuxt-link>
           </li>
-          <li>
-            <nuxt-link to="/us">我们</nuxt-link>
+          <li class="header__link">
+            <nuxt-link to="/us">关于我们</nuxt-link>
+            <ul class="header__dropdown">
+              <li class="header__dropdonw-item">
+                <nuxt-link to='/3'>中孚空间服务</nuxt-link>
+              </li>
+              <li class="header__dropdonw-item">
+                <nuxt-link to='/3'>中孚空间服务</nuxt-link>
+              </li>
+
+            </ul>
           </li>
-          <li>
+          <li class="header__link">
             <nuxt-link to="/views">观点</nuxt-link>
           </li>
         </ul>

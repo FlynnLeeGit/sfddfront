@@ -1,0 +1,64 @@
+:root {
+  --pinkish-red: #ef192e;
+}
+
+@b zero {
+  @e title {
+    font-size: 48px;
+    margin-bottom: 40px;
+  }
+  @e desc {
+    font-size: 18px;
+    line-height: 2;
+  }
+}
+
+@b first {
+  padding-top: 100px;
+  text-align: center;
+  @e img {
+    position: relative;
+    margin-top: -50px;
+    z-index: -1;
+  }
+}
+
+@b second {
+  margin-top: 70px;
+  background-color: #282b34;
+  text-align: center;
+  color: #fff;
+  padding-top: 180px;
+  padding-bottom: 80px;
+  @e legends {
+    margin-top: 90px;
+  }
+  @e legend-title {
+    color: var(--pinkish-red);
+    font-size: 24px;
+  }
+  @e legend-sub {
+    color: #8e8e8e;
+    margin-top: 14px;
+    font-size: 16px;
+  }
+  @e legend-icon {
+    margin-top: 26px;
+  }
+  @e legend-sign {
+    margin: 120px 70px 0;
+  }
+  @e ps {
+    font-size: 12px;
+    margin-top: 40px;
+    color: #7c7c7c;
+  }
+}
+
+@b zero-increment {
+  padding-top: 6%;
+  padding-left: 20px;
+  @e number {
+    margin-bottom: 70px;
+  }
+}

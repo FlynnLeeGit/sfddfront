@@ -19,21 +19,31 @@
   @e nav {
     float: right;
   }
-  @e links {
-    li {
-      position: relative;
-      font-size: 14px;
-      display: inline-block;
-      padding: 0 15px;
-      &:not(:first-child) {
-        margin-left: 20px;
-      }
-      &:hover {
-        box-shadow: 0 0 18px rgba(0, 0, 0, .2);
-      }
-      a.active {
-        color: rgba(0, 0, 0, .4);
-      }
+  @e links {}
+  @e link {
+    position: relative;
+    font-size: 14px;
+    display: inline-block;
+    padding: 0 15px;
+    cursor: pointer;
+    &:not(:first-child) {
+      margin-left: 20px;
     }
+    &:hover {
+      box-shadow: 0 0 18px rgba(0, 0, 0, .2);
+    }
+    a.active {
+      color: rgba(0, 0, 0, .4);
+    }
+  }
+  @e dropdown {
+    padding: 8px 0;
+    position: absolute;
+    width: 120px;
+    text-align: center;
+    left: 50%;
+    margin-left: -60px;
+    line-height: 32px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, .2);
   }
 }
