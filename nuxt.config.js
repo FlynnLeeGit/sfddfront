@@ -9,14 +9,14 @@ module.exports = {
   dev: isDev,
   cache: !isDev,
   head: {
-    title: 'starter',
+    title: 'SFDD',
     meta: [
       {
         charset: 'utf-8'
       },
       {
         name: 'viewport',
-        content: 'width=device-width, initial-scale=1'
+        content: 'width=1280'
       },
       {
         hid: 'description',
