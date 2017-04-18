@@ -1,6 +1,7 @@
 @b ideas-hd {
   border-bottom: 1px solid #e2e2e2;
   height: 60px;
+  background-color:color(#fff alpha(.2));
   @e title {
     font-size: 24px;
     color: #333;
