@@ -1,0 +1,58 @@
+@import '../../assets/css/src/tools/mixins.css';
+@b design {
+  @e title {
+    font-size: 48px;
+    text-align: center;
+  }
+  @e desc {
+    font-size: 18px;
+    line-height: 2;
+    margin-top: 40px;
+    text-align: center;
+  }
+}
+
+@b cartography {
+  padding-top: 140px;
+  @e video {
+    margin-top: 120px;
+    width: 100%;
+  }
+}
+
+@b space {
+  padding-top: 130px;
+  text-align: center;
+  padding-bottom: 160px;
+  @e img {
+    margin-top: 120px;
+  }
+}
+
+@b taste {
+  padding-top: 4%;
+  color: #fff;
+}
+
+@b detail {
+  padding-top: 140px;
+  text-align: center;
+  padding-bottom: 240px;
+  @e img {
+    margin-top: 80px;
+  }
+}
+
+@b light {
+  color: #fff;
+  padding-top: 38%;
+}
+
+@b budget {
+  padding-top: 170px;
+  padding-bottom: 220px;
+  text-align: center;
+  @e img {
+    margin-top: 120px;
+  }
+}

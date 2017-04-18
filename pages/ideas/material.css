@@ -1,0 +1,57 @@
+@import '../../assets/css/src/tools/mixins.css';
+@b logos {
+  text-align: center;
+  padding-top: 150px;
+  padding-bottom: 70px;
+  h1 {
+    font-size: 48px;
+    line-height: 1.5;
+  }
+  h4 {
+    font-size: 18px;
+    line-height: 2;
+    margin-top: 60px;
+  }
+  @e img {
+    width: 100%;
+    margin-top: 80px;
+  }
+}
+
+@b m-content {
+  color: #fff;
+  h1 {
+    font-size: 48px;
+  }
+  p {
+    font-size: 18px;
+    line-height: 2;
+    margin-top: 40px;
+  }
+  &.-forest {
+    padding-top: 25%;
+    padding-left: 50px;
+  }
+  &.-paint {
+    padding-top: 28%;
+    text-align: center;
+  }
+  &.-woodwork {
+    padding-top: 4%;
+    text-align: center;
+  }
+  &.-bath {
+    text-align: center;
+    padding-top: 20%;
+  }
+  &.-floor {
+    text-align: center;
+    padding-top: 23%;
+  }
+  &.-tile {
+    height: 100%;
+    text-align: center;
+    padding-top: 28%;
+    background-color: rgba(0, 0, 0, .3);
+  }
+}

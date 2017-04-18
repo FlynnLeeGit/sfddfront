@@ -23,10 +23,10 @@
              container>
       <h1>中孚空间 · 预案式成品整装</h1>
       <h3>
-                                    <p>已为您规划好完整的设计预案，从硬装到软装的造价清单，从制图到全景展示，预案中一应俱全。</p>
-                                    <p>帮你把关选材搭配，预算控制，氛围意境。选择我们的当季预案，</p>
-                                    <p>来匹配您的房型，设计费仅以2折收取</p>
-                                  </h3>
+        <p>已为您规划好完整的设计预案，从硬装到软装的造价清单，从制图到全景展示，预案中一应俱全。</p>
+        <p>帮你把关选材搭配，预算控制，氛围意境。选择我们的当季预案，</p>
+        <p>来匹配您的房型，设计费仅以2折收取</p>
+      </h3>
     </section>
 
     <section class="video"
@@ -133,7 +133,7 @@
         <h2>材料选择标准</h2>
         <p>我们拥有强大的供应链跟严格的供应链考评机制，精选符合设计的国内外一线品牌，从质量稳定、环保、价格、配送及时、安装合规、产能稳定这七个维度，以季度为单位进行评测。采用集采预定的方式对供应商下单，确保我们的采购成本优势能体现在整装预案之内。</p>
         <nuxt-link class="Btn -black"
-                   to='/3'>深入了解</nuxt-link>
+                   to='/ideas/material'>深入了解</nuxt-link>
       </div>
     </section>
 
@@ -162,21 +162,6 @@
       </div>
     </section>
 
-    <section class="find">
-      <img class="find__bg"
-           src="~assets/img/index/ft_bg.jpg"
-           alt="ft_bg">
-      <div class="find__overlay">
-        <div class="find__content" container>
-          <h2>2017年春季 · 整装方案</h2>
-          <h4>每季度整装产品限时发售，离本季产品下架时间还有</h4>
-          <h4>XX天</h4>
-          <nuxt-link class="Btn -white"
-                     to='/2'>点击前往</nuxt-link>
-        </div>
-      </div>
-
-    </section>
   </div>
 </template>
 

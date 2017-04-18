@@ -93,13 +93,13 @@
     }
   }
   @e pins {
-    width: 1280px;
+    width: 1260px;
     margin-left: -50px;
     padding: 20px 0;
   }
   @e pin {
     width: 100px;
-    margin: 0 68px;
+    margin: 0 66px;
     text-align: center;
     position: relative;
     cursor: pointer;
@@ -322,33 +322,5 @@
   @e arrow {
     margin-top: 40px;
     @mixin size 40px;
-  }
-}
-
-@b find {
-  position: relative;
-  @e bg {
-    width: 100%;
-    min-width: 1200px;
-  }
-  @e overlay {
-    background-color: rgba(0, 0, 0, .3);
-    @mixin overlay;
-  }
-  @e content {
-    text-align: center;
-    color: #fff;
-    margin-top: 8%;
-    h2 {
-      font-size: 36px;
-      margin-bottom: 24px;
-    }
-    h4 {
-      font-size: 24px;
-      line-height: 1.75;
-    }
-    a {
-      margin-top: 55px;
-    }
   }
 }

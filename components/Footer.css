@@ -2,6 +2,30 @@
   --color-white: #fff;
 }
 
+@b find {
+  @e content {
+    height: 100%;
+    background-color: rgba(0, 0, 0, .3);
+    text-align: center;
+    color: #fff;
+    padding-top: 8%;
+    h2 {
+      font-size: 36px;
+      margin-bottom: 24px;
+    }
+    h4 {
+      font-size: 24px;
+      line-height: 1.75;
+    }
+    a {
+      margin-top: 55px;
+    }
+  }
+  @e day {
+    color: #eb182d;
+  }
+}
+
 @b footer {
   background-color: #2c2c2f;
   color: var(--color-white);
@@ -21,9 +45,7 @@
     margin-bottom: 10px;
     font-size: 14px;
   }
-  @e item {
-
-  }
+  @e item {}
   @e phone {
     font-size: 24px;
   }
