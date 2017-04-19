@@ -1,4 +1,5 @@
-@import '../../assets/css/src/tools/mixins.css';
+@import '../../tools.css';
+
 @b logos {
   text-align: center;
   padding-top: 150px;

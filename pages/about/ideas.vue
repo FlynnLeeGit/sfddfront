@@ -14,9 +14,9 @@ export default {
   data () {
     return {
       tabs: [
-        { to: '/ideas/design', name: '设计标准' },
-        { to: '/ideas/quality', name: '质量控制' },
-        { to: '/ideas/material', name: '材料选择' }
+        { to: '/about/ideas/design', name: '设计标准' },
+        { to: '/about/ideas/quality', name: '质量控制' },
+        { to: '/about/ideas/material', name: '材料选择' }
       ]
     }
   }

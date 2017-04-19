@@ -1,4 +1,5 @@
-@import '../../assets/css/src/tools/mixins.css';
+@import '../../tools.css';
+
 @b design {
   @e title {
     font-size: 48px;

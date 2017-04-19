@@ -32,6 +32,9 @@
     &:hover {
       box-shadow: 0 0 18px rgba(0, 0, 0, .2);
     }
+    &:hover>.header__dropdown {
+      transform: scaleY(1);
+    }
     a.active {
       color: rgba(0, 0, 0, .4);
     }
@@ -39,11 +42,26 @@
   @e dropdown {
     padding: 8px 0;
     position: absolute;
-    width: 120px;
     text-align: center;
-    left: 50%;
-    margin-left: -60px;
     line-height: 32px;
     box-shadow: 0 5px 18px rgba(0, 0, 0, .2);
+    background-color: #fff;
+    white-space: nowrap;
+    left: 50%;
+    margin-left: -60px;
+    transition: transform .3s;
+    transform: scaleY(0);
+    transform-origin: center top;
+    a {
+      width: 120px;
+      background-image: radial-gradient(#f0f0f0 0%, #f0f0f0 50%, #fff 50%, #fff 100%);
+      background-position: center center;
+      background-size: 0 0;
+      background-repeat: no-repeat;
+      transition: all .5s ease-out;
+    }
+    a:hover {
+      background-size: 200px 200px;
+    }
   }
 }

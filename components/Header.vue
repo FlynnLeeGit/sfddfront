@@ -22,15 +22,14 @@
             <nuxt-link to='/feedback'>用户回访</nuxt-link>
           </li>
           <li class="header__link">
-            <nuxt-link to="/us">关于我们</nuxt-link>
+            <nuxt-link to="/about" event='noop'>关于我们</nuxt-link>
             <ul class="header__dropdown">
               <li class="header__dropdonw-item">
-                <nuxt-link to='/3'>中孚空间服务</nuxt-link>
+                <nuxt-link to='/about/ideas/design'>中孚整装理念</nuxt-link>
               </li>
               <li class="header__dropdonw-item">
-                <nuxt-link to='/3'>中孚空间服务</nuxt-link>
+                <nuxt-link to='/about/services/zero'>中孚空间服务</nuxt-link>
               </li>
-
             </ul>
           </li>
           <li class="header__link">
@@ -41,4 +40,5 @@
     </div>
   </header>
 </template>
+
 <style src='./Header.css'></style>

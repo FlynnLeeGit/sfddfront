@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="zero">
     <section class="first"
              container>
       <h1 class="zero__title">整装一口价，从设计到入驻的全部花费</h1>

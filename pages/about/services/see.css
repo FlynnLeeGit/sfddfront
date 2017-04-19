@@ -1,0 +1,29 @@
+@b see {
+  @e title {
+    font-size: 48px;
+  }
+  @e desc {
+    font-size: 18px;
+    line-height: 2;
+    margin-top: 40px;
+  }
+}
+
+@b scene {
+  text-align: center;
+  padding-top: 140px;
+  padding-bottom: 156px;
+  @e video {
+    margin-top: 100px;
+  }
+}
+
+@b line {
+  text-align: center;
+  padding-top: 125px;
+  padding-bottom: 180px;
+  background-color: #f7f7f7;
+  @e video {
+    margin-top: 100px;
+  }
+}

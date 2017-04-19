@@ -11,25 +11,11 @@ module.exports = {
   head: {
     title: 'SFDD',
     meta: [
-      {
-        charset: 'utf-8'
-      },
-      {
-        name: 'viewport',
-        content: 'width=1280'
-      },
-      {
-        hid: 'description',
-        name: 'description',
-        content: 'zfdd'
-      }
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=1280' },
+      { name: 'description', content: 'zfdd' }
     ],
-    link: [
-      {
-        rel: 'icon',
-        href: '/favicon.png'
-      }
-    ]
+    link: [{ rel: 'icon', href: '/favicon.png' }]
   },
   /*
    ** Global CSS
@@ -43,7 +29,10 @@ module.exports = {
   ],
   router: {
     base: '/',
-    linkActiveClass: 'active'
+    linkActiveClass: 'active',
+    scrollBehavior () {
+      return { x: 0, y: 0 }
+    }
   },
   /*
    ** Add axios globally

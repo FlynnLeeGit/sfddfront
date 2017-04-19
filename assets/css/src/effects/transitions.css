@@ -1,7 +1,9 @@
 /*页面过渡*/
+
+
 .page-leave-active,
 .page-enter-active {
-  transition: all .5s;
+  transition: opacity .1s;
 }
 
 .page-enter,
@@ -20,9 +22,10 @@
   opacity: 0;
 }
 
-.slide-top-enter{
-  transform:translate3d(0,50%,0);
+.slide-top-enter {
+  transform: translate3d(0, 50%, 0);
 }
-.slide-top-enter-active{
-  transition:all .3s;
+
+.slide-top-enter-active {
+  transition: all .3s;
 }

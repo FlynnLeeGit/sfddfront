@@ -3,6 +3,7 @@
 }
 
 @b zero {
+  padding-top: 60px;
   @e title {
     font-size: 48px;
     margin-bottom: 40px;

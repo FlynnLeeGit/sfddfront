@@ -12,8 +12,6 @@
 }
 
 @b top {
-  margin-top: -60px;
-  z-index: -1;
   @e content {
     text-align: center;
     padding-top: 44%;

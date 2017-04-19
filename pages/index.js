@@ -60,25 +60,25 @@ export default {
         {
           icon: sIcon1,
           title: '所见即所得',
-          to: '/services/see',
+          to: '/about/services/see',
           txt: '中孚通过全套预案深化图纸，全尺寸现场放线以确保精确施工后的所见即所得。'
         },
         {
           icon: sIcon2,
           title: '闭口合同零增项',
-          to: '/services/zero',
+          to: '/about/services/zero',
           txt: '精算每个整装产品的成本后执行平方米报价，不额外增项，执行闭口合同。'
         },
         {
           icon: sIcon3,
           title: '先施工后付款',
-          to: '/services/construction',
+          to: '/about/services/construction',
           txt: '5000元开工定金，各阶段验收通过后方支付本阶段款项，装不好，不付款。'
         },
         {
           icon: sIcon4,
           title: '装修贷款',
-          to: '/services/loan',
+          to: '/about/services/loan',
           txt: '联合建设银行装修分期业务，高额度，放心贷。'
         }
       ]
