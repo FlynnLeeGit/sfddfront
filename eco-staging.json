@@ -36,7 +36,7 @@
       // 后台项目地址
       "repo": "git@58.246.42.46:develop/sfddfrontend.git",
       "path":"/srv/www/test/sfddfe",
-      "post-deploy":"npm run staging"
+      "post-deploy":"cnpm install && npm run build && npm run staging"
     }
   }
 }
