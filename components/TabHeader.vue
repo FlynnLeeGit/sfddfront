@@ -11,6 +11,7 @@
                  :key='tab.to'
                  tag='li'
                  :to='tab.to'
+                 :exact='tab.exact'
                  class="TabHeader__tab">
         {{tab.name}}
       </nuxt-link>

@@ -1,0 +1,29 @@
+@b intro {
+  padding-top: 60px;
+}
+
+@b what {
+  text-align: center;
+  padding-top: 110px;
+  padding-bottom: 120px;
+  @e img {
+    margin-top: 60px;
+  }
+}
+
+@b who {
+  padding-top: 8%;
+  color: #fff;
+  @e yellow {
+    color: #ffe329;
+  }
+}
+
+@b flow {
+  padding-top: 130px;
+  text-align: center;
+  padding-bottom: 120px;
+  @e img {
+    margin-top: 70px;
+  }
+}

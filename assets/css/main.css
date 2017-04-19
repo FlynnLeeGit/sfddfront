@@ -187,6 +187,17 @@ a {
   color: #fff;
 }
 
+@b Intro {
+  @e title {
+    font-size: 48px;
+  }
+  @e desc {
+    font-size: 18px;
+    line-height: 2;
+    margin-top: 40px;
+  }
+}
+
 .Link {
   color: #fff;
   opacity: 0.5;

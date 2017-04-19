@@ -1,0 +1,11 @@
+@b custom-more {
+  height: 100%;
+  color: #fff;
+  text-align: center;
+  @e title {
+    font-size: 36px;
+  }
+  @e btn {
+    margin-top: 40px;
+  }
+}

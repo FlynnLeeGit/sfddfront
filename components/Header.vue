@@ -16,7 +16,7 @@
             <nuxt-link to='/all'>成品整装 · 2017春季</nuxt-link>
           </li>
           <li class="header__link">
-            <nuxt-link to="/onebyone">一对一定制设计</nuxt-link>
+            <nuxt-link to="/customDesign">一对一定制设计</nuxt-link>
           </li>
           <li class="header__link">
             <nuxt-link to='/feedback'>用户回访</nuxt-link>

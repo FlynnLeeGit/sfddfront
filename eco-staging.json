@@ -25,18 +25,5 @@
     "env_staging": {
       "NODE_ENV": "staging"
     }
-  }],
-  // staging 发布配置
-  "deploy": {
-    "staging": {
-      "user": "php-fpm",
-      // 发布服务器地址
-      "host": "www.baogaoyezhu.com",
-      "ref": "origin/master",
-      // 后台项目地址
-      "repo": "git@58.246.42.46:develop/sfddfrontend.git",
-      "path":"/srv/www/test/sfddfe",
-      "post-deploy":"cnpm install && npm run build && npm run staging"
-    }
-  }
+  }]
 }

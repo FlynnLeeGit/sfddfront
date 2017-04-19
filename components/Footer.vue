@@ -1,16 +1,16 @@
 <template>
   <footer>
 
-    <section class="ResponsiveBlock">
+    <section class="ResponsiveBlock ft-find">
       <img class="ResponsiveBlock__img"
            src="~assets/img/index/ft_bg.jpg"
            alt="ft_bg">
       <div class="ResponsiveBlock__content">
-        <div class="find__content">
+        <div class="ft-find__content">
           <h2>2017年春季 · 整装方案</h2>
           <h4>每季度整装产品限时发售，离本季产品下架时间还有</h4>
-          <h4><span class="find__day">XX</span>天</h4>
-          <nuxt-link class="Btn -white"
+          <h4><span class="ft-find__day">XX</span>天</h4>
+          <nuxt-link class="Btn -white ft-find__btn"
                      to='/2'>点击前往</nuxt-link>
         </div>
       </div>
@@ -102,4 +102,4 @@
   </footer>
 </template>
 
-<style src='./Footer.css' scoped></style>
+<style src='./Footer.css'></style>
