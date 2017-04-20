@@ -21,10 +21,10 @@ export default {
     }
   },
   mounted () {
-    const serverAjaxErrors = this.$store.state.server.ajaxErrors
+    const serverAjaxErrors = this.$store.state.ajaxErrors
     if (serverAjaxErrors.length) {
       Object.keys(serverAjaxErrors).forEach(k => {
-        console.error('[server-ajax_error]', k, serverAjaxErrors[k]) // eslint-disable-line
+        console.error('[server-ajax_error]', JSON.parse(JSON.stringify(serverAjaxErrors[k]))) // eslint-disable-line
       })
     }
     window.addEventListener('scroll', () => {

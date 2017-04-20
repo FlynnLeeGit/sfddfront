@@ -24,6 +24,16 @@ $color {
   border-bottom-width: calc($(height) / 2)px;
 }
 
+@define-mixin leftTriangle $width,
+$height,
+$color {
+  @mixin triangle;
+  border-right-width: $(width)px;
+  border-right-color: $color;
+  border-top-width: calc($(height) / 2)px;
+  border-bottom-width: calc($(height) / 2)px;
+}
+
 @define-mixin absCenter {
   position: absolute;
   left: 0;

@@ -1,0 +1,70 @@
+:root {
+  --color-border: #e2e2e2;
+  --color-primary:#ff5a5f;
+}
+
+@b TableFilter {
+  line-height: 48px;
+  border-bottom: 1px solid var(--color-border);
+  position:relative;
+  z-index:100;
+  @e content {
+    height: 100%;
+  }
+  @e item {
+    padding: 0 20px;
+    height: 100%;
+    border-right: 1px solid var(--color-border);
+    position:relative;
+    cursor:pointer;
+    &:hover{
+      background-color:#f2f2f2;
+    }
+    &[active]{
+      box-shadow:0 -3px 0 var(--color-primary) inset;
+      .TableFilter__item-arrow{
+        transform:rotate(180deg);
+      }
+      .filter-dropdown {
+        transform:scaleY(1);
+      }
+    }
+  }
+  @e item-name{
+    margin-right:8px;
+  }
+  @e item-arrow{
+    transition:transform .3s;
+    color:var(--color-primary);
+  }
+}
+
+@b filter-dropdown{
+  background-color:#fff;
+  position:absolute;
+  z-index:10;
+  left:0;
+  border-radius:4px;
+  box-shadow:0 14px 36px 2px rgba(0,0,0,.15);
+  margin-top:2px;
+  padding:24px;
+  transition:transform .2s;
+  transform-origin:top center;
+  transform:scaleY(0);
+  @e list{
+     line-height:26px;
+  }
+  @e item{
+    width:100px;
+    a{
+      padding:0 5px;
+      width:100%;
+      border-radius:2px;
+        &:hover,&.active{
+        background-color:var(--color-primary);
+        color:#fff;
+      }
+    }
+  }
+
+}

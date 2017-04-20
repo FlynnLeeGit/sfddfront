@@ -1,0 +1,11 @@
+@b SvgIcon {
+  display: inline-block;
+  vertical-align: middle;
+  @e icon {
+    display: block;
+    fill: currentColor;
+    height: 1em;
+    width: 1em;
+  }
+
+}

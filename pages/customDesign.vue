@@ -31,7 +31,7 @@ export default {
       tabs: [
         { to: '/customDesign', name: '介绍', exact: true },
         { to: '/customDesign/products', name: '部分作品' },
-        { to: '/customDesign/insperation', name: '全世界的灵感' }
+        { to: '/customDesign/insperation?page=1', name: '全世界的灵感' }
       ]
     }
   }

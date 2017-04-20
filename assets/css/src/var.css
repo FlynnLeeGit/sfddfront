@@ -1,7 +1,6 @@
 :root{
-  --color-primary:yellow;
+  --color-primary:#ff5a5f;
   --color-secondary:red;
-
 
   --color-heading:#333;
   --color-title:#666;
@@ -9,6 +8,9 @@
 
   --color-white:#fff;
   --color-black:#000;
+
+  --color-border: #e2e2e2;
+  --color-bg:#f7f7f7;
 
   --size-1:.75rem;
   --size-2:1rem;

@@ -1,0 +1,11 @@
+@b products{
+  padding-top:60px;
+  @e ft{
+    text-align:center;
+    padding:40px 0;
+  }
+}
+
+@b imgs{
+
+}

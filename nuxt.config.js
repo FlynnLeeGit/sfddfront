@@ -15,7 +15,8 @@ module.exports = {
       { name: 'viewport', content: 'width=1280' },
       { name: 'description', content: 'zfdd' }
     ],
-    link: [{ rel: 'icon', href: '/favicon.png' }]
+    link: [{ rel: 'icon', href: '/favicon.png' },
+    { rel: 'stylesheet', type: 'text/css', href: '//at.alicdn.com/t/font_rduko7y3jsqt1emi.css' }]
   },
   /*
    ** Global CSS
@@ -25,6 +26,9 @@ module.exports = {
     {
       src: '~plugins/vue-lazy',
       ssr: false
+    },
+    {
+      src: '~plugins/filters'
     }
   ],
   router: {

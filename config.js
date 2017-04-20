@@ -1,4 +1,5 @@
 module.exports = {
+  HOZZY_SERVER: '//dn-st.baogaoyezhu.com',
   PORT: {
     development: 5180,
     staging: 5180,
