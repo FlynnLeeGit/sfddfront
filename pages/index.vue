@@ -185,7 +185,6 @@ import sIcon2 from '~assets/img/index/s_icon2.png'
 import sIcon3 from '~assets/img/index/s_icon3.png'
 import sIcon4 from '~assets/img/index/s_icon4.png'
 
-console.log(sIcon1)
 export default {
   data () {
     return {

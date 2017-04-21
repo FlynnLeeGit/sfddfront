@@ -6,7 +6,7 @@
       </nuxt-link>
     </li>
     <li class='Pagination__item' v-for='page in pageInRange' @click='handleCurrentChange(page)'>
-      <nuxt-link :to="pageTo(page)" exact>
+      <nuxt-link :to="pageTo(page)" exact :class="{active:page === currentPage }">
         {{ page }}
       </nuxt-link>
     </li>
@@ -35,7 +35,7 @@ export default {
     },
     numItemsPerPage: {
       type: Number,
-      default: 16
+      default: 10
     }
   },
   data () {

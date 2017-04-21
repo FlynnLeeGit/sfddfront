@@ -1,41 +1,37 @@
 <template>
   <div class="inspiration">
+    <table-filter :tabs='tabs' />
 
-
-    <table-filter @change='change' :tabs='tabs'/>
-
-
-
-    <section class='inspiration__bd' container>
-      <ul class='imgs' grid='2'>
-        <li :key='item.id' class='imgs__item' v-for='item in insPaginate.items'>
+    <section class='inspiration__bd'
+             container>
+      <ul class='imgs'
+          grid='2'>
+        <li :key='item.id'
+            class='imgs__item'
+            v-for='item in insPaginate.items'>
           <div class="imgs__img-ratio">
             <div class="imgs__img-content">
-              <img :src="getHozzyImg(item.src)" />
-
+              <img :src="item.src | hozzyImgFilter('case600')" />
             </div>
-
           </div>
         </li>
       </ul>
-
     </section>
 
-
-
     <section class="inspiration__ft">
-        <pagination v-if='insPaginate.totalCount' :total='insPaginate.totalCount' />
+      <pagination v-if='insPaginate.totalCount'
+                  :num-items-per-page='16'
+                  :total='insPaginate.totalCount' />
     </section>
   </div>
 </template>
 <script>
 import TableFilter from '~components/TableFilter'
 import Pagination from '~components/Pagination'
-import {mapGetters} from 'vuex'
-import {hozzyImgFilter} from '~plugins/filters'
+import { mapGetters } from 'vuex'
 
 export default {
-  asyncData ({store, route}) {
+  asyncData ({ store, route }) {
     return store.dispatch('getInspiration', route.query)
   },
   data () {
@@ -47,14 +43,6 @@ export default {
     TableFilter,
     Pagination
   },
-  methods: {
-    change (route) {
-
-    },
-    getHozzyImg(fname){
-      return hozzyImgFilter(fname,'case600')
-    }
-  },
   computed: {
     ...mapGetters(['insStyles', 'insRooms', 'insPaginate'])
   },
@@ -62,16 +50,16 @@ export default {
     const _tabs = []
 
     _tabs.push({
-      tag:'room',
-      name:'空间',
-      filter:this.insRooms.list,
-      filterMap:this.insRooms.map
+      tag: 'room',
+      name: '空间',
+      filter: this.insRooms.list,
+      filterMap: this.insRooms.map
     })
     _tabs.push({
-      tag:'style',
-      name:'风格',
-      filter:this.insStyles.list,
-      filterMap:this.insStyles.map
+      tag: 'style',
+      name: '风格',
+      filter: this.insStyles.list,
+      filterMap: this.insStyles.map
     })
     this.tabs = _tabs
   }

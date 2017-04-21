@@ -29,13 +29,8 @@ module.exports = {
    */
   css: ['~assets/css/main.css'],
   plugins: [
-    {
-      src: '~plugins/vue-lazy',
-      ssr: false
-    },
-    {
-      src: '~plugins/filters'
-    }
+    { src: '~plugins/vue-lazy', ssr: false }
+    // { src: '~plugins/filters' }
   ],
   router: {
     base: '/',

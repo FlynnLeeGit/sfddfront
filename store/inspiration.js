@@ -3,41 +3,50 @@ import errorHandler from '~plugins/errorHandler'
 import { toListMap } from '~plugins/utils'
 
 const state = {
-  paginate: {},
-  styles: {
+  insPaginate: {},
+  insStyles: {
     list: [],
     map: {},
     seted: false
   },
-  rooms: {
+  insRooms: {
     list: [],
     map: {},
     seted: false
-  }
+  },
+  vrListAll: [],
+  vrList: []
 }
 const mutations = {
-  SET_INS_PAGINATE (state, data) {
-    state.paginate = data
+  SET_INS_PAGINATE (state, paginate) {
+    state.insPaginate = paginate
   },
   SET_INS_STYLES (state, styleMap) {
-    if (!state.styles.seted) {
-      state.styles = toListMap(styleMap)
-      state.styles.seted = true
+    if (!state.insStyles.seted) {
+      state.insStyles = toListMap(styleMap)
+      state.insStyles.seted = true
     }
   },
   SET_INS_ROOMS (state, roomMap) {
-    if (!state.rooms.seted) {
-      state.rooms = toListMap(roomMap)
-      state.styles.seted = true
+    if (!state.insRooms.seted) {
+      state.insRooms = toListMap(roomMap)
+      state.insRooms.seted = true
     }
+  },
+  SET_VRLIST_ALL (state, list) {
+    state.vrListAll = list
+  },
+  SET_VRLIST (state, page) {
+    state.vrList = state.vrListAll.slice((page - 1) * 6, page * 6)
   }
 }
 
 const actions = {
   getInspiration (store, query) {
-    return axios.get('/_fapi/inspiration/img', {
-      params: query
-    })
+    return axios
+      .get('/_fapi/inspiration/img', {
+        params: query
+      })
       .then(({ data }) => {
         store.commit('SET_INS_PAGINATE', data.paginate)
         store.commit('SET_INS_STYLES', data.styles)
@@ -46,13 +55,30 @@ const actions = {
       .catch(e => {
         errorHandler(store, e)
       })
+  },
+  getVrListAll (store, page) {
+    // 此处是全量数据
+    return axios
+      .get('/_fapi/inspiration/vrs')
+      .then(({ data }) => {
+        // 页面对象
+        store.commit('SET_VRLIST_ALL', data)
+        // 设定vr列表
+        store.commit('SET_VRLIST', page)
+      })
+      .catch(e => {
+        errorHandler(store, e)
+      })
   }
 }
 
 const getters = {
-  insStyles: state => state.styles,
-  insRooms: state => state.rooms,
-  insPaginate: state => state.paginate
+  insStyles: state => state.insStyles,
+  insRooms: state => state.insRooms,
+  insPaginate: state => state.insPaginate,
+  vrPaginate: state => state.vrPaginate,
+  vrList: state => state.vrList,
+  vrTotal: state => state.vrListAll.length
 }
 
 export default {

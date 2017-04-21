@@ -183,7 +183,7 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: .5em 1.5em;
+  padding: .8em 2em;
   -webkit-transition: all .3s;
   transition: all .3s
 }

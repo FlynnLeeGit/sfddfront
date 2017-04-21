@@ -1,0 +1,33 @@
+@import '../../tools.css';
+@b vrlist {
+  padding-top: 60px;
+  @e bd {}
+  @e ft {
+    text-align: center;
+    padding: 40px 0;
+  }
+}
+
+@b imgs {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  @e item {
+    cursor: pointer;
+    width: 50%;
+    min-height: 150px;
+    margin-bottom: 20px;
+    padding: 0 20px;
+  }
+  @e img-ratio {
+    background-color: #999;
+    padding-top: 58%;
+    overflow: hidden;
+    position: relative;
+  }
+  @e img-content {
+    @mixin overlay;
+    img {
+      width: 100%;
+    }
+  }
+}

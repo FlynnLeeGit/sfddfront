@@ -1,14 +1,14 @@
-@b custom-disign {
-  @e more {}
-  @e more-content {
+@b custom-design {
+  @e ft {}
+  @e ft-content {
     height: 100%;
     color: #fff;
     text-align: center;
   }
-  @e more-title {
+  @e ft-title {
     font-size: 36px;
   }
-  @e more-btn {
+  @e ft-btn {
     margin-top: 40px;
   }
 }

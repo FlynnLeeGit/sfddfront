@@ -11,6 +11,7 @@ import MyHeader from '~components/Header.vue'
 import MyFooter from '~components/Footer.vue'
 import { throttle } from '~plugins/utils'
 export default {
+  middleware: ['filters'],
   components: {
     MyHeader,
     MyFooter
@@ -35,7 +36,7 @@ export default {
 }
 </script>
 <style>
-  body{
-    padding-top: 80px;
-  }
+body {
+  padding-top: 80px;
+}
 </style>

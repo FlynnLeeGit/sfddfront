@@ -6,7 +6,6 @@ Vue.use(Vuex)
 
 import ui from './ui'
 import inspiration from './inspiration'
-import products from './products'
 
 const store = new Vuex.Store({
   state: {
@@ -20,8 +19,7 @@ const store = new Vuex.Store({
   actions: {},
   modules: {
     ui,
-    inspiration,
-    products
+    inspiration
   }
 })
 
