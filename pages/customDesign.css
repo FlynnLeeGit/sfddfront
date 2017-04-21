@@ -1,11 +1,14 @@
-@b custom-more {
-  height: 100%;
-  color: #fff;
-  text-align: center;
-  @e title {
+@b custom-disign {
+  @e more {}
+  @e more-content {
+    height: 100%;
+    color: #fff;
+    text-align: center;
+  }
+  @e more-title {
     font-size: 36px;
   }
-  @e btn {
+  @e more-btn {
     margin-top: 40px;
   }
 }

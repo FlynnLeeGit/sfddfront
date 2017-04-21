@@ -22,7 +22,8 @@
             <nuxt-link to='/feedback'>用户回访</nuxt-link>
           </li>
           <li class="header__link">
-            <nuxt-link to="/about" event='noop'>关于我们</nuxt-link>
+            <nuxt-link to="/about"
+                       event='noop'>关于我们</nuxt-link>
             <ul class="header__dropdown">
               <li class="header__dropdonw-item">
                 <nuxt-link to='/about/ideas/design'>中孚整装理念</nuxt-link>

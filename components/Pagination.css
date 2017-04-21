@@ -1,41 +1,37 @@
 @import './tools.css';
-
-@b Pagination{
-  display:inline-block;
-  @e item{
-
-
-    a{
-      padding:10px;
-       border:1px solid var(--color-border);
-    border-radius:2px;
-    margin-right:10px;
-    color:var(--color-primary);
+@b Pagination {
+  display: inline-block;
+  @e item {
+    a {
+      padding: 10px;
+      border: 1px solid var(--color-border);
+      border-radius: 2px;
+      margin-right: 10px;
+      color: var(--color-primary);
     }
-    a:hover{
-      border-color:#aaa;
+    a:hover {
+      border-color: #aaa;
     }
-    a.active{
-      background-color:#ededed;
-      color:var(--color-heading);
-      cursor:default;
+    a.active {
+      background-color: #ededed;
+      color: var(--color-heading);
+      cursor: default;
     }
-
-    .iconfont{
-      font-size:10px;
+    .iconfont {
+      font-size: 10px;
     }
-    &.-prev,&.-next{
-      a.active{
-        background-color:transparent;
-        color:var(--color-primary);
-        cursor:pointer;
+    &.-prev,
+    &.-next {
+      a.active {
+        background-color: transparent;
+        color: var(--color-primary);
+        cursor: pointer;
       }
     }
-    &.-more{
-      a{
-      border-color:transparent;
-      cursor:default;
-
+    &.-more {
+      a {
+        border-color: transparent;
+        cursor: default;
       }
     }
   }

@@ -2,4 +2,16 @@
   ._tr {
     text-align: right;
   }
+  ._tc {
+    text-align: center;
+  }
+  ._f48 {
+    font-size: 48px;
+  }
+  ._f18 {
+    font-size: 18px;
+  }
+  ._lh2 {
+    line-height: 2;
+  }
 }

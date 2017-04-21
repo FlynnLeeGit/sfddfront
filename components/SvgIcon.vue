@@ -1,6 +1,11 @@
 <template>
-  <div class="SvgIcon" :style='iconStyle'>
-    <svg viewBox="0 0 18 18" aria-hidden="true" focusable="false" class="SvgIcon__icon" v-html='path'>
+  <div class="SvgIcon"
+       :style='iconStyle'>
+    <svg viewBox="0 0 18 18"
+         aria-hidden="true"
+         focusable="false"
+         class="SvgIcon__icon"
+         v-html='path'>
     </svg>
   </div>
 </template>

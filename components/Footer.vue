@@ -89,8 +89,8 @@
           <a class="Link"
              href='//www.miitbeian.gov.cn'
              target="_blank">
-                沪ICP备12039245号
-              </a>
+                  沪ICP备12039245号
+                </a>
           <span>／</span>
           <a class="Link"
              href='/any'

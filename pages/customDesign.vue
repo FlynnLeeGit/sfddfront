@@ -3,16 +3,16 @@
     <tab-header title='一对一定制设计'
                 :tabs='tabs' />
     <nuxt-child />
-    <section class="ResponsiveBlock">
+    <section class="ResponsiveBlock custom__more">
       <img src="~assets/img/customDesign/intro/more.jpg"
            alt="custom-more-img"
            class="ResponsiveBlock__img">
       <div class="ResponsiveBlock__content">
-        <div class="custom-more"
+        <div class="custom__more-content"
              grid='middle'>
           <div>
-            <h1 class="custom-more__title">了解我们过往的作品</h1>
-            <nuxt-link class="Btn -white custom-more__btn"
+            <h1 class="custom__more-title">了解我们过往的作品</h1>
+            <nuxt-link class="Btn -white custom__more-btn"
                        to='/more'>点击前往</nuxt-link>
           </div>
         </div>
@@ -26,7 +26,7 @@ export default {
   components: {
     TabHeader
   },
-  data() {
+  data () {
     return {
       tabs: [
         { to: '/customDesign', name: '介绍', exact: true },

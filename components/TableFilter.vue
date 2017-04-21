@@ -3,13 +3,25 @@
     <div container>
       <ul class="TableFilter__list"
           grid>
-        <li v-for='(tab,idx) in tabs' :key='tab.tag' class="TableFilter__item" :active="activeTab===idx" @click.stop='activeTab = idx'>
-            <span class='TableFilter__item-name'>{{getFilterName(tab)}}</span>
-            <svg-icon class='TableFilter__item-arrow' icon='arrow' size='0.8em' />
-          <div class='filter-dropdown' @click.stop>
-            <ul class='filter-dropdown__list' grid :style='dropdownListStyle(tab.filter.length)'>
-              <li class='filter-dropdown__item' v-for='f in tab.filter' @click='handleFilterChange(f.name,idx)'>
-                <nuxt-link :to="filterTo(tab.tag,f)" exact>{{f.name}}</nuxt-link>
+        <li v-for='(tab,idx) in tabs'
+            :key='tab.tag'
+            class="TableFilter__item"
+            :active="activeTab===idx"
+            @click.stop='activeTab = idx'>
+          <span class='TableFilter__item-name'>{{getFilterName(tab)}}</span>
+          <svg-icon class='TableFilter__item-arrow'
+                    icon='arrow'
+                    size='0.8em' />
+          <div class='filter-dropdown'
+               @click.stop>
+            <ul class='filter-dropdown__list'
+                grid
+                :style='dropdownListStyle(tab.filter.length)'>
+              <li class='filter-dropdown__item'
+                  v-for='f in tab.filter'
+                  @click='handleFilterChange(f.name,idx)'>
+                <nuxt-link :to="filterTo(tab.tag,f)"
+                           exact>{{f.name}}</nuxt-link>
               </li>
             </ul>
           </div>
@@ -39,11 +51,11 @@ export default {
   },
   methods: {
     dropdownListStyle (length) {
-      return length > 10 ? {minWidth: '600px'} : {}
+      return length > 10 ? { minWidth: '600px' } : {}
     },
     filterTo (tag, f) {
       const newQuery = Object.assign({}, this.$route.query, { [tag]: f.id, page: 1 })
-      return {name: 'customDesign-insperation', query: newQuery}
+      return { name: 'customDesign-insperation', query: newQuery }
     },
     handleFilterChange () {
       this.activeTab = -1
