@@ -10,7 +10,7 @@
             v-for='item in vrList'>
           <div class="imgs__img-ratio">
             <a class="imgs__img-content"
-               :href="'/virtual_reality/inspiration/' + item.id + '/vr' "
+               :href="'/virtual_reality/inspirations/' + item.id + '/vr' "
                target='_blank'>
               <img :src="item.thumb | imgFilter('case600')" />
             </a>
