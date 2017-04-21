@@ -60,9 +60,9 @@ a {
   display: inline-block;
 }
 
-.iconfont{
-  display:inline-block;
-  font-size:inherit;
+.iconfont {
+  display: inline-block;
+  font-size: inherit;
 }
 
 .z-depth-1, .z-hover-1:hover {
@@ -155,6 +155,22 @@ a {
 
 #app ._tr {
   text-align: right;
+}
+
+#app ._tc {
+  text-align: center;
+}
+
+#app ._f48 {
+  font-size: 48px;
+}
+
+#app ._f18 {
+  font-size: 18px;
+}
+
+#app ._lh2 {
+  line-height: 2;
 }
 
 .Btn {

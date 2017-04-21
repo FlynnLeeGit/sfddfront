@@ -13,7 +13,9 @@
           <div>
             <h1 class="custom__more-title">了解我们过往的作品</h1>
             <nuxt-link class="Btn -white custom__more-btn"
-                       to='/more'>点击前往</nuxt-link>
+                       to='/more'>
+              点击前往
+            </nuxt-link>
           </div>
         </div>
       </div>

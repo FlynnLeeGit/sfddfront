@@ -1,6 +1,6 @@
 const ENV = process.env.NODE_ENV
 const isDev = ENV === 'development'
-console.log(`[ENV] ${ENV}`); // eslint-disable-line
+console.log(`[ENV] ${ENV}`) // eslint-disable-line
 const { saladConf } = require('./config')
 module.exports = {
   /*
@@ -15,8 +15,14 @@ module.exports = {
       { name: 'viewport', content: 'width=1280' },
       { name: 'description', content: 'zfdd' }
     ],
-    link: [{ rel: 'icon', href: '/favicon.png' },
-    { rel: 'stylesheet', type: 'text/css', href: '//at.alicdn.com/t/font_rduko7y3jsqt1emi.css' }]
+    link: [
+      { rel: 'icon', href: '/favicon.png' },
+      {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href: '//at.alicdn.com/t/font_rduko7y3jsqt1emi.css'
+      }
+    ]
   },
   /*
    ** Global CSS
@@ -47,7 +53,24 @@ module.exports = {
       require('postcss-easy-import')(),
       require('postcss-salad')(saladConf)
     ],
-    vendor: ['axios', 'lru-cache']
-    // publicPath: '/compiled/_nuxt/',
+    vendor: ['axios', 'lru-cache'],
+    loaders: [
+      {
+        test: /\.(png|jpe?g|gif|svg)$/,
+        loader: 'url-loader',
+        query: {
+          limit: 10000, // upto10K
+          name: 'img/[name].[hash:7].[ext]'
+        }
+      },
+      {
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        loader: 'url-loader',
+        query: {
+          limit: 10000, // upto 10k
+          name: 'fonts/[name].[hash:7].[ext]'
+        }
+      }
+    ]
   }
 }
