@@ -7,13 +7,10 @@ export default {
   get (url) {
     const key = url
     if (configApi.cached && configApi.cached.has(key) && isProd) {
-      console.log(`使用api缓存${url}`); // eslint-disable-line
+      console.log(`使用api缓存${url}`) // eslint-disable-line
       return Promise.resolve(configApi.cached.get(key))
     }
-    return axios({
-      method: 'get',
-      url: url
-    }).then(res => {
+    return axios.get(url).then(res => {
       if (configApi.cached) configApi.cached.set(key, res)
       return res
     })
