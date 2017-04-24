@@ -3,13 +3,16 @@
     <tab-header title='中孚整装理念'
                 :tabs="tabs" />
     <nuxt-child />
+    <market-contained />
   </div>
 </template>
 <script>
 import TabHeader from '~components/TabHeader'
+import marketContained from '~components/market/mContained'
 export default {
   components: {
-    TabHeader
+    TabHeader,
+    marketContained
   },
   data () {
     return {

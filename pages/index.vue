@@ -162,6 +162,8 @@
       </div>
     </section>
 
+    <market-contained />
+
   </div>
 </template>
 
@@ -185,7 +187,12 @@ import sIcon2 from '~assets/img/index/s_icon2.png'
 import sIcon3 from '~assets/img/index/s_icon3.png'
 import sIcon4 from '~assets/img/index/s_icon4.png'
 
+import marketContained from '~components/market/mContained'
+
 export default {
+  components: {
+    marketContained
+  },
   data () {
     return {
       videoScale: 0.5,

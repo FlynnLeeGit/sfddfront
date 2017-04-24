@@ -15,7 +15,17 @@ const state = {
     seted: false
   },
   vrListAll: [],
-  vrList: []
+  vrList: [],
+  vrStyles: {
+    list: [],
+    map: {},
+    seted: false
+  },
+  vrSpaces: {
+    list: [],
+    map: {},
+    seted: false
+  }
 }
 const mutations = {
   SET_INS_PAGINATE (state, paginate) {
@@ -38,11 +48,22 @@ const mutations = {
   },
   SET_VRLIST (state, page) {
     state.vrList = state.vrListAll.slice((page - 1) * 6, page * 6)
+  },
+  SET_VR_STYLES (state, styles) {
+    if (!state.vrStyles.seted) {
+      state.vrSpaces.seted = true
+    }
+  },
+  SET_VR_SPACES (state, spaces) {
+    if (!state.vrSpaces.seted) {
+      state.vrSpaces.seted = true
+    }
   }
 }
 
 const actions = {
   getInspiration (store, query) {
+    console.log(query) // eslint-disable-line
     return axios
       .get('/_fapi/inspiration/img', {
         params: query
@@ -65,6 +86,11 @@ const actions = {
         store.commit('SET_VRLIST_ALL', data)
         // 设定vr列表
         store.commit('SET_VRLIST', page)
+        return axios.get('/_fapi/inspiration/vrs/cate')
+      })
+      .then(({ data }) => {
+        store.commit('SET_VR_STYLES', data.styles)
+        store.commit('SET_VR_SPACES', data.spaces)
       })
       .catch(e => {
         errorHandler(store, e)

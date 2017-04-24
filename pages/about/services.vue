@@ -1,13 +1,20 @@
 <template>
   <div>
-    <tab-header title='中孚空间服务' :tabs='tabs' />
+    <tab-header title='中孚空间服务'
+                :tabs='tabs' />
     <nuxt-child />
+    <market-contained />
+
   </div>
 </template>
 <script>
+import marketContained from '~components/market/mContained'
 import TabHeader from '~components/TabHeader'
+
 export default {
   components: {
+    marketContained,
+
     TabHeader
   },
   data () {

@@ -3,29 +3,17 @@
     <tab-header title='一对一定制设计'
                 :tabs='tabs' />
     <nuxt-child />
-    <section class="ResponsiveBlock custom-design__ft">
-      <img src="~assets/img/customDesign/intro/more.jpg"
-           class="ResponsiveBlock__img">
-      <div class="ResponsiveBlock__content">
-        <div class="custom-design__ft-content"
-             grid='middle'>
-          <div>
-            <h1 class="custom-design__ft-title">了解我们过往的作品</h1>
-            <nuxt-link class="Btn -white custom-design__ft-btn"
-                       to='/more'>
-              点击前往
-            </nuxt-link>
-          </div>
-        </div>
-      </div>
-    </section>
+    <market-know-previous />
+
   </div>
 </template>
 <script>
 import TabHeader from '~components/TabHeader'
+import marketKnowPrevious from '~components/market/mKnowPrevious'
 export default {
   components: {
-    TabHeader
+    TabHeader,
+    marketKnowPrevious
   },
   data () {
     return {
