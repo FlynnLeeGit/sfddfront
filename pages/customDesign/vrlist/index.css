@@ -30,4 +30,10 @@
       width: 100%;
     }
   }
+  @e name {
+    margin-top: 8px;
+    line-height: 18px;
+    font-size: 15px;
+    font-weight: bold;
+  }
 }

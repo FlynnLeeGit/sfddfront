@@ -11,6 +11,9 @@ export default (store, e) => {
       if (e.data) {
         console.error(e.data) // eslint-disable-line
       }
+      if (e.response) {
+        console.error(e.response) //eslint-disable-line
+      }
       store.commit('SET_AJAX_ERROR', {
         message: e.toString(),
         axiosConfig: e.config

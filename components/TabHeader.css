@@ -16,7 +16,7 @@
     &:hover,
     &.active {
       color: #fff;
-      background-color: #ed182a;
+      background-color: #ff5a5f;
       transition: all .3s;
     }
   }

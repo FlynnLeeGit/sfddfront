@@ -1,17 +1,25 @@
 <template>
-  <ul class="Pagination" grid>
-    <li class="Pagination__item -prev" v-if='currentPage>1 && paginate.totalPage>5' @click='handleCurrentChange(currentPage-1)'>
+  <ul class="Pagination"
+      grid>
+    <li class="Pagination__item -prev"
+        v-if='currentPage>1 && paginate.totalPage>5'
+        @click='handleCurrentChange(currentPage-1)'>
       <nuxt-link :to='pageTo(currentPage - 1)'>
         <i class="iconfont icon-caret-left"></i>
       </nuxt-link>
     </li>
-    <li class='Pagination__item' v-for='page in pageInRange' @click='handleCurrentChange(page)'>
-      <nuxt-link :to="pageTo(page)" exact :class="{active:page === currentPage }">
+    <li class='Pagination__item'
+        v-for='page in pageInRange'
+        @click='handleCurrentChange(page)'>
+      <nuxt-link :to="pageTo(page)"
+                 exact
+                 :class="{active:page === currentPage }">
         {{ page }}
       </nuxt-link>
     </li>
-    <li class="Pagination__item -next" v-if='currentPage<paginate.totalPage && paginate.totalPage > 5'
-      @click='handleCurrentChange(currentPage+1)'>
+    <li class="Pagination__item -next"
+        v-if='currentPage<paginate.totalPage && paginate.totalPage > 5'
+        @click='handleCurrentChange(currentPage+1)'>
       <nuxt-link :to='pageTo(currentPage + 1)'>
         <i class="iconfont icon-caret-right"></i>
       </nuxt-link>
@@ -40,9 +48,14 @@ export default {
   },
   data () {
     return {
-      currentPage: 1,
       pageInRange: [],
-      paginate: {}
+      paginate: {},
+      currentPage: 1
+    }
+  },
+  computed: {
+    page () {
+      return +this.$route.query.page || 1
     }
   },
   methods: {
@@ -68,12 +81,16 @@ export default {
     }
   },
   created () {
-    this.currentPage = +this.$route.query.page || 1
+    this.currentPage = this.page
     this.initPaginate()
   },
   watch: {
     total (newTotal) {
       this.initPaginate()
+    },
+    page (newPage) {
+      this.currentPage = newPage
+      this.updatePageInRange()
     }
   }
 }

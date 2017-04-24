@@ -53,9 +53,9 @@ export default {
     dropdownListStyle (length) {
       return length > 10 ? { minWidth: '600px' } : {}
     },
-    filterTo (tag, f) {
-      const newQuery = Object.assign({}, this.$route.query, { [tag]: f.id, page: 1 })
-      return { name: 'customDesign-insperation', query: newQuery }
+    filterTo (tag, filter) {
+      const newQuery = Object.assign({}, this.$route.query, { [tag]: filter.id, page: 1 })
+      return { query: newQuery }
     },
     handleFilterChange () {
       this.activeTab = -1

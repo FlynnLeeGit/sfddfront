@@ -1,6 +1,6 @@
 import axios from 'axios'
 import errorHandler from '~plugins/errorHandler'
-import { toListMap } from '~plugins/utils'
+import { toListMap, F } from '~plugins/utils'
 
 const state = {
   insPaginate: {},
@@ -15,7 +15,6 @@ const state = {
     seted: false
   },
   vrListAll: [],
-  vrList: [],
   vrStyles: {
     list: [],
     map: {},
@@ -46,16 +45,27 @@ const mutations = {
   SET_VRLIST_ALL (state, list) {
     state.vrListAll = list
   },
-  SET_VRLIST (state, page) {
-    state.vrList = state.vrListAll.slice((page - 1) * 6, page * 6)
-  },
   SET_VR_STYLES (state, styles) {
     if (!state.vrStyles.seted) {
-      state.vrSpaces.seted = true
+      const styleMap = {
+        all: '风格-全部'
+      }
+      styles.forEach(s => {
+        styleMap[s] = s
+      })
+      state.vrStyles = toListMap(styleMap)
+      state.vrStyles.seted = true
     }
   },
   SET_VR_SPACES (state, spaces) {
     if (!state.vrSpaces.seted) {
+      const spaceMap = {
+        all: '空间-全部'
+      }
+      spaces.forEach(s => {
+        spaceMap[s] = s
+      })
+      state.vrSpaces = toListMap(spaceMap)
       state.vrSpaces.seted = true
     }
   }
@@ -63,7 +73,6 @@ const mutations = {
 
 const actions = {
   getInspiration (store, query) {
-    console.log(query) // eslint-disable-line
     return axios
       .get('/_fapi/inspiration/img', {
         params: query
@@ -77,24 +86,39 @@ const actions = {
         errorHandler(store, e)
       })
   },
-  getVrListAll (store, page) {
+  getVrListAll (store) {
     // 此处是全量数据
     return axios
       .get('/_fapi/inspiration/vrs')
       .then(({ data }) => {
         // 页面对象
         store.commit('SET_VRLIST_ALL', data)
-        // 设定vr列表
-        store.commit('SET_VRLIST', page)
-        return axios.get('/_fapi/inspiration/vrs/cate')
-      })
-      .then(({ data }) => {
-        store.commit('SET_VR_STYLES', data.styles)
-        store.commit('SET_VR_SPACES', data.spaces)
       })
       .catch(e => {
         errorHandler(store, e)
       })
+  },
+  getVrCate (store) {
+    return axios
+      .get('/_fapi/inspiration/vrs/cate')
+      .then(({ data }) => {
+        store.commit('SET_VR_STYLES', data.styles)
+        store.commit('SET_VR_SPACES', data.spaces)
+        return axios.get('/_fapi/inspiration/vrs')
+      })
+      .then(e => {
+        errorHandler(store, e)
+      })
+  },
+  initVrList (store, query) {
+    if (!store.state.vrListAll.length) {
+      return store
+        .dispatch('getVrCate')
+        .then(() => store.dispatch('getVrListAll'))
+        .catch(e => {
+          errorHandler(store, e)
+        })
+    }
   }
 }
 
@@ -102,9 +126,9 @@ const getters = {
   insStyles: state => state.insStyles,
   insRooms: state => state.insRooms,
   insPaginate: state => state.insPaginate,
-  vrPaginate: state => state.vrPaginate,
-  vrList: state => state.vrList,
-  vrTotal: state => state.vrListAll.length
+  vrListAll: state => state.vrListAll,
+  vrSpaces: state => state.vrSpaces,
+  vrStyles: state => state.vrStyles
 }
 
 export default {

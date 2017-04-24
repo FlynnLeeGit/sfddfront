@@ -7,7 +7,7 @@
           grid='2'>
         <li :key='item.id'
             class='imgs__item'
-            v-for='item in vrList'>
+            v-for="item in pageVrList">
           <div class="imgs__img-ratio">
             <a class="imgs__img-content"
                :href="'/virtual_reality/inspirations/' + item.id + '/vr' "
@@ -15,6 +15,9 @@
               <img :src="item.thumb | imgFilter('case600')" />
             </a>
           </div>
+          <p class="imgs__name">
+            {{item.title}}
+          </p>
         </li>
       </ul>
 
@@ -22,7 +25,7 @@
 
     <section class='vrlist__ft'
              container>
-      <pagination :total='vrTotal'
+      <pagination :total='vrList.length'
                   :num-items-per-page='6' />
 
     </section>
@@ -37,18 +40,14 @@ import TableFilter from '~components/TableFilter'
 import Pagination from '~components/Pagination'
 
 import { mapGetters } from 'vuex'
+
 export default {
   components: {
     TableFilter,
     Pagination
   },
   asyncData ({ store, route }) {
-    const page = +route.query.page || 1
-    if (!store.state.inspiration.vrListAll.length) {
-      return store.dispatch('getVrListAll', page)
-    } else {
-      store.commit('SET_VRLIST', page)
-    }
+    return store.dispatch('initVrList', route.query)
   },
   data () {
     return {
@@ -56,22 +55,52 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['vrList', 'vrTotal'])
+    ...mapGetters(['vrListAll', 'vrStyles', 'vrSpaces']),
+    query () {
+      return this.$route.query
+    },
+    page () {
+      return +this.query.page || 1
+    },
+    style () {
+      return this.query.style
+    },
+    space () {
+      return this.query.space
+    },
+    vrList () {
+      return this.vrListAll
+        .filter(item => {
+          if (!this.space || this.space === 'all') {
+            return true
+          }
+          return item.space === this.space
+        })
+        .filter(item => {
+          if (!this.style || this.style === 'all') {
+            return true
+          }
+          return item.style === this.style
+        })
+    },
+    pageVrList () {
+      return this.vrList.slice((this.page - 1) * 6, this.page * 6)
+    }
   },
   created () {
     const _tabs = []
-    // _tabs.push({
-    //   tag: 'room',
-    //   name: '空间',
-    //   filter: this.insRooms.list,
-    //   filterMap: this.insRooms.map
-    // })
-    // _tabs.push({
-    //   tag: 'style',
-    //   name: '风格',
-    //   filter: this.insStyles.list,
-    //   filterMap: this.insStyles.map
-    // })
+    _tabs.push({
+      tag: 'space',
+      name: '空间',
+      filter: this.vrSpaces.list,
+      filterMap: this.vrSpaces.map
+    })
+    _tabs.push({
+      tag: 'style',
+      name: '风格',
+      filter: this.vrStyles.list,
+      filterMap: this.vrStyles.map
+    })
     this.tabs = _tabs
   }
 }
