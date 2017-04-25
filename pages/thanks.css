@@ -1,0 +1,26 @@
+@import './tools.css';
+@b thanks {
+  max-width: 1000px;
+  padding-top: 70px;
+  padding-bottom: 110px;
+  line-height: 24px;
+  @e title {
+    color: var(--color-primary);
+    font-size: 18px;
+    margin-bottom: 50px;
+  }
+  @e content {
+    p {
+      margin-bottom: 15px;
+      text-indent: 2em;
+      text-align: justify;
+    }
+  }
+  @e sign {
+    text-align: right;
+    margin-top: 60px;
+    img {
+      margin-bottom: 30px;
+    }
+  }
+}

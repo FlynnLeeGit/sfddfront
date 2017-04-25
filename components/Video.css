@@ -1,0 +1,29 @@
+@import './tools.css';
+@b Video {
+  position: relative;
+  cursor: pointer;
+  @e placeholder {
+    @mixin overlay;
+    transition: all .3s;
+    &[active] {
+      opacity: 0;
+    }
+    &:after {
+      content: "";
+      @mixin rightTriangle 25,
+      40,
+      #fff;
+      @mixin absCenter;
+      left: 12px;
+    }
+    &:before {
+      content: "";
+      @mixin absCenter;
+      @mixin circle 85px;
+      background-color: rgba(0, 0, 0, .5);
+    }
+  }
+  @e el {
+    width: 100%;
+  }
+}

@@ -9,6 +9,7 @@
     "css": "nodemon -w gulpfile.js --exec \"gulp css\"",
     "build": "cross-env NODE_ENV=staging nuxt build",
     "build:a": "cross-env NODE_ENV=staging nuxt build -a",
+    "g": "cross-env NODE_ENV=staging nuxt generate",
     "start": "cross-env NODE_ENV=staging node server.js",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "staging": "pm2 startOrRestart eco-staging.json --env staging",

@@ -6,6 +6,11 @@ module.exports = {
     staging: 'https://dn-st.baogaoyezhu.com',
     production: 'https://dn-st.baogaoyezhu.com'
   }[ENV],
+  VIDEO_SERVER: {
+    development: '//video.baogaoyezhu.com',
+    staging: '//video.baogaoyezhu.com',
+    production: '//video.baogaoyezhu.com'
+  }[ENV],
   PORT: {
     development: 5180,
     staging: 5180,

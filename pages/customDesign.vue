@@ -3,17 +3,16 @@
     <tab-header title='一对一定制设计'
                 :tabs='tabs' />
     <nuxt-child />
-    <market-know-previous />
+
 
   </div>
 </template>
 <script>
 import TabHeader from '~components/TabHeader'
-import marketKnowPrevious from '~components/market/mKnowPrevious'
+
 export default {
   components: {
-    TabHeader,
-    marketKnowPrevious
+    TabHeader
   },
   data () {
     return {

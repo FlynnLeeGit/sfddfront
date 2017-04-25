@@ -173,6 +173,10 @@ a {
   line-height: 2;
 }
 
+#app ._color-primary {
+  color: #ff5a5f;
+}
+
 .Btn {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;

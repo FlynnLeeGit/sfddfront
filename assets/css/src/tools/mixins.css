@@ -43,6 +43,21 @@ $color {
   margin: auto;
 }
 
+@define-mixin bgCover {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@define-mixin shadowHover {
+  transition: all .2s linear;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, .1);
+    transform: translate3d(0, -2px, 0);
+  }
+}
+
 @define-mixin size $width {
   width: $width;
   height: $width;

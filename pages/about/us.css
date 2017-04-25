@@ -1,3 +1,4 @@
+@import '../tools.css';
 .us__child {
   padding-top: 60px;
   text-align: center;
@@ -6,9 +7,11 @@
 @b team {
   text-align: left;
   @e item {
+    @mixin bgCover;
     width: 250px;
     height: 330px;
-    background: #999;
+    background-color: #999;
     margin: 20px;
+    cursor: pointer;
   }
 }

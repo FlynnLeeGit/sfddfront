@@ -45,7 +45,19 @@
            alt="flow2">
     </section>
 
+    <market name='know-previous'
+            title='了解我们过往的作品'
+            to='/customDesign/vrlist' />
   </div>
 </template>
 
 <style scoped src='./index.css'></style>
+
+<script>
+import Market from '~components/Market'
+export default {
+  components: {
+    Market
+  }
+}
+</script>

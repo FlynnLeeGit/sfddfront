@@ -23,10 +23,10 @@
              container>
       <h1>中孚空间 · 预案式成品整装</h1>
       <h3>
-                          <p>已为您规划好完整的设计预案，从硬装到软装的造价清单，从制图到全景展示，预案中一应俱全。</p>
-                          <p>帮你把关选材搭配，预算控制，氛围意境。选择我们的当季预案，</p>
-                          <p>来匹配您的房型，设计费仅以2折收取</p>
-                        </h3>
+                                              <p>已为您规划好完整的设计预案，从硬装到软装的造价清单，从制图到全景展示，预案中一应俱全。</p>
+                                              <p>帮你把关选材搭配，预算控制，氛围意境。选择我们的当季预案，</p>
+                                              <p>来匹配您的房型，设计费仅以2折收取</p>
+                                            </h3>
     </section>
 
     <section class="video"
@@ -162,7 +162,13 @@
       </div>
     </section>
 
-    <market-contained />
+    <market title='2017年春季 · 整装方案'
+            desc="每季度整装产品限时发售，离本季产品下架时间还有
+                  <br>
+                  <span class='_color-primary'>XX</span>
+                  天"
+            to='/2'
+            name='contained' />
 
   </div>
 </template>
@@ -187,12 +193,14 @@ import sIcon2 from '~assets/img/index/s_icon2.png'
 import sIcon3 from '~assets/img/index/s_icon3.png'
 import sIcon4 from '~assets/img/index/s_icon4.png'
 
-import marketContained from '~components/market/mContained'
+import Market from '~components/Market'
+import { scrollMixin } from '~plugins/mixins'
 
 export default {
   components: {
-    marketContained
+    Market
   },
+  mixins: [scrollMixin],
   data () {
     return {
       videoScale: 0.5,

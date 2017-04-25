@@ -1,0 +1,32 @@
+@import './tools.css';
+@b pay-flow {
+  padding-top: 160px;
+  padding-bottom: 170px;
+  text-align: center;
+  @e list {
+    margin-top: 80px;
+  }
+  @e item {
+    &:not(:first-child) {
+      margin-left: 90px;
+    }
+    h2 {
+      font-size: 24px;
+    }
+  }
+  @e icon-wrap {
+    margin-top: 28px;
+    margin-bottom: 38px;
+    background-color: #fff;
+    @mixin circle 160px;
+    border: 1px solid #2c2c2c;
+  }
+  @e item-line {
+    position: relative;
+    margin-top: -140px;
+    margin-left: -100px;
+    z-index: -1;
+    transition: transform .3s ease-out;
+    transform: scaleX(1);
+  }
+}

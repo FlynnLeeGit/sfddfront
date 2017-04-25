@@ -3,16 +3,22 @@
     <tab-header title='中孚整装理念'
                 :tabs="tabs" />
     <nuxt-child />
-    <market-contained />
+    <market title='2017年春季 · 整装方案'
+            desc="每季度整装产品限时发售，离本季产品下架时间还有
+                  <br>
+                  <span class='_color-primary'>XX</span>
+                  天"
+            to='/2'
+            name='contained' />/>
   </div>
 </template>
 <script>
 import TabHeader from '~components/TabHeader'
-import marketContained from '~components/market/mContained'
+import Market from '~components/Market'
 export default {
   components: {
     TabHeader,
-    marketContained
+    Market
   },
   data () {
     return {

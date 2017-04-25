@@ -29,7 +29,7 @@ class LoadEl {
       top,
       bottom
     } = this.el.getBoundingClientRect()
-    return top < window.innerHeight * 0.8 && bottom > 0 && !this.loaded
+    return top < window.innerHeight * 1.1 && bottom > 0 && !this.loaded
   }
   loadBg () {
     this.el.style.backgroundImage = `url(${this.binding.value})`

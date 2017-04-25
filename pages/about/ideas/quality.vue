@@ -23,10 +23,7 @@
         <br> 同时放线于现场，清晰的标示材质、尺寸，能提早暴露现场问题，
         <br> 高效协调我们与各材料商、分包商之间的工作范围，确保施工一气呵成。
       </p>
-      <video class="line__video"
-             src="//video.baogaoyezhu.com/video/case/406/58c79aac6868d.mp4"
-             controls>
-      </video>
+      <v-video class="line__video" src='//video.baogaoyezhu.com/video/sfdd/2.mp4' />
     </section>
 
     <section class="high-precision"
@@ -37,10 +34,7 @@
         <br> 尺寸详细标注、立面完整表达、材质标识清晰，收口与大样与剖面一张不漏，
         <br> 这些用心不仅为我们效率大幅提升，更为您家的效果落地保驾护航。
       </p>
-      <video class="high-precision__video"
-             src="//video.baogaoyezhu.com/video/case/406/58c79aac6868d.mp4"
-             controls>
-      </video>
+      <v-video class="high-precision__video" src='//video.baogaoyezhu.com/video/sfdd/3.mp4' />
     </section>
 
     <section class="tri-check">
@@ -81,3 +75,11 @@
   </div>
 </template>
 <style scoped src='./quality.css'></style>
+<script>
+import vVideo from '~components/Video'
+export default {
+  components: {
+    vVideo
+  }
+}
+</script>

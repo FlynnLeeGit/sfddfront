@@ -29,8 +29,8 @@ module.exports = {
    */
   css: ['~assets/css/main.css'],
   plugins: [
-    { src: '~plugins/vue-lazy', ssr: false },
-    { src: '~plugins/mixins', ssr: false }
+    { src: '~plugins/vue-lazy', ssr: false }
+    // { src: '~plugins/mixins', ssr: false }
     // { src: '~plugins/filters' }
   ],
   router: {
@@ -52,7 +52,7 @@ module.exports = {
     vendor: ['axios', 'lru-cache'],
     loaders: [
       {
-        test: /\.(png|jpe?g|gif|svg)$/,
+        test: /\.(png|jpe?g|gif|svg|mp4)$/,
         loader: 'url-loader',
         query: {
           limit: 10000, // upto10K

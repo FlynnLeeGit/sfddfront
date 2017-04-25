@@ -7,8 +7,8 @@
       <ul class="team"
           grid>
         <li class="team__item"
-            v-for='n in designList'>
-
+            v-for='t in teamList'
+            v-lazy.bg='t.src'>
         </li>
       </ul>
 
@@ -32,27 +32,22 @@ export default {
   data () {
     return {
       tabs: [
-        { to: '/about/us?design=1', name: '设计团队' },
-        { to: '/about/us?tech=1', name: '技术团队' },
-        { to: '/about/us?build=1', name: '施工团队' }
+        { to: '/about/us?team=design', name: '设计团队', exact: true },
+        { to: '/about/us?team=tech', name: '技术团队', exact: true },
+        { to: '/about/us?team=build', name: '施工团队', exact: true }
       ],
       designList: [
-        { src: '' },
-        { src: '' },
-        { src: '' },
-        { src: '' },
-        { src: '' }
+        { src: require('~assets/img/logo.png') },
+        { src: '2' },
+        { src: '3' },
+        { src: '4' },
+        { src: '5' }
       ],
       techList: [
-        { src: '' },
-        { src: '' },
-        { src: '' },
-        { src: '' },
-        { src: '' }
+        { src: 't1' },
+        { src: 't5' }
       ],
       buildList: [
-        { src: '' },
-        { src: '' },
         { src: '' },
         { src: '' },
         { src: '' }
@@ -60,8 +55,11 @@ export default {
     }
   },
   computed: {
-    query () {
-      return this.$route.query
+    team () {
+      return this.$route.query.team
+    },
+    teamList () {
+      return this[this.team + 'List']
     }
   }
 }

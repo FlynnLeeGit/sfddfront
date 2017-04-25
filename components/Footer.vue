@@ -45,7 +45,7 @@
           </li>
           <li class='footer__item'>
             <nuxt-link class='Link'
-                       to='/about/5'>致谢</nuxt-link>
+                       to='/thanks'>致谢</nuxt-link>
           </li>
         </ul>
         <ul class="footer__list">
