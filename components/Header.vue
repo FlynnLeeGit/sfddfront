@@ -32,7 +32,7 @@
                 <nuxt-link to='/about/services/zero'>中孚空间服务</nuxt-link>
               </li>
               <li class="header__dropdonw-item">
-                <nuxt-link to='/about/us/design'>我们</nuxt-link>
+                <nuxt-link to='/about/us?design=1'>我们</nuxt-link>
               </li>
             </ul>
           </li>

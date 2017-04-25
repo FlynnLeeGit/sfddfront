@@ -1,0 +1,14 @@
+.us__child {
+  padding-top: 60px;
+  text-align: center;
+}
+
+@b team {
+  text-align: left;
+  @e item {
+    width: 250px;
+    height: 330px;
+    background: #999;
+    margin: 20px;
+  }
+}
