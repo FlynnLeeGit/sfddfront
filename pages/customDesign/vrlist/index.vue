@@ -49,11 +49,6 @@ export default {
   asyncData ({ store, route }) {
     return store.dispatch('initVrList', route.query)
   },
-  data () {
-    return {
-      tabs: []
-    }
-  },
   computed: {
     ...mapGetters(['vrListAll', 'vrStyles', 'vrSpaces']),
     query () {
@@ -85,24 +80,20 @@ export default {
     },
     pageVrList () {
       return this.vrList.slice((this.page - 1) * 6, this.page * 6)
+    },
+    tabs(){
+      return [{
+        tag: 'space',
+        name: '空间',
+        filter: this.vrSpaces.list,
+        filterMap: this.vrSpaces.map
+      },{
+        tag: 'style',
+        name: '风格',
+        filter: this.vrStyles.list,
+        filterMap: this.vrStyles.map
+      }]
     }
-  },
-  created () {
-    const _tabs = []
-    _tabs.push({
-      tag: 'space',
-      name: '空间',
-      filter: this.vrSpaces.list,
-      filterMap: this.vrSpaces.map
-    })
-    _tabs.push({
-      tag: 'style',
-      name: '风格',
-      filter: this.vrStyles.list,
-      filterMap: this.vrStyles.map
-    })
-    this.tabs = _tabs
   }
 }
 </script>
-

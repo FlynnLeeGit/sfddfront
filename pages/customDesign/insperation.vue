@@ -34,34 +34,25 @@ export default {
   asyncData ({ store, route }) {
     return store.dispatch('getInspiration', route.query)
   },
-  data () {
-    return {
-      tabs: []
-    }
-  },
   components: {
     TableFilter,
     Pagination
   },
   computed: {
-    ...mapGetters(['insStyles', 'insRooms', 'insPaginate'])
-  },
-  created () {
-    const _tabs = []
-
-    _tabs.push({
-      tag: 'room',
-      name: '空间',
-      filter: this.insRooms.list,
-      filterMap: this.insRooms.map
-    })
-    _tabs.push({
-      tag: 'style',
-      name: '风格',
-      filter: this.insStyles.list,
-      filterMap: this.insStyles.map
-    })
-    this.tabs = _tabs
+    ...mapGetters(['insStyles', 'insRooms', 'insPaginate']),
+    tabs(){
+      return [{
+        tag: 'room',
+        name: '空间',
+        filter: this.insRooms.list,
+        filterMap: this.insRooms.map
+      },{
+        tag: 'style',
+        name: '风格',
+        filter: this.insStyles.list,
+        filterMap: this.insStyles.map
+      }]
+    }
   }
 }
 </script>
