@@ -21,7 +21,9 @@
                   v-for='f in tab.filter'
                   @click='handleFilterChange(f.name,idx)'>
                 <nuxt-link :to="filterTo(tab.tag,f)"
-                           exact>{{f.name}}</nuxt-link>
+                           exact>
+                  {{f.name}}
+                </nuxt-link>
               </li>
             </ul>
           </div>
