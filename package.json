@@ -20,7 +20,8 @@
     "cross-env": "^3.1.4",
     "express": "^4.14.0",
     "lru-cache": "^4.0.2",
-    "nuxt": "latest"
+    "nuxt": "latest",
+    "vue-spinner": "^1.0.2"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.1",

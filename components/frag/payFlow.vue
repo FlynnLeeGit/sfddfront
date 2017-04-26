@@ -57,4 +57,4 @@
   </section>
 </template>
 
-<style src='./fragPayFlow.css'></style>
+<style src='./payFlow.css'></style>

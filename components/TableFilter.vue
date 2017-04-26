@@ -56,7 +56,8 @@ export default {
       return length > 10 ? { minWidth: '600px' } : {}
     },
     filterTo (tag, filter) {
-      const newQuery = Object.assign({}, this.$route.query, { [tag]: filter.id, page: 1 })
+      const newQuery = Object.assign({}, this.$route.query, { [tag]: filter.id })
+      delete newQuery.page
       return { query: newQuery }
     },
     handleFilterChange () {

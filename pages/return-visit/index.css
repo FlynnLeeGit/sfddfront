@@ -1,0 +1,43 @@
+@import '../tools.css';
+@b return-visit {
+  background-color: var(--color-bg);
+  @e content {
+    padding-top: 60px;
+  }
+}
+
+@b feeds {
+  padding-top: 10px;
+  padding-bottom: 80px;
+  @e item {
+    padding: 20px;
+    margin-top: 30px;
+    background-color: var(--color-white);
+  }
+  @e img {
+    @mixin bgCover;
+    width: 500px;
+    height: 360px;
+    background-color: #999;
+    margin-right: 20px;
+  }
+  @e content {
+    padding: 40px;
+    max-width: 600px;
+    height: 360px;
+    position: relative;
+  }
+  @e title {
+    font-size: 24px;
+  }
+  @e desc {
+    margin-top: 40px;
+    line-height: 30px;
+    color: var(--color-title);
+  }
+  @e time {
+    position: absolute;
+    bottom: 0;
+    color: var(--color-text);
+  }
+}

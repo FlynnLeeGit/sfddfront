@@ -1,7 +1,8 @@
 <template>
   <div class="Video"
        @click='toggleVideoPlay()'>
-    <div class="Video__placeholder" :active='isPlaying'></div>
+    <div class="Video__placeholder"
+         :active='isPlaying'></div>
     <video ref='videoEl'
            class="Video__el"
            :src="src">
@@ -15,6 +16,10 @@ export default {
     src: {
       type: String,
       default: ''
+    },
+    timeUpdate: {
+      type: Function,
+      default: () => { }
     }
   },
   data () {
@@ -26,22 +31,35 @@ export default {
   methods: {
     toggleVideoPlay () {
       if (this.videoEl.paused) {
-        this.videoPlay()
+        this.play()
       } else {
-        this.videoPause()
+        this.pause()
       }
     },
-    videoPlay () {
+    play () {
       this.videoEl.play()
       this.isPlaying = true
     },
-    videoPause () {
+    pause () {
       this.videoEl.pause()
       this.isPlaying = false
+    },
+    /**
+     * @param percent 0-1数字表示百分比
+     * */
+    goProgress (progress) {
+      this.videoEl.currentTime = progress * this.videoEl.duration
     }
   },
   mounted () {
     this.videoEl = this.$refs.videoEl
+    this.videoEl.addEventListener('timeupdate', e => {
+      const currentTime = e.target.currentTime
+      const progress = (currentTime / e.target.duration).toFixed(2)
+      if (this.timeUpdate) {
+        this.timeUpdate(progress, currentTime)
+      }
+    })
   }
 }
 </script>

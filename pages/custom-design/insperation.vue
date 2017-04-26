@@ -8,11 +8,10 @@
           grid='2'>
         <li :key='item.id'
             class='imgs__item'
-            v-for='item in insPaginate.items'>
-          <div class="imgs__img-ratio">
-            <div class="imgs__img-content">
-              <img :src="item.src | hozzyImgFilter('case600')" />
-            </div>
+            v-for='item in insPaginate.items'
+            v-lazy.bg="getSrc(item.src)">
+          <div class="imgs__loader">
+            <pulse-loader :loading='true' />
           </div>
         </li>
       </ul>
@@ -29,6 +28,8 @@
 import TableFilter from '~components/TableFilter'
 import Pagination from '~components/Pagination'
 import { mapGetters } from 'vuex'
+import { hozzyImgFilter } from '~/middleware/filters'
+import pulseLoader from 'vue-spinner/src/PulseLoader'
 
 export default {
   asyncData ({ store, route }) {
@@ -36,17 +37,23 @@ export default {
   },
   components: {
     TableFilter,
-    Pagination
+    Pagination,
+    pulseLoader
+  },
+  methods: {
+    getSrc (fname) {
+      return hozzyImgFilter(fname, 'case600')
+    }
   },
   computed: {
     ...mapGetters(['insStyles', 'insRooms', 'insPaginate']),
-    tabs(){
+    tabs () {
       return [{
         tag: 'room',
         name: '空间',
         filter: this.insRooms.list,
         filterMap: this.insRooms.map
-      },{
+      }, {
         tag: 'style',
         name: '风格',
         filter: this.insStyles.list,

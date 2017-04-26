@@ -10,7 +10,7 @@
           <h1 class="Market__title">{{title}}</h1>
           <h4 class="Market__desc" v-html='desc'></h4>
           <nuxt-link class="Btn -white Market__btn"
-                     to='/customDesign/vrlist'>
+                     :to='to'>
             点击前往
           </nuxt-link>
         </div>

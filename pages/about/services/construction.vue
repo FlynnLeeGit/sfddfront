@@ -27,7 +27,7 @@
 </template>
 <style scoped src='./construction.css'></style>
 <script>
-import fragPayFlow from '~components/fragPayFlow'
+import fragPayFlow from '~components/frag/payFlow'
 export default {
   components: {
     fragPayFlow

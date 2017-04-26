@@ -68,7 +68,7 @@
         <br> 我们采用云端项目管理系统，井井有条的管理着每年数万计的质量主控点
       </p>
       <img class="management__img"
-           src="~assets/img/ideas/quality/tri_check.png"
+           src="~assets/img/ideas/quality/flow.jpg"
            alt="management">
     </section>
 

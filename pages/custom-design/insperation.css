@@ -1,0 +1,30 @@
+@import '../tools.css';
+@b inspiration {
+  padding-top: 60px;
+  @e ft {
+    border-top: 1px solid var(--color-border);
+    padding: 40px 0;
+    text-align: center;
+  }
+}
+
+@b imgs {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  @e item {
+    width: 540px;
+    height: 315px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, .1);
+    &:nth-child(even) {
+      margin-left: 40px;
+    }
+  }
+  @e loader {
+    position: relative;
+    text-align: center;
+    padding-top: 25%;
+    z-index: -1;
+  }
+}

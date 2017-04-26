@@ -11,24 +11,26 @@
 @b imgs {
   padding-top: 30px;
   padding-bottom: 30px;
+  a {
+    display: initial;
+  }
   @e item {
+    width: 540px;
     cursor: pointer;
-    width: 50%;
-    min-height: 150px;
     margin-bottom: 20px;
-    padding: 0 20px;
-  }
-  @e img-ratio {
-    background-color: #999;
-    padding-top: 58%;
-    overflow: hidden;
-    position: relative;
-  }
-  @e img-content {
-    @mixin overlay;
-    img {
-      width: 100%;
+    &:nth-child(even) {
+      margin-left: 40px;
     }
+  }
+  @e img {
+    height: 315px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, .1);
+  }
+  @e loader {
+    position: relative;
+    text-align: center;
+    padding-top: 25%;
+    z-index: -1;
   }
   @e name {
     margin-top: 8px;

@@ -8,16 +8,16 @@
         <li :key='item.id'
             class='imgs__item'
             v-for="item in pageVrList">
-          <div class="imgs__img-ratio">
-            <a class="imgs__img-content"
-               :href="'/virtual_reality/inspirations/' + item.id + '/vr' "
-               target='_blank'>
-              <img :src="item.thumb | imgFilter('case600')" />
-            </a>
-          </div>
-          <p class="imgs__name">
-            {{item.title}}
-          </p>
+          <a :href="'/virtual_reality/inspirations/' + item.id + '/vr'" target="_blank">
+            <div class="imgs__img"
+                 v-lazy.bg='getSrc(item.src)'>
+              <pulse-loader class="imgs__loader"
+                            :loading='true' />
+            </div>
+            <p class="imgs__name">
+              {{item.title}}
+            </p>
+          </a>
         </li>
       </ul>
 
@@ -38,16 +38,24 @@
 <script>
 import TableFilter from '~components/TableFilter'
 import Pagination from '~components/Pagination'
+import pulseLoader from 'vue-spinner/src/PulseLoader'
 
 import { mapGetters } from 'vuex'
+import { imgFilter } from '~/middleware/filters'
 
 export default {
   components: {
     TableFilter,
-    Pagination
+    Pagination,
+    pulseLoader
   },
   asyncData ({ store, route }) {
     return store.dispatch('initVrList', route.query)
+  },
+  methods: {
+    getSrc (fname) {
+      return imgFilter(fname, 'case600')
+    }
   },
   computed: {
     ...mapGetters(['vrListAll', 'vrStyles', 'vrSpaces']),
@@ -81,13 +89,13 @@ export default {
     pageVrList () {
       return this.vrList.slice((this.page - 1) * 6, this.page * 6)
     },
-    tabs(){
+    tabs () {
       return [{
         tag: 'space',
         name: '空间',
         filter: this.vrSpaces.list,
         filterMap: this.vrSpaces.map
-      },{
+      }, {
         tag: 'style',
         name: '风格',
         filter: this.vrStyles.list,

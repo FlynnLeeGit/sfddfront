@@ -118,7 +118,7 @@
 <script>
 import Market from '~components/Market'
 import vVideo from '~components/Video'
-import fragPayFlow from '~components/fragPayFlow'
+import fragPayFlow from '~components/frag/payFlow'
 export default {
   components: {
     Market,

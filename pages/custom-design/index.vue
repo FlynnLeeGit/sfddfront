@@ -45,19 +45,17 @@
            alt="flow2">
     </section>
 
-    <market name='know-previous'
-            title='了解我们过往的作品'
-            to='/customDesign/vrlist' />
+    <frag-market-know-previous />
   </div>
 </template>
 
 <style scoped src='./index.css'></style>
 
 <script>
-import Market from '~components/Market'
+import fragMarketKnowPrevious from '~components/frag/market-know-previous'
 export default {
   components: {
-    Market
+    fragMarketKnowPrevious
   }
 }
 </script>

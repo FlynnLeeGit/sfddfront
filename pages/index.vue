@@ -22,27 +22,19 @@
     <section class="feature"
              container>
       <h1>中孚空间 · 预案式成品整装</h1>
-      <h3>
-                                              <p>已为您规划好完整的设计预案，从硬装到软装的造价清单，从制图到全景展示，预案中一应俱全。</p>
-                                              <p>帮你把关选材搭配，预算控制，氛围意境。选择我们的当季预案，</p>
-                                              <p>来匹配您的房型，设计费仅以2折收取</p>
-                                            </h3>
+      <h3>已为您规划好完整的设计预案，从硬装到软装的造价清单，从制图到全景展示，预案中一应俱全。<br>帮你把关选材搭配，预算控制，氛围意境。选择我们的当季预案，<br>来匹配您的房型，设计费仅以2折收取</h3>
     </section>
 
     <section class="video"
-             container>
-      <div ref='video__wrap'
-           class="video__wrap"
-           @click='toggleVideoPlay()'
-           :style="videoWrapStyle">
-        <div class="video__placeholder"
-             :active='isPlaying'></div>
-        <video ref='video__el'
-               src="//video.baogaoyezhu.com/video/case/406/58c79aac6868d.mp4"
-               class="video__el"></video>
-      </div>
+             container
+             ref='videoSection'
+             :style='videoSectionStyle'>
+      <v-video ref='video'
+               :time-update='timeUpdate'
+               src='//video.baogaoyezhu.com/video/sfdd/1.mp4' />
 
-      <div class="video__control">
+      <!--<div class="video__control">
+
         <div class="video__timeline">
           <img src="~assets/img/index/time_line.png"
                alt="video-timeline">
@@ -51,8 +43,8 @@
             <img src="~assets/img/index/time_line_orange.png"
                  alt="timeline-progress">
           </div>
-
         </div>
+
         <ul class="video__pins"
             grid='6'>
           <li @click='videoGo(index)'
@@ -65,7 +57,8 @@
             <p>{{pin.title}}</p>
           </li>
         </ul>
-      </div>
+      </div>-->
+
     </section>
 
     <section class="beauty"
@@ -162,121 +155,83 @@
       </div>
     </section>
 
-    <market title='2017年春季 · 整装方案'
-            desc="每季度整装产品限时发售，离本季产品下架时间还有
-                  <br>
-                  <span class='_color-primary'>XX</span>
-                  天"
-            to='/2'
-            name='contained' />
+    <frag-market-contained></frag-market-contained>
 
   </div>
 </template>
 
 <script>
-import icon1 from '~assets/img/index/icon1.png'
-import icon2 from '~assets/img/index/icon2.png'
-import icon3 from '~assets/img/index/icon3.png'
-import icon4 from '~assets/img/index/icon4.png'
-import icon5 from '~assets/img/index/icon5.png'
-import icon6 from '~assets/img/index/icon6.png'
-
-import icon1Active from '~assets/img/index/icon1_active.png'
-import icon2Active from '~assets/img/index/icon2_active.png'
-import icon3Active from '~assets/img/index/icon3_active.png'
-import icon4Active from '~assets/img/index/icon4_active.png'
-import icon5Active from '~assets/img/index/icon5_active.png'
-import icon6Active from '~assets/img/index/icon6_active.png'
-
-import sIcon1 from '~assets/img/index/s_icon1.png'
-import sIcon2 from '~assets/img/index/s_icon2.png'
-import sIcon3 from '~assets/img/index/s_icon3.png'
-import sIcon4 from '~assets/img/index/s_icon4.png'
-
-import Market from '~components/Market'
+import fragMarketContained from '~components/frag/market-contained'
+import vVideo from '~components/Video'
 import { scrollMixin } from '~plugins/mixins'
 
 export default {
   components: {
-    Market
+    fragMarketContained,
+    vVideo
   },
   mixins: [scrollMixin],
   data () {
     return {
-      videoScale: 0.5,
-      videoEl: null,
-      isPlaying: false,
+      videoScale: 0.6,
       videoProgress: 0,
-      videoPins: [
-        { icon: icon1, active: icon1Active, title: '硬装' },
-        { icon: icon2, active: icon2Active, title: '设备' },
-        { icon: icon3, active: icon3Active, title: '家具' },
-        { icon: icon4, active: icon4Active, title: '软饰' },
-        { icon: icon5, active: icon5Active, title: '家电' },
-        { icon: icon6, active: icon6Active, title: '整家' }
-      ],
       videoPinActive: 0,
+      // videoPins: [
+      //   { icon: require('~assets/img/index/icon1.png'), active: require('~assets/img/index/icon1_active.png'), title: '放线' },
+      //   { icon: require('~assets/img/index/icon2.png'), active: require('~assets/img/index/icon2_active.png'), title: '设备' },
+      //   { icon: require('~assets/img/index/icon3.png'), active: require('~assets/img/index/icon3_active.png'), title: '家具' },
+      //   { icon: require('~assets/img/index/icon4.png'), active: require('~assets/img/index/icon4_active.png'), title: '软饰' },
+      //   { icon: require('~assets/img/index/icon5.png'), active: require('~assets/img/index/icon5_active.png'), title: '家电' },
+      //   { icon: require('~assets/img/index/icon6.png'), active: require('~assets/img/index/icon6_active.png'), title: '整家' }
+      // ],
       serviceList: [
-        { icon: sIcon1, title: '所见即所得', to: '/about/services/see', txt: '中孚通过全套预案深化图纸，全尺寸现场放线以确保精确施工后的所见即所得。' },
-        { icon: sIcon2, title: '闭口合同零增项', to: '/about/services/zero', txt: '精算每个整装产品的成本后执行平方米报价，不额外增项，执行闭口合同。' },
-        { icon: sIcon3, title: '先施工后付款', to: '/about/services/construction', txt: '5000元开工定金，各阶段验收通过后方支付本阶段款项，装不好，不付款。' },
-        { icon: sIcon4, title: '装修贷款', to: '/about/services/loan', txt: '联合建设银行装修分期业务，高额度，放心贷。' }
+        { icon: require('~assets/img/index/s_icon1.png'), title: '所见即所得', to: '/about/services/see', txt: '中孚通过全套预案深化图纸，全尺寸现场放线以确保精确施工后的所见即所得。' },
+        { icon: require('~assets/img/index/s_icon2.png'), title: '闭口合同零增项', to: '/about/services/zero', txt: '精算每个整装产品的成本后执行平方米报价，不额外增项，执行闭口合同。' },
+        { icon: require('~assets/img/index/s_icon3.png'), title: '先施工后付款', to: '/about/services/construction', txt: '5000元开工定金，各阶段验收通过后方支付本阶段款项，装不好，不付款。' },
+        { icon: require('~assets/img/index/s_icon4.png'), title: '装修贷款', to: '/about/services/loan', txt: '联合建设银行装修分期业务，高额度，放心贷。' }
       ]
     }
   },
   computed: {
-    videoWrapStyle () {
+    videoSectionStyle () {
       return {
         transform: `translate3d(0,0,0) scale(${this.videoScale})`
       }
     },
     progressStyle () {
       return {
-        width: `${this.videoProgress}%`
+        width: `${this.videoProgress * 100}%`
       }
     }
   },
   methods: {
-    toggleVideoPlay () {
-      if (this.videoEl.paused) {
-        this.videoPlay()
-      } else {
-        this.videoPause()
-      }
-    },
-    videoPlay () {
-      this.videoEl.play()
-      this.isPlaying = true
-    },
-    videoPause () {
-      this.videoEl.pause()
-      this.isPlaying = false
-    },
     videoGo (index) {
       if (index !== 5) {
         this.videoPinActive = index
-        this.videoEl.currentTime = index / 5 * this.videoEl.duration
-        this.videoPlay()
+        const progress = index / 5
+        this.videoProgress = progress
+        this.$refs.video.goProgress(progress)
+        this.$refs.video.play()
       }
+    },
+    timeUpdate (progress) {
+      this.videoProgress = progress
     }
-  },
-  mounted () {
-    this.videoEl = this.$refs.video__el
-    this.videoEl.addEventListener('timeupdate', e => {
-      const _progress = e.target.currentTime / e.target.duration
-      this.videoProgress = parseInt(_progress * 100)
-      this.videoPinActive = parseInt(_progress * 5)
-    })
   },
   watch: {
     '$store.state.ui.st' (newScrollTop) {
-      const videoWrapEl = this.$refs.video__wrap
-      const { top } = videoWrapEl.getBoundingClientRect()
-      let ratio = top / window.innerHeight
-      if (ratio < 0) ratio = 0
-      if (ratio >= 1) ratio = 1
-      let scale = -4 / 9 * ratio + 1.05
-      if (scale > 1) scale = 1
+      const videoEl = this.$refs.videoSection
+      const { top, height } = videoEl.getBoundingClientRect()
+      const parentWindowHeight = window.innerHeight - 80
+      const vpMiddleLineTop = parentWindowHeight / 2
+      const videoElCenterTop = (top - 80) + height / 2
+      let scale = 1 - ((videoElCenterTop - vpMiddleLineTop) / parentWindowHeight)
+      if (scale < 0.6) {
+        scale = 0.6
+      }
+      if (scale >= 1) {
+        scale = 1
+      }
       this.videoScale = scale
     }
   }

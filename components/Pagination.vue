@@ -2,15 +2,13 @@
   <ul class="Pagination"
       grid>
     <li class="Pagination__item -prev"
-        v-if='currentPage>1 && paginate.totalPage>5'
-        @click='handleCurrentChange(currentPage-1)'>
+        v-if='currentPage>1 && paginate.totalPage>5'>
       <nuxt-link :to='pageTo(currentPage - 1)'>
         <i class="iconfont icon-caret-left"></i>
       </nuxt-link>
     </li>
     <li class='Pagination__item'
-        v-for='page in pageInRange'
-        @click='handleCurrentChange(page)'>
+        v-for='page in pageInRange'>
       <nuxt-link :to="pageTo(page)"
                  exact
                  :class="{active:page === currentPage }">
@@ -18,8 +16,7 @@
       </nuxt-link>
     </li>
     <li class="Pagination__item -next"
-        v-if='currentPage<paginate.totalPage && paginate.totalPage > 5'
-        @click='handleCurrentChange(currentPage+1)'>
+        v-if='currentPage<paginate.totalPage && paginate.totalPage > 5'>
       <nuxt-link :to='pageTo(currentPage + 1)'>
         <i class="iconfont icon-caret-right"></i>
       </nuxt-link>
@@ -61,11 +58,7 @@ export default {
   methods: {
     pageTo (page) {
       const newQuery = Object.assign({}, this.$route.query, { page: page })
-      return { name: this.$route.name, query: newQuery }
-    },
-    handleCurrentChange (page) {
-      this.currentPage = page
-      this.updatePageInRange()
+      return { query: newQuery }
     },
     updatePageInRange () {
       this.pageInRange = this.paginate.getPageInRange(this.currentPage)

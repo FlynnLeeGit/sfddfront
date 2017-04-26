@@ -7,9 +7,11 @@
 
   </div>
 </template>
+
+<style src='./custom-design.css'></style>
+
 <script>
 import TabHeader from '~components/TabHeader'
-
 export default {
   components: {
     TabHeader
@@ -17,12 +19,11 @@ export default {
   data () {
     return {
       tabs: [
-        { to: '/customDesign', name: '介绍', exact: true },
-        { to: '/customDesign/vrlist', name: '部分作品' },
-        { to: '/customDesign/insperation?page=1', name: '全世界的灵感' }
+        { to: '/custom-design', name: '介绍', exact: true },
+        { to: '/custom-design/vrlist', name: '部分作品' },
+        { to: '/custom-design/insperation', name: '全世界的灵感' }
       ]
     }
   }
 }
 </script>
-<style src='./customDesign.css'></style>
