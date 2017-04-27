@@ -18,6 +18,7 @@
     width: 540px;
     cursor: pointer;
     margin-bottom: 20px;
+    position: relative;
     &:nth-child(even) {
       margin-left: 40px;
     }
@@ -29,13 +30,19 @@
   @e loader {
     position: relative;
     text-align: center;
-    padding-top: 25%;
+    padding-top: 28%;
     z-index: -1;
   }
   @e name {
-    margin-top: 8px;
-    line-height: 18px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    line-height: 40px;
     font-size: 15px;
     font-weight: bold;
+    color: #fff;
+    background-image: linear-gradient(to right, transparent 0%, color(#000 alpha(.5)) 50%, transparent 100%);
   }
 }

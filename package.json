@@ -5,8 +5,9 @@
   "author": "flynnlee <5930029372@qq.com>",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon -w nuxt.config.js -w server.js -w config.js server.js",
-    "css": "nodemon -w gulpfile.js --exec \"gulp css\"",
+    "dev": "npm run dev:css & npm run dev:srv",
+    "dev:srv": "cross-env NODE_ENV=development nodemon -w nuxt.config.js -w server.js -w config.js server.js",
+    "dev:css": "nodemon -w gulpfile.js --exec \"gulp css\"",
     "build": "cross-env NODE_ENV=staging nuxt build",
     "build:a": "cross-env NODE_ENV=staging nuxt build -a",
     "g": "cross-env NODE_ENV=staging nuxt generate",

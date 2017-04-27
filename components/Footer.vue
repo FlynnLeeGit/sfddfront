@@ -3,26 +3,10 @@
     <div container>
       <section class="footer__nav">
         <ul class="footer__list">
-          <li class="footer__list-title">往期</li>
+          <li class="footer__list-title">热销小区</li>
           <li class='footer__item'>
             <nuxt-link class='Link'
-                       to='/old/1'>2016冬季</nuxt-link>
-          </li>
-          <li class='footer__item'>
-            <nuxt-link class='Link'
-                       to='/old/2'>2016秋季</nuxt-link>
-          </li>
-          <li class='footer__item'>
-            <nuxt-link class='Link'
-                       to='/old/2'>2016夏季</nuxt-link>
-          </li>
-          <li class='footer__item'>
-            <nuxt-link class='Link'
-                       to='/old/2'>2016春季</nuxt-link>
-          </li>
-          <li class='footer__item'>
-            <nuxt-link class='Link'
-                       to='/old/2'>热销小区</nuxt-link>
+                       to='/cases/dragon'>城开珑庭</nuxt-link>
           </li>
         </ul>
         <ul class="footer__list">

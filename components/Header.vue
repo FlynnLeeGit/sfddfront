@@ -1,5 +1,6 @@
 <template>
-  <header class='header'>
+  <header class='header'
+          :not-fixed='notFixed'>
     <div container>
       <a href="/"
          class='header__logo'>
@@ -46,3 +47,21 @@
 </template>
 
 <style src='./Header.css'></style>
+
+<script>
+export default {
+  data () {
+    return {
+      notFixed: false
+    }
+  },
+  created () {
+    this.$root.$on('HeaderNotFixed', () => {
+      this.notFixed = true
+    })
+    this.$root.$on('HeaderFixed', () => {
+      this.notFixed = false
+    })
+  }
+}
+</script>
