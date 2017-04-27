@@ -1,0 +1,40 @@
+@import './tools.css';
+@b job {
+  @e list {
+    margin-top: 50px;
+  }
+}
+
+@b jobs {
+  border: 1px solid var(--color-border);
+  margin-top: 50px;
+  margin-bottom: 100px;
+  @e item {
+    padding: 30px 0;
+    line-height: 22px;
+    &:not(:first-child) {
+      border-top: 1px solid var(--color-border);
+    }
+    &.-th {
+      background-color: #eee;
+      font-weight: bold;
+    }
+  }
+  @e td {
+    display: inline-block;
+    padding: 0 30px;
+    vertical-align: top;
+    &:nth-child(1) {
+      width: 20%;
+    }
+    &:nth-child(2) {
+      width: 50%;
+    }
+    &:nth-child(3) {
+      width: 20%;
+    }
+    &:nth-child(4) {
+      width: 10%;
+    }
+  }
+}
