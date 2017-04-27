@@ -18,13 +18,34 @@
     <section class="style"
              container>
       <h1 class="Intro__title">风格筛选</h1>
-      <ul class="style__tabs">
+      <div class="style__tabs">
+        <label class="Radio">
+          <input type="radio"
+                 :value='1'
+                 v-model='currentStyle'><i></i> 新中式风格
+        </label>
+        <label class="Radio">
+          <input type="radio"
+                 :value='2'
+                 v-model='currentStyle'><i></i> 美式风格
+        </label>
+        <label class="Radio">
+          <input type="radio"
+                 :value='3'
+                 v-model='currentStyle'><i></i> 现代简约
+        </label>
+        <label class="Radio">
+          <input type="radio"
+                 :value='4'
+                 v-model='currentStyle'><i></i> 新古典
+        </label>
 
-      </ul>
+      </div>
       <ul class="style__list"
           grid>
         <li class="style__item"
             v-for='s in styles[currentStyle]'
+            :key='s.src'
             v-lazy.bg='s.src'>
         </li>
       </ul>
@@ -60,12 +81,22 @@
     <section class="layout">
       <div container>
         <h1 class="Intro__title">城开珑庭·房型设计布局方案</h1>
-        <ul class="layout__tabs">
-
-        </ul>
+        <div class="layout__tabs">
+          <label class="Radio">
+            <input type="radio"
+                   v-model='currentLayout'
+                   :value='1'><i></i> 两房
+          </label>
+          <label class="Radio">
+            <input type="radio"
+                   v-model='currentLayout'
+                   :value='2'><i></i> 三房
+          </label>
+        </div>
         <ul class="layout__list"
             grid>
           <li class="layout__item"
+              :key='item.src'
               v-for='item in layouts[currentLayout]'
               v-lazy.bg='item.src'>
 
@@ -104,7 +135,6 @@
 
     <section class="ft-video">
 
-
     </section>
 
     <market title='了解中孚空间整体装修预案'
@@ -134,8 +164,8 @@ export default {
           { src: require('~assets/img/cases/dragon/c2.jpg') }
         ],
         2: [
-          { src: '3' },
-          { src: '4' }
+          { src: require('~assets/img/cases/dragon/c1.jpg') },
+          { src: require('~assets/img/cases/dragon/c1.jpg') }
         ],
         3: [
           { src: '5' },

@@ -14,7 +14,7 @@
                        exact>首页</nuxt-link>
           </li>
           <li class="header__link">
-            <nuxt-link to='/cases/dragon'>成品整装 · 2017春季</nuxt-link>
+            <nuxt-link to='/2017'>成品整装 · 2017春季</nuxt-link>
           </li>
           <li class="header__link">
             <nuxt-link to="/custom-design">一对一定制设计</nuxt-link>

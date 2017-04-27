@@ -14,11 +14,8 @@
         <br> 我们通过SADP（中孚自研的施工图设计插件）确保每张图纸的精确度，
         <br> 再通过全尺寸放线在开工早期就完成最终效果的室内呈现。
       </p>
-      <video class="scene__video"
-             src="//video.baogaoyezhu.com/video/case/406/58c79aac6868d.mp4"
-             width="100%"
-             controls>
-      </video>
+      <v-video class="scene__video"
+               src="//video.baogaoyezhu.com/video/sfdd/3.mp4" />
     </section>
 
     <section class="line">
@@ -29,11 +26,8 @@
           <br> 同时放线于现场，清晰的标示材质、尺寸，能提早暴露现场问题，
           <br> 高效协调我们与各材料商、分包商之间的工作范围，确保施工一气呵成。
         </p>
-        <video class="line__video"
-               width="100%"
-               src="//video.baogaoyezhu.com/video/case/406/58c79aac6868d.mp4"
-               controls>
-        </video>
+        <v-video class="line__video"
+                 src="//video.baogaoyezhu.com/video/sfdd/2.mp4" />
       </div>
 
     </section>
@@ -41,3 +35,11 @@
   </div>
 </template>
 <style scoped src='./see.css'></style>
+<script>
+import vVideo from '~components/Video'
+export default {
+  components: {
+    vVideo
+  }
+}
+</script>

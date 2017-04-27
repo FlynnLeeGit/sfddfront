@@ -1,7 +1,10 @@
 @import '../../tools.css';
 @b vrlist {
   padding-top: 60px;
-  @e bd {}
+  @e bd {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
   @e ft {
     text-align: center;
     padding: 40px 0;
@@ -9,8 +12,6 @@
 }
 
 @b imgs {
-  padding-top: 30px;
-  padding-bottom: 30px;
   a {
     display: initial;
   }
@@ -22,8 +23,13 @@
     &:nth-child(even) {
       margin-left: 40px;
     }
+    &:hover {
+      .imgs__vr {
+        color: var(--color-primary);
+      }
+    }
   }
-  @e img {
+  @e content {
     height: 315px;
     box-shadow: 0 0 10px 5px rgba(0, 0, 0, .1);
   }
@@ -44,5 +50,13 @@
     font-weight: bold;
     color: #fff;
     background-image: linear-gradient(to right, transparent 0%, color(#000 alpha(.5)) 50%, transparent 100%);
+  }
+  @e vr {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 36px;
+    color: var(--color-text);
+    transition: all .3s;
   }
 }

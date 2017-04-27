@@ -69,7 +69,6 @@
   }
   @e pin {
     width: 100px;
-    margin: 0 66px;
     text-align: center;
     position: relative;
     cursor: pointer;
@@ -79,11 +78,23 @@
         opacity: 0.65;
       }
     }
-    &:first-child {
-      margin-left: 0;
+    &:nth-child(1) {
+      margin-left: 100px;
     }
-    &:last-child {
-      margin-right: 0;
+    &:nth-child(2) {
+      margin-left: 220px;
+    }
+    &:nth-child(3) {
+      margin-left: 90px;
+    }
+    &:nth-child(4) {
+      margin-left: 130px;
+    }
+    &:nth-child(5) {
+      margin-left: 0px;
+    }
+    &:nth-child(6) {
+      margin-left: 117px;
       cursor: default;
     }
   }

@@ -4,7 +4,7 @@
     <li class="Pagination__item -prev"
         v-if='currentPage>1 && paginate.totalPage>5'>
       <nuxt-link :to='pageTo(currentPage - 1)'>
-        <i class="iconfont icon-caret-left"></i>
+        <i class="iconfont icon-back"></i>
       </nuxt-link>
     </li>
     <li class='Pagination__item'
@@ -18,7 +18,7 @@
     <li class="Pagination__item -next"
         v-if='currentPage<paginate.totalPage && paginate.totalPage > 5'>
       <nuxt-link :to='pageTo(currentPage + 1)'>
-        <i class="iconfont icon-caret-right"></i>
+        <i class="iconfont icon-more"></i>
       </nuxt-link>
 
     </li>

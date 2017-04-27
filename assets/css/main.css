@@ -235,6 +235,55 @@ a {
   opacity: 1;
 }
 
+@b Radio {
+  display: inline-block;
+  cursor: pointer;
+  input {
+    display: none;
+  }
+  input:checked {
+  }
+  input:checked~i {
+    background-color: #008489;
+    border-color: #008489;
+  }
+  input:checked~i:after {
+    -webkit-transform: rotate(-45deg) scale(1);
+            transform: rotate(-45deg) scale(1);
+  }
+  &:hover i {
+    border-color: #008489;
+  }
+  i {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: text-top;
+    position: relative;
+    border: 2px solid #e2e2e2;
+    -webkit-transition: all .3s;
+    transition: all .3s
+  }
+  i:after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 5px;
+    width: 10px;
+    height: 6px;
+    border: 2px solid #fff;
+    border-top: 0;
+    border-right: 0;
+    -webkit-transform: rotate(-45deg) scale(0);
+            transform: rotate(-45deg) scale(0);
+    -webkit-transition: -webkit-transform .3s;
+    transition: -webkit-transform .3s;
+    transition: transform .3s;
+    transition: transform .3s, -webkit-transform .3s;
+  }
+}
+
 @b ResponsiveBlock {
   position: relative;
   min-width: 1200px;

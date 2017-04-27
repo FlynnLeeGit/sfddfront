@@ -1,0 +1,44 @@
+@import '../var.css';
+@import '../tools/mixins.css';
+@b Radio {
+  display: inline-block;
+  cursor: pointer;
+  input {
+    display: none;
+  }
+  input:checked {
+    &~i {
+      background-color: var(--color-secondary);
+      border-color: var(--color-secondary);
+    }
+    &~i:after {
+      transform: rotate(-45deg) scale(1);
+    }
+  }
+  &:hover {
+    i {
+      border-color: var(--color-secondary);
+    }
+  }
+  i {
+    @mixin circle 22px;
+    display: inline-block;
+    vertical-align: text-top;
+    position: relative;
+    border: 2px solid var(--color-border);
+    transition: all .3s;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 5px;
+      width: 10px;
+      height: 6px;
+      border: 2px solid var(--color-white);
+      border-top: 0;
+      border-right: 0;
+      transform: rotate(-45deg) scale(0);
+      transition: transform .3s;
+    }
+  }
+}
