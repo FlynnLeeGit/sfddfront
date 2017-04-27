@@ -163,14 +163,12 @@
 <script>
 import fragMarketContained from '~components/frag/market-contained'
 import vVideo from '~components/Video'
-import { scrollMixin } from '~plugins/mixins'
 
 export default {
   components: {
     fragMarketContained,
     vVideo
   },
-  mixins: [scrollMixin],
   data () {
     return {
       videoScale: 0.6,

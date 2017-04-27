@@ -30,7 +30,7 @@ module.exports = {
   css: ['~assets/css/main.css'],
   plugins: [
     { src: '~plugins/vue-lazy', ssr: false }
-    // { src: '~plugins/mixins', ssr: false }
+    // { src: '~plugins/globalMixins', ssr: false }
     // { src: '~plugins/filters' }
   ],
   router: {

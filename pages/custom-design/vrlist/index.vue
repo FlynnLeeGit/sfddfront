@@ -8,15 +8,17 @@
         <li :key='item.id'
             class='imgs__item'
             v-for="item in pageVrList">
-          <a :href="'/virtual_reality/inspirations/' + item.id + '/vr'" target="_blank">
+          <a :href="'/virtual_reality/inspirations/' + item.id + '/vr'"
+             target="_blank">
             <div class="imgs__img"
-                 v-lazy.bg='getSrc(item.src)'>
+                 v-lazy.bg='getSrc(item.thumb)'>
               <pulse-loader class="imgs__loader"
                             :loading='true' />
+              <p class="imgs__name">
+                {{item.title}}
+              </p>
             </div>
-            <p class="imgs__name">
-              {{item.title}}
-            </p>
+
           </a>
         </li>
       </ul>

@@ -1,19 +1,7 @@
-@b quality {
-  @e title {
-    text-align: center;
-    font-size: 48px;
-    margin-bottom: 44px;
-  }
-  @e desc {
-    text-align: center;
-    font-size: 18px;
-    line-height: 2;
-  }
-}
+@b quality {}
 
 @b top {
   @e content {
-    text-align: center;
     padding-top: 44%;
     p {
       font-size: 16px;
@@ -41,7 +29,6 @@
   background-color: #f7f7f7;
   padding-top: 125px;
   padding-bottom: 90px;
-  text-align: center;
   @e img {
     margin-top: 35px;
   }
@@ -51,7 +38,6 @@
   padding-top: 140px;
   @e img-wrap {
     margin-top: 80px;
-    text-align: center;
     background-image: linear-gradient(transparent 0%, transparent 50%, #d7212e 50%, #d7212e 100%);
   }
 }
@@ -59,7 +45,6 @@
 @b management {
   padding-top: 140px;
   padding-bottom: 140px;
-  text-align: center;
   @e img {
     margin-top: 130px;
   }

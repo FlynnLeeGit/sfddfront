@@ -106,7 +106,7 @@ const actions = {
         store.commit('SET_VR_SPACES', data.spaces)
         return axios.get('/_fapi/inspiration/vrs')
       })
-      .then(e => {
+      .catch(e => {
         errorHandler(store, e)
       })
   },

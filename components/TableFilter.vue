@@ -1,5 +1,6 @@
 <template>
-  <div class="TableFilter">
+  <div class="TableFilter"
+       :fixed='$store.state.ui.st>80'>
     <div container>
       <ul class="TableFilter__list"
           grid>
