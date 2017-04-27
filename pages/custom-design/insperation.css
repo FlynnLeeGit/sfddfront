@@ -1,6 +1,10 @@
 @import '../tools.css';
 @b inspiration {
   padding-top: 60px;
+  @e bd {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
   @e ft {
     border-top: 1px solid var(--color-border);
     padding: 40px 0;
@@ -9,8 +13,6 @@
 }
 
 @b imgs {
-  padding-top: 30px;
-  padding-bottom: 30px;
   @e item {
     width: 540px;
     height: 315px;

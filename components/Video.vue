@@ -49,6 +49,9 @@ export default {
      * */
     goProgress (progress) {
       this.videoEl.currentTime = progress * this.videoEl.duration
+    },
+    go (time) {
+      this.videoEl.currentTime = time
     }
   },
   mounted () {
@@ -57,7 +60,7 @@ export default {
       const currentTime = e.target.currentTime
       const progress = (currentTime / e.target.duration).toFixed(2)
       if (this.timeUpdate) {
-        this.timeUpdate(progress, currentTime)
+        this.timeUpdate(currentTime, progress)
       }
     })
   }

@@ -23,11 +23,13 @@
           </a>
         </li>
       </ul>
+      <frag-no-result v-if='!vrList.length' />
 
     </section>
 
     <section class='vrlist__ft'
-             container>
+             container
+             v-if='vrList.length'>
       <pagination :total='vrList.length'
                   :num-items-per-page='6' />
 
@@ -42,6 +44,7 @@
 import TableFilter from '~components/TableFilter'
 import Pagination from '~components/Pagination'
 import pulseLoader from 'vue-spinner/src/PulseLoader'
+import fragNoResult from '~components/frag/no-result'
 
 import { mapGetters } from 'vuex'
 import { imgFilter } from '~/middleware/filters'
@@ -50,6 +53,7 @@ export default {
   components: {
     TableFilter,
     Pagination,
+    fragNoResult,
     pulseLoader
   },
   asyncData ({ store, route }) {

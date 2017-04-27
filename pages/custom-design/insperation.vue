@@ -15,18 +15,22 @@
           </div>
         </li>
       </ul>
+      <frag-no-result v-if='!insPaginate.totalCount' />
     </section>
 
-    <section class="inspiration__ft">
-      <pagination v-if='insPaginate.totalCount'
-                  :num-items-per-page='16'
+    <section class="inspiration__ft"
+             v-if='insPaginate.totalCount'>
+      <pagination :num-items-per-page='16'
                   :total='insPaginate.totalCount' />
+
     </section>
+
   </div>
 </template>
 <script>
 import TableFilter from '~components/TableFilter'
 import Pagination from '~components/Pagination'
+import fragNoResult from '~components/frag/no-result'
 import { mapGetters } from 'vuex'
 import { hozzyImgFilter } from '~/middleware/filters'
 import pulseLoader from 'vue-spinner/src/PulseLoader'
@@ -38,6 +42,7 @@ export default {
   components: {
     TableFilter,
     Pagination,
+    fragNoResult,
     pulseLoader
   },
   methods: {

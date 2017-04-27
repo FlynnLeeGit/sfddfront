@@ -33,7 +33,7 @@
                :time-update='timeUpdate'
                src='//video.baogaoyezhu.com/video/sfdd/1.mp4' />
 
-      <!--<div class="video__control">
+      <div class="video__control">
 
         <div class="video__timeline">
           <img src="~assets/img/index/time_line.png"
@@ -57,7 +57,7 @@
             <p>{{pin.title}}</p>
           </li>
         </ul>
-      </div>-->
+      </div>
 
     </section>
 
@@ -164,6 +164,8 @@
 import fragMarketContained from '~components/frag/market-contained'
 import vVideo from '~components/Video'
 
+const TIME = [2.5, 10, 14.2, 20, 22]
+
 export default {
   components: {
     fragMarketContained,
@@ -174,14 +176,14 @@ export default {
       videoScale: 0.6,
       videoProgress: 0,
       videoPinActive: 0,
-      // videoPins: [
-      //   { icon: require('~assets/img/index/icon1.png'), active: require('~assets/img/index/icon1_active.png'), title: '放线' },
-      //   { icon: require('~assets/img/index/icon2.png'), active: require('~assets/img/index/icon2_active.png'), title: '设备' },
-      //   { icon: require('~assets/img/index/icon3.png'), active: require('~assets/img/index/icon3_active.png'), title: '家具' },
-      //   { icon: require('~assets/img/index/icon4.png'), active: require('~assets/img/index/icon4_active.png'), title: '软饰' },
-      //   { icon: require('~assets/img/index/icon5.png'), active: require('~assets/img/index/icon5_active.png'), title: '家电' },
-      //   { icon: require('~assets/img/index/icon6.png'), active: require('~assets/img/index/icon6_active.png'), title: '整家' }
-      // ],
+      videoPins: [
+        { icon: require('~assets/img/index/icon1.png'), active: require('~assets/img/index/icon1_active.png'), title: '放线' },
+        { icon: require('~assets/img/index/icon2.png'), active: require('~assets/img/index/icon2_active.png'), title: '隐蔽工程' },
+        { icon: require('~assets/img/index/icon3.png'), active: require('~assets/img/index/icon3_active.png'), title: '泥木' },
+        { icon: require('~assets/img/index/icon4.png'), active: require('~assets/img/index/icon4_active.png'), title: '硬装' },
+        { icon: require('~assets/img/index/icon5.png'), active: require('~assets/img/index/icon5_active.png'), title: '软装' },
+        { icon: require('~assets/img/index/icon6.png'), active: require('~assets/img/index/icon6_active.png'), title: '整家' }
+      ],
       serviceList: [
         { icon: require('~assets/img/index/s_icon1.png'), title: '所见即所得', to: '/about/services/see', txt: '中孚通过全套预案深化图纸，全尺寸现场放线以确保精确施工后的所见即所得。' },
         { icon: require('~assets/img/index/s_icon2.png'), title: '闭口合同零增项', to: '/about/services/zero', txt: '精算每个整装产品的成本后执行平方米报价，不额外增项，执行闭口合同。' },
@@ -204,16 +206,20 @@ export default {
   },
   methods: {
     videoGo (index) {
-      if (index !== 5) {
+      if (index < TIME.length) {
         this.videoPinActive = index
-        const progress = index / 5
-        this.videoProgress = progress
-        this.$refs.video.goProgress(progress)
+        const time = TIME[index]
+        this.$refs.video.go(time)
         this.$refs.video.play()
       }
     },
-    timeUpdate (progress) {
+    timeUpdate (currentTime, progress) {
       this.videoProgress = progress
+      let _activeIdx = 0
+      TIME.forEach((time, idx) => {
+        (currentTime >= time) && (_activeIdx = idx)
+      })
+      this.videoPinActive = _activeIdx
     }
   },
   watch: {
