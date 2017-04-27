@@ -10,13 +10,14 @@
             v-for="item in pageVrList">
           <a :href="'/virtual_reality/inspirations/' + item.id + '/vr'"
              target="_blank">
-            <div class="imgs__img"
+            <div class="imgs__content"
                  v-lazy.bg='getSrc(item.thumb)'>
               <pulse-loader class="imgs__loader"
                             :loading='true' />
               <p class="imgs__name">
                 {{item.title}}
               </p>
+              <i class="iconfont icon-vr imgs__vr"></i>
             </div>
 
           </a>

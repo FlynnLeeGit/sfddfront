@@ -9,7 +9,7 @@ module.exports = {
   dev: isDev,
   cache: !isDev,
   head: {
-    title: 'SFDD',
+    title: '中孚空间',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=1280' },
@@ -20,7 +20,7 @@ module.exports = {
       {
         rel: 'stylesheet',
         type: 'text/css',
-        href: '//at.alicdn.com/t/font_rduko7y3jsqt1emi.css'
+        href: '//at.alicdn.com/t/font_1pn7gdnx89a7cik9.css'
       }
     ]
   },
