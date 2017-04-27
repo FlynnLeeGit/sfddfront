@@ -13,7 +13,7 @@
           <li class="footer__list-title">关于</li>
           <li class='footer__item'>
             <nuxt-link class='Link'
-                       to='/about/1'>招聘</nuxt-link>
+                       to='/job'>招聘</nuxt-link>
           </li>
           <li class='footer__item'>
             <nuxt-link class='Link'

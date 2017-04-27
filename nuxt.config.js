@@ -28,6 +28,11 @@ module.exports = {
    ** Global CSS
    */
   css: ['~assets/css/main.css'],
+  // loading: '~components/Loading.vue',
+  loading: {
+    color: '#008489',
+    height: '2px'
+  },
   plugins: [
     { src: '~plugins/vue-lazy', ssr: false }
     // { src: '~plugins/globalMixins', ssr: false }

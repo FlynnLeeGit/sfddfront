@@ -8,10 +8,11 @@
           grid='2'>
         <li :key='item.id'
             class='imgs__item'
+            @click.stop='openModal(item.src)'
             v-for='item in insPaginate.items'
             v-lazy.bg="getSrc(item.src)">
           <div class="imgs__loader">
-            <pulse-loader :loading='true' />
+            <pulse-loader />
           </div>
         </li>
       </ul>
@@ -25,15 +26,28 @@
 
     </section>
 
+    <modal ref='imgModal'
+           width='95%'>
+      <div class="modal">
+        <pulse-loader class="modal__loader" />
+        <img :src="currentImg"
+             width="100%"
+             alt="modalImg">
+      </div>
+    </modal>
+
   </div>
 </template>
 <script>
 import TableFilter from '~components/TableFilter'
 import Pagination from '~components/Pagination'
+import Modal from '~components/Modal'
+import pulseLoader from 'vue-spinner/src/PulseLoader'
+
 import fragNoResult from '~components/frag/no-result'
+
 import { mapGetters } from 'vuex'
 import { hozzyImgFilter } from '~/middleware/filters'
-import pulseLoader from 'vue-spinner/src/PulseLoader'
 
 export default {
   asyncData ({ store, route }) {
@@ -42,12 +56,20 @@ export default {
   components: {
     TableFilter,
     Pagination,
+    Modal,
     fragNoResult,
     pulseLoader
   },
+  data: () => ({
+    currentImg: ''
+  }),
   methods: {
     getSrc (fname) {
       return hozzyImgFilter(fname, 'case600')
+    },
+    openModal (fname) {
+      this.currentImg = hozzyImgFilter(fname, 'case1920')
+      this.$refs.imgModal.open()
     }
   },
   computed: {
