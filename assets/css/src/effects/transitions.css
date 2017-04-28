@@ -24,16 +24,15 @@
 .modal-enter-active,
 .modal-leave-active {
   transition: all .5s;
-  top: 40%;
   opacity: 1;
-  transform: scaleX(1);
+  transform: translate3d(0, 0, 0) scaleX(1);
+  will-change: opacity, transform;
 }
 
 .modal-enter,
 .modal-leave-active {
   opacity: 0;
-  top: 10%;
-  transform: scaleX(.7);
+  transform: translate3d(0, 30%, 0) scaleX(.7);
 }
 
 .slide-top-enter {

@@ -17,4 +17,7 @@
   ._color-primary {
     color: var(--color-primary);
   }
+  ._1em {
+    margin-left: 1em;
+  }
 }

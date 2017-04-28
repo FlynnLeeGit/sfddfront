@@ -25,7 +25,7 @@
     }
     &:hover {
       .imgs__vr {
-        color: var(--color-primary);
+        color: var(--color-secondary);
       }
     }
   }
@@ -55,8 +55,10 @@
     position: absolute;
     right: 20px;
     top: 20px;
-    font-size: 36px;
-    color: var(--color-text);
+    font-size: 40px;
+    color: var(--color-white);
+    border-radius: 50%;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, .3);
     transition: all .3s;
   }
 }

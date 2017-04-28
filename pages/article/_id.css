@@ -1,0 +1,29 @@
+@import '../tools.css';
+@b article {
+  @e banner {
+    @mixin bgCover;
+    height: 400px;
+    position: relative;
+    &:after {
+      content: "";
+      @mixin overlay;
+      background-color: rgba(0, 0, 0, .3);
+    }
+    h1 {
+      font-size: 40px;
+      position: relative;
+      z-index: 2;
+      color: #fff;
+    }
+  }
+  @e bd {
+    width: 660px;
+    margin: 50px auto;
+  }
+  @e info {
+    font-size: 16px;
+  }
+  @e content {
+    margin-top: 60px;
+  }
+}
