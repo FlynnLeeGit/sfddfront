@@ -1,5 +1,5 @@
 @import '../tools.css';
-@b revisit-id {
+@b article {
   @e banner {
     @mixin bgCover;
     height: 400px;

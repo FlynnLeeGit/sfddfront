@@ -38,7 +38,7 @@
             </ul>
           </li>
           <li class="header__link">
-            <nuxt-link to="/views">观点</nuxt-link>
+            <nuxt-link to="/view-point">观点</nuxt-link>
           </li>
         </ul>
       </nav>

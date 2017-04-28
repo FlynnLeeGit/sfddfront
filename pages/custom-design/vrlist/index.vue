@@ -31,7 +31,7 @@
              container
              v-if='vrList.length'>
       <pagination :total='vrList.length'
-                  :num-items-per-page='6' />
+                  :num-items-per-page='numItemsPerPage' />
 
     </section>
 
@@ -59,6 +59,9 @@ export default {
   asyncData ({ store, route }) {
     return store.dispatch('initVrList', route.query)
   },
+  data: () => ({
+    numItemsPerPage: 10
+  }),
   methods: {
     getSrc (fname) {
       return imgFilter(fname, 'case600')
@@ -94,7 +97,7 @@ export default {
         })
     },
     pageVrList () {
-      return this.vrList.slice((this.page - 1) * 6, this.page * 6)
+      return this.vrList.slice((this.page - 1) * this.numItemsPerPage, this.page * this.numItemsPerPage)
     },
     tabs () {
       return [{

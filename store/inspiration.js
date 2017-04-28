@@ -1,6 +1,6 @@
-import axios from 'axios'
+import axios from '~plugins/axios'
 import errorHandler from '~plugins/errorHandler'
-import { toListMap, F } from '~plugins/utils'
+import { toListMap } from '~plugins/utils'
 
 const state = {
   insPaginate: {},
@@ -111,14 +111,12 @@ const actions = {
       })
   },
   initVrList (store, query) {
-    if (!store.state.vrListAll.length) {
-      return store
-        .dispatch('getVrCate')
-        .then(() => store.dispatch('getVrListAll'))
-        .catch(e => {
-          errorHandler(store, e)
-        })
-    }
+    return store
+      .dispatch('getVrCate')
+      .then(() => store.dispatch('getVrListAll'))
+      .catch(e => {
+        errorHandler(store, e)
+      })
   }
 }
 

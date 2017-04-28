@@ -1,5 +1,11 @@
+@b view-point {
+  @e child {
+    padding-top: 60px;
+  }
+}
+
 @import '../tools.css';
-@b return-visit {
+@b view-point {
   background-color: var(--color-bg);
   @e content {
     padding-top: 60px;

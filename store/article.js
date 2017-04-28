@@ -4,7 +4,8 @@ import errorHandler from '~plugins/errorHandler'
 const state = {
   viewPaginate: {},
   revisitPaginate: {},
-  currentRevisit: {}
+  viewCate: [],
+  currentArticle: {}
 }
 
 const mutations = {
@@ -14,8 +15,11 @@ const mutations = {
   SET_VIEW_PAGINATE (state, paginate) {
     state.viewPaginate = paginate
   },
-  SET_CURRENT_REVISIT (state, revisit) {
-    state.currentRevisit = revisit
+  SET_CURRENT_ARTICLE (state, article) {
+    state.currentArticle = article
+  },
+  SET_VIEW_CATE (state, cate) {
+    state.viewCate = cate
   }
 }
 
@@ -30,11 +34,39 @@ const actions = {
         errorHandler(store, e)
       })
   },
-  getCurrentRevisit (store, id) {
+  getCurrentArticle (store, id) {
     return axios
       .get(`/_fapi/contents/${id}`)
       .then(({ data }) => {
-        store.commit('SET_CURRENT_REVISIT', data)
+        store.commit('SET_CURRENT_ARTICLE', data)
+      })
+      .catch(e => {
+        errorHandler(store, e)
+      })
+  },
+  getViewCate (store) {
+    return axios
+      .get('/_fapi/article/viewpoint/cate')
+      .then(({ data }) => {
+        store.commit('SET_VIEW_CATE', data)
+      })
+      .catch(e => {
+        errorHandler(store, e)
+      })
+  },
+  getView (store, query) {
+    const reqUrl = query.cate
+      ? `/_fapi/cates/${query.cate}/articles`
+      : '/_fapi/article/viewpoint'
+    return store
+      .dispatch('getViewCate')
+      .then(() => {
+        return axios.get(reqUrl, {
+          params: query
+        })
+      })
+      .then(({ data }) => {
+        store.commit('SET_VIEW_PAGINATE', data)
       })
       .catch(e => {
         errorHandler(store, e)
@@ -44,7 +76,9 @@ const actions = {
 
 const getters = {
   revisitPaginate: state => state.revisitPaginate,
-  currentRevisit: state => state.currentRevisit
+  viewCate: state => state.viewCate,
+  viewPaginate: state => state.viewPaginate,
+  currentArticle: state => state.currentArticle
 }
 
 export default {
