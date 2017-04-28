@@ -3,7 +3,8 @@ import errorHandler from '~plugins/errorHandler'
 
 const state = {
   viewPaginate: {},
-  revisitPaginate: {}
+  revisitPaginate: {},
+  currentRevisit: {}
 }
 
 const mutations = {
@@ -12,6 +13,9 @@ const mutations = {
   },
   SET_VIEW_PAGINATE (state, paginate) {
     state.viewPaginate = paginate
+  },
+  SET_CURRENT_REVISIT (state, revisit) {
+    state.currentRevisit = revisit
   }
 }
 
@@ -25,11 +29,22 @@ const actions = {
       .catch(e => {
         errorHandler(store, e)
       })
+  },
+  getCurrentRevisit (store, id) {
+    return axios
+      .get(`/_fapi/contents/${id}`)
+      .then(({ data }) => {
+        store.commit('SET_CURRENT_REVISIT', data)
+      })
+      .catch(e => {
+        errorHandler(store, e)
+      })
   }
 }
 
 const getters = {
-  revisitPaginate: state => state.revisitPaginate
+  revisitPaginate: state => state.revisitPaginate,
+  currentRevisit: state => state.currentRevisit
 }
 
 export default {

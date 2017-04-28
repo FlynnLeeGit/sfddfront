@@ -1,6 +1,7 @@
 <template>
   <transition name='fade'>
     <div class="Overlay"
+         @click.self='close()'
          v-if="show">
     </div>
   </transition>
@@ -18,13 +19,9 @@ export default {
     close () {
       this.show = false
       document.body.style.overflow = 'auto'
+      this.$emit('close')
     }
-  },
-  created () {
-    this.$root.$on('OverlayOpen', this.open)
-    this.$root.$on('OverlayClose', this.close)
   }
-
 }
 </script>
 <style>

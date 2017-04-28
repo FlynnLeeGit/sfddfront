@@ -1,18 +1,24 @@
 <template>
-  <transition name='modal'>
-    <div class="Modal"
-         :style='modalStyle'
-         @click.stop
-         v-if='show'>
-      <div class="Modal__content">
-        <slot></slot>
+  <div>
+    <transition name='modal'>
+      <div class="Modal"
+           :style='modalStyle'
+           v-if='show'>
+        <div class="Modal__content">
+          <slot></slot>
+        </div>
       </div>
-    </div>
-  </transition>
+    </transition>
+    <modal-overlay ref='overlay' @close='close()' />
+  </div>
 </template>
 <style src='./Modal.css'></style>
 <script>
+import ModalOverlay from './Overlay'
 export default {
+  components: {
+    ModalOverlay
+  },
   props: {
     width: {
       type: String,
@@ -31,20 +37,12 @@ export default {
   },
   methods: {
     open () {
-      this.$root.$emit('OverlayOpen')
+      this.$refs.overlay.open()
       this.show = true
     },
     close () {
-      this.$root.$emit('OverlayClose')
       this.show = false
     }
-  },
-  mounted () {
-    document.addEventListener('click', this.close, false)
-  },
-  destroyed () {
-    document.removeEventListener('click', this.close, false)
   }
-
 }
 </script>

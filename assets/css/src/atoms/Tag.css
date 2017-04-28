@@ -1,0 +1,11 @@
+@b Tag {
+  color: #0991ce;
+  background-color: color(#0991ce alpha(.2));
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  border-radius: 2px;
+  font-size: 12px;
+  line-height: 20px;
+  padding: 0 10px;
+}

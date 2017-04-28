@@ -16,10 +16,22 @@
   }
   @e img {
     @mixin bgCover;
+    position: relative;
     width: 500px;
     height: 360px;
     background-color: #999;
     margin-right: 20px;
+  }
+  @e author {
+    position: absolute;
+    padding: 0 30px;
+    bottom: 16px;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    span{
+      margin-right:10px;
+    }
   }
   @e content {
     padding: 40px;
