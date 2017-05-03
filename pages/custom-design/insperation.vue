@@ -68,7 +68,7 @@ export default {
       return hozzyImgFilter(fname, 'case600')
     },
     openModal (fname) {
-      this.currentImg = hozzyImgFilter(fname, 'case1920')
+      this.currentImg = hozzyImgFilter(fname,'default')
       this.$refs.imgModal.open()
     }
   },

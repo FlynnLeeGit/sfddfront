@@ -1,0 +1,20 @@
+@import '../../tools.css';
+@b simple {
+  background-image: url('~assets/img/assemble/simple/bg.png');
+  background-size: cover;
+  background-position: 0 -100px;
+  @e bg1 {
+    right: 0;
+    top: 10%;
+  }
+  @e bg2 {
+    bottom: 0;
+    top: -50%;
+    opacity: .6;
+  }
+  @e bg3 {
+    right: 0;
+    bottom: 0;
+    opacity: .5;
+  }
+}

@@ -1,33 +1,30 @@
-:root{
-  --color-primary:#ff5a5f;
-  --color-secondary:#008489;
-
-  --color-heading:#333;
-  --color-title:#666;
-  --color-text:#999;
-
-  --color-white:#fff;
-  --color-black:#000;
-
+:root {
+  --color-primary: #ff5a5f;
+  --color-secondary: #008489;
+  --color-heading: #333;
+  --color-title: #666;
+  --color-text: #999;
+  --color-white: #fff;
+  --color-black: #000;
   --color-border: #e2e2e2;
-  --color-bg:#f7f7f7;
-
-  --size-1:.75rem;
-  --size-2:1rem;
-  --size-3:1.25rem;
-  --size-4:1.5rem;
-  --size-5:2rem;
-  --size-6:2.5rem;
-
-
-  --weight-light:300;
-  --weight-normal:400;
-  --weight-semibold:500;
-  --weight-bold:700;
+  --color-bg: #f7f7f7;
+  --size-1: .75rem;
+  --size-2: 1rem;
+  --size-3: 1.25rem;
+  --size-4: 1.5rem;
+  --size-5: 2rem;
+  --size-6: 2.5rem;
+  --weight-light: 300;
+  --weight-normal: 400;
+  --weight-semibold: 500;
+  --weight-bold: 700;
 }
 
-@custom-media --mobile (width <= 768px );
-@custom-media --tablet (width > 768px ) and (width < 1000px );
-@custom-media --desktop (width >= 1000px ) and (width < 1192px );
-@custom-media --widescreen (width >= 1192px ) and (width < 1384px );
-@custom-media --widescreen (width >= 1384 );
+@custom-media --sm(width<1200px);
+
+
+@custom-media --mobile (width <=768px);
+@custom-media --tablet (width > 768px) and (width < 1000px);
+@custom-media --desktop (width >=1000px) and (width < 1192px);
+@custom-media --widescreen (width >=1192px) and (width < 1384px);
+@custom-media --widescreen (width >=1384);

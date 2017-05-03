@@ -1,0 +1,19 @@
+@b classic {
+  @e bg1 {
+    right: 0;
+    top: 10%;
+    width: 30%;
+  }
+  @e bg2 {
+    width: 20%;
+  }
+  @e bg3 {
+    right: 0;
+    bottom: 200px;
+    width: 40%;
+  }
+  @e bg4 {
+    bottom: 200px;
+    width: 25%;
+  }
+}

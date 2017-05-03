@@ -1,0 +1,21 @@
+@b america {
+  @e bg1 {
+    right: 0;
+    width: 26%;
+    bottom: 40%;
+  }
+  @e bg2 {
+    width: 15%;
+    top: 10%;
+  }
+  @e bg3 {
+    right: 0;
+    width: 20%;
+    bottom: 100px;
+  }
+  @e bg4 {
+    width: 20%;
+    right: 0;
+    bottom: -80px;
+  }
+}
