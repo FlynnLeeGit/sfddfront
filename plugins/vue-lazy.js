@@ -1,6 +1,4 @@
-import {
-  throttle
-} from '~plugins/utils'
+import { throttle } from '~plugins/utils'
 import Vue from 'vue'
 
 // 图片懒加载
@@ -13,29 +11,31 @@ class LoadEl {
     this.isBg = binding.modifiers.bg
     this.isAnimate = binding.modifiers.animate
 
+    if (this.isAnimate) {
+      this.el.style.opacity = 0
+    }
+
     this.loaded = false
     // 每个图像特有事件监听方法，所以不能放在原型上
     this.handler = () => {
-      throttle(
-        () => {
-          this.update()
-        },
-        500
-      )
+      throttle(() => {
+        this.update()
+      }, 500)
     }
   }
   canLoad () {
-    const {
-      top,
-      bottom
-    } = this.el.getBoundingClientRect()
+    const { top, bottom } = this.el.getBoundingClientRect()
     return top < window.innerHeight * 1 && bottom > 0 && !this.loaded
   }
   loadBg () {
     this.el.style.backgroundImage = `url(${this.binding.value})`
   }
   loadAnimate () {
-    this.el.setAttribute('animated', true)
+    this.el.classList.add('animated')
+    const effects = this.binding.value.split(' ')
+    effects.forEach(effect => {
+      this.el.classList.add(effect)
+    })
   }
   update () {
     if (this.canLoad()) {

@@ -1,7 +1,7 @@
 <template>
   <market title='2017年春季 · 整装方案'
           :desc="desc"
-          to='/2017'
+          to='/assemble/intro/cn'
           name='contained' />
 </template>
 <script>
