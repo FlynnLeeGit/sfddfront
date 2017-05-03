@@ -63,7 +63,7 @@
 
       <section class="assemble-space -right bedroom"
                grid>
-        <img src="~assets/img/assemble/america/dining-room.jpg"
+        <img src="~assets/img/assemble/america/bedroom.jpg"
              class="assemble-space__img"
              alt="america-bedroom" />
         <div class="assemble-space__intro">

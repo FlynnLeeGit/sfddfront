@@ -8,22 +8,16 @@
 </template>
 <style scoped>
 .vr {
-  height: calc(100vh - 80px);
+  height: calc(100vh - 85px);
 }
 </style>
 <script>
 export default {
-  data () {
-    return {
-      ftEl: null
-    }
-  },
-  mounted () {
-    this.ftEl = document.querySelector('.footer')
-    this.ftEl.style.display = 'none'
+  created () {
+    this.$root.$emit('FooterClose')
   },
   destroyed () {
-    this.ftEl.style.display = 'block'
+    this.$root.$emit('FooterOpen')
   }
 }
 </script>
