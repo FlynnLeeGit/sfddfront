@@ -1,0 +1,53 @@
+.animated {
+  animation-duration: .75s;
+  animation-fill-mode: both;
+  @each $d in (200, 400, 600, 800) {
+    &.delay$(d) {
+      animation-delay: $(d)ms;
+    }
+  }
+  @each $name in (fade, slideInUp, slideInDown, scale) {
+    &.$(name) {
+      animation-name: $(name);
+    }
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translate3d(0, 40%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes scale {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translate3d(0, -40%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}

@@ -21,11 +21,6 @@ module.exports = {
         rel: 'stylesheet',
         type: 'text/css',
         href: '//at.alicdn.com/t/font_vmapecbe7q0ssjor.css'
-      },
-      {
-        rel: 'stylesheet',
-        type: 'text/css',
-        href: '//unpkg.com/element-ui/lib/theme-default/index.css'
       }
     ]
   },

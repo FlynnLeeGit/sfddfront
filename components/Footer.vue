@@ -1,5 +1,6 @@
 <template>
-  <footer class="footer">
+  <footer class="footer"
+          v-if='ftShow'>
     <div container>
       <section class="footer__nav">
         <ul class="footer__list">
@@ -56,8 +57,8 @@
         <a class="Link"
            href='//www.miitbeian.gov.cn'
            target="_blank">
-                    沪ICP备12039245号
-                  </a>
+                      沪ICP备12039245号
+                    </a>
         <span>／</span>
         <a class="Link"
            href='/any'
@@ -69,3 +70,21 @@
 </template>
 
 <style src='./Footer.css'></style>
+
+<script>
+export default {
+  data () {
+    return {
+      ftShow: true
+    }
+  },
+  created () {
+    this.$root.$on('FooterClose', () => {
+      this.ftShow = false
+    })
+    this.$root.$on('FooterOpen', () => {
+      this.ftShow = true
+    })
+  }
+}
+</script>

@@ -14,7 +14,22 @@
                        exact>首页</nuxt-link>
           </li>
           <li class="header__link">
-            <nuxt-link to='/2017'>成品整装 · 2017春季</nuxt-link>
+            <nuxt-link to="/assemble"
+                       event='noop'>成品整装 · 2017春季</nuxt-link>
+            <ul class="header__dropdown">
+              <li class="header__dropdonw-item">
+                <nuxt-link to='/assemble/intro/cn'>新中式</nuxt-link>
+              </li>
+              <li class="header__dropdonw-item">
+                <nuxt-link to='/assemble/intro/classic'>新古典</nuxt-link>
+              </li>
+              <li class="header__dropdonw-item">
+                <nuxt-link to='/assemble/intro/simple'>现代简约</nuxt-link>
+              </li>
+              <li class="header__dropdonw-item">
+                <nuxt-link to='/assemble/intro/america'>简美</nuxt-link>
+              </li>
+            </ul>
           </li>
           <li class="header__link">
             <nuxt-link to="/custom-design">一对一定制设计</nuxt-link>

@@ -1,0 +1,37 @@
+@b cn {
+  @e bg2 {
+    left: 0;
+    top: -400px;
+  }
+  @e bg3 {
+    right: 0;
+    top: -300px;
+  }
+}
+
+@keyframes bgX {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: 100%;
+  }
+}
+
+@b top {
+  background-image: url('~assets/img/assemble/cn/bg1.jpg');
+  background-size: cover;
+  animation: bgX 4s infinite alternate linear;
+}
+
+@b hall {}
+
+@b dining-room {}
+
+@b bedroom {}
+
+@b ft {
+  background-image: url('~assets/img/assemble/cn/bg4.jpg');
+  background-size: cover;
+  background-position-y: -100%;
+}
