@@ -12,7 +12,7 @@ class LoadEl {
     this.isAnimate = binding.modifiers.animate
 
     if (this.isAnimate) {
-      this.el.style.opacity = 0
+      this.el.style.visibility = 'hidden'
     }
 
     this.loaded = false
@@ -32,10 +32,13 @@ class LoadEl {
   }
   loadAnimate () {
     this.el.classList.add('animated')
-    const effects = this.binding.value.split(' ')
-    effects.forEach(effect => {
-      this.el.classList.add(effect)
-    })
+    try {
+      this.binding.value.forEach(effect => {
+        this.el.classList.add(effect)
+      })
+    } catch (e) {
+      console.error(this.binding.value, e) // eslint-disable-line
+    }
   }
   update () {
     if (this.canLoad()) {
@@ -63,13 +66,18 @@ const lazy = {
     loadEl.update()
     loadEl.addEvent()
     // 哈希表 使用vue生成节点key用作键名
-    elHashMap[vnode.key] = loadEl
+    vnode.$uid = `x${el.offsetLeft}y${el.offsetTop}`
+    elHashMap[vnode.$uid] = loadEl
   },
   remove (el, binding, vnode) {
     // 获得当前的懒加载实例对象
-    const loadEl = elHashMap[vnode.key]
+    const loadEl = elHashMap[vnode.$uid]
+
     // 销毁时删除事件监听
-    loadEl.removeEvent()
+    if (loadEl) {
+      loadEl.removeEvent()
+      delete elHashMap[vnode.$uid]
+    }
   }
 }
 

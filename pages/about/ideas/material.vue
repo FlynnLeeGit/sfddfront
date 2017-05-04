@@ -2,19 +2,21 @@
   <div>
     <section class="logos"
              container>
-      <h1>精选国内外一线品牌<br />采用集采预定的方式对供应商下单</h1>
-      <h4>材料的挑选是工程质量的基础，我们拥有强大的供应链和严格的供应链考评机制，精选符合设计的国内外一线品牌，<br>从质量稳定、环保、价格、配送及时、安装合规、产能稳定这七个维度，以季度为单位进行评测，<br>采用集采预定的方式对供应商下单，确保我们的采购成本优势能体现自在整装预案之内。</h4>
+      <h1 v-lazy.animate="['fade']">精选国内外一线品牌<br />采用集采预定的方式对供应商下单</h1>
+      <h4 v-lazy.animate="['slideInUp']">材料的挑选是工程质量的基础，我们拥有强大的供应链和严格的供应链考评机制，精选符合设计的国内外一线品牌，<br>从质量稳定、环保、价格、配送及时、安装合规、产能稳定这七个维度，以季度为单位进行评测，<br>采用集采预定的方式对供应商下单，确保我们的采购成本优势能体现自在整装预案之内。</h4>
       <img src="~assets/img/ideas/material/logos.jpg"
            class="logos__img"
            alt="材料供应商">
     </section>
 
     <section class="ResponsiveBlock">
-      <img class="ResponsiveBlock__img"
+      <img v-lazy.animate="['blurIn']"
+           class="ResponsiveBlock__img"
            src="~assets/img/ideas/material/forest.jpg"
            alt="forest">
       <div class="ResponsiveBlock__content">
-        <div container
+        <div v-lazy.animate="['fade']"
+             container
              class="m-content -forest">
           <h1>环保责任</h1>
           <p>为确保整装竣工后的环保等级
@@ -28,11 +30,13 @@
     </section>
 
     <section class="ResponsiveBlock">
-      <img class="ResponsiveBlock__img"
+      <img v-lazy.animate="['blurIn']"
+           class="ResponsiveBlock__img"
            src="~assets/img/ideas/material/paint.jpg"
            alt="paint">
       <div class="ResponsiveBlock__content">
-        <div class="m-content -paint">
+        <div v-lazy.animate="['fade']"
+             class="m-content -paint">
           <h1>涂料</h1>
           <p>我们所采用的涂料产品所有性能必须符合或高于《合成树脂乳液内墙涂料》GB/T 9756-2009一等品的指标要求，
             <br> 内墙涂料性能应超越HJ/T201-2005《环境标志产品认证技术要求》、GB18528-2008《室内装饰装修材料内墙涂料中有害物质限量》对涂料产品的环保要求、
@@ -44,11 +48,13 @@
     </section>
 
     <section class="ResponsiveBlock">
-      <img class="ResponsiveBlock__img"
+      <img v-lazy.animate="['blurIn']"
+           class="ResponsiveBlock__img"
            src="~assets/img/ideas/material/woodwork.jpg"
            alt="woodwork">
       <div class="ResponsiveBlock__content">
-        <div class="m-content -woodwork">
+        <div v-lazy.animate="['fade']"
+             class="m-content -woodwork">
           <h1>木作</h1>
           <p>木作产品所有性能必须符合或高于《室内装饰装修材料人造板及其制品中甲醛释放量》GB18580-2001指标要求
             <br> 漆膜涂层符合国家标准GB/T3324 4.6条规定，耐夜24H不低于3级，耐湿热70℃不低于3级，耐干热80℃不低于3级，软硬质覆面剥离强度3.5*102N/m
@@ -59,11 +65,13 @@
     </section>
 
     <section class="ResponsiveBlock">
-      <img class="ResponsiveBlock__img"
+      <img v-lazy.animate="['blurIn']"
+           class="ResponsiveBlock__img"
            src="~assets/img/ideas/material/bath.jpg"
            alt="bath">
       <div class="ResponsiveBlock__content">
-        <div class="m-content -bath">
+        <div v-lazy.animate="['fade']"
+             class="m-content -bath">
           <h1>卫浴洁具质量标准</h1>
           <p>我们所选用的陶瓷产品所有性能必须符合中国国家标准《卫生陶瓷》GB 6952-2005中的指标要求
             <br> 釉面、外观缺陷最大允许范围、最大允许变形、尺寸允许偏差、尺寸等，应符合GB6952的规定
@@ -75,11 +83,13 @@
     </section>
 
     <section class="ResponsiveBlock">
-      <img class="ResponsiveBlock__img"
+      <img v-lazy.animate="['blurIn']"
+           class="ResponsiveBlock__img"
            src="~assets/img/ideas/material/floor.jpg"
            alt="floor">
       <div class="ResponsiveBlock__content">
-        <div class="m-content -floor">
+        <div v-lazy.animate="['fade']"
+             class="m-content -floor">
           <h1>地板质量标准</h1>
           <p>我国家标准，精选全国优秀的供应商，构家要求每一块木地板的厚度偏差≤0.5mm，长度偏差≤1mm，
             <br> 宽度偏差≤0.2mm，直角度≤0.2mm，边角直度≤0.3mm/m，宽方向翘曲度≤0.02%，
@@ -91,11 +101,13 @@
     </section>
 
     <section class="ResponsiveBlock">
-      <img class="ResponsiveBlock__img"
+      <img v-lazy.animate="['blurIn']"
+           class="ResponsiveBlock__img"
            src="~assets/img/ideas/material/tile.jpg"
            alt="tile">
       <div class="ResponsiveBlock__content">
-        <div class="m-content -tile">
+        <div v-lazy.animate="['fade']"
+             class="m-content -tile">
           <h1>瓷砖质量标准</h1>
           <p>我室内墙面釉面每块瓷砖表面平整，稳质均匀，垂直观测无缺陷。破坏强度，断裂模数，抗震性，抗釉裂性均必须通过严格检测，
             <br> 相对工作尺寸的允许偏差不得大于±0.5%，厚度偏差控制在±10%、边直角控制在±0.2%、直角度控制±0.3%，

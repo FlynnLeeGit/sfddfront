@@ -45,11 +45,14 @@ export default {
       this.isPlaying = false
     },
     /**
-     * @param percent 0-1数字表示百分比
+     * @param progress 0-1数字表示百分比
      * */
     goProgress (progress) {
       this.videoEl.currentTime = progress * this.videoEl.duration
     },
+    /**
+     * @param time 时间s
+     * */
     go (time) {
       this.videoEl.currentTime = time
     }

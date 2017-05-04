@@ -26,7 +26,5 @@
     margin-top: -140px;
     margin-left: -100px;
     z-index: -1;
-    transition: transform .3s ease-out;
-    transform: scaleX(1);
   }
 }

@@ -5,6 +5,7 @@ node_modules
 npm-debug.log
 debug.log
 logs
+error.html
 
 #Mac
 .DS_Store

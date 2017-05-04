@@ -12,7 +12,9 @@ export default (store, e) => {
         console.error(e.data) // eslint-disable-line
       }
       if (e.response) {
-        console.error(e.response) //eslint-disable-line
+        console.error('---------error.html is in Root Folder----------') // eslint-disable-line
+        const fs = require('fs')
+        fs.writeFileSync('error.html', e.response.data)
       }
       store.commit('SET_AJAX_ERROR', {
         message: e.toString(),

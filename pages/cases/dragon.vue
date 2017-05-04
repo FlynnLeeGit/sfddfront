@@ -1,7 +1,8 @@
 <template>
   <div class="dragon">
     <section class="ResponsiveBlock banner">
-      <img src="~assets/img/cases/dragon/banner.jpg"
+      <img v-lazy.animate="['blurIn']"
+           src="~assets/img/cases/dragon/banner.jpg"
            alt="dragon-banner"
            class="ResponsiveBlock__img">
       <div class="ResponsiveBlock__content">
@@ -63,6 +64,7 @@
                      :key='k'
                      tag='li'
                      :to='item.to'
+                     v-lazy.animate="['slideInUp','fade','delay'+k*200]"
                      class="budget__item">
             <div class="budget__icon-wrap"
                  grid='middle'>

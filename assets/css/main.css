@@ -66,10 +66,11 @@ a {
 }
 
 .animated {
-  -webkit-animation-duration: .75s;
-          animation-duration: .75s;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
   -webkit-animation-fill-mode: both;
-          animation-fill-mode: both
+          animation-fill-mode: both;
+  visibility: visible !important
 }
 
 .animated.delay200 {
@@ -97,9 +98,19 @@ a {
           animation-name: fade;
 }
 
+.animated.fade.fade {
+  -webkit-animation-name: fade, fade;
+          animation-name: fade, fade;
+}
+
 .animated.slideInUp {
   -webkit-animation-name: slideInUp;
           animation-name: slideInUp;
+}
+
+.animated.slideInUp.fade {
+  -webkit-animation-name: slideInUp, fade;
+          animation-name: slideInUp, fade;
 }
 
 .animated.slideInDown {
@@ -107,9 +118,79 @@ a {
           animation-name: slideInDown;
 }
 
+.animated.slideInDown.fade {
+  -webkit-animation-name: slideInDown, fade;
+          animation-name: slideInDown, fade;
+}
+
 .animated.scale {
   -webkit-animation-name: scale;
           animation-name: scale;
+}
+
+.animated.scale.fade {
+  -webkit-animation-name: scale, fade;
+          animation-name: scale, fade;
+}
+
+.animated.scaleX {
+  -webkit-animation-name: scaleX;
+          animation-name: scaleX;
+}
+
+.animated.scaleX.fade {
+  -webkit-animation-name: scaleX, fade;
+          animation-name: scaleX, fade;
+}
+
+.animated.scaleXRight {
+  -webkit-animation-name: scaleXRight;
+          animation-name: scaleXRight;
+}
+
+.animated.scaleXRight.fade {
+  -webkit-animation-name: scaleXRight, fade;
+          animation-name: scaleXRight, fade;
+}
+
+.animated.scaleToRight {
+  -webkit-animation-name: scaleToRight;
+          animation-name: scaleToRight;
+}
+
+.animated.scaleToRight.fade {
+  -webkit-animation-name: scaleToRight, fade;
+          animation-name: scaleToRight, fade;
+}
+
+.animated.scaleToLeft {
+  -webkit-animation-name: scaleToLeft;
+          animation-name: scaleToLeft;
+}
+
+.animated.scaleToLeft.fade {
+  -webkit-animation-name: scaleToLeft, fade;
+          animation-name: scaleToLeft, fade;
+}
+
+.animated.blurIn {
+  -webkit-animation-name: blurIn;
+          animation-name: blurIn;
+}
+
+.animated.blurIn.fade {
+  -webkit-animation-name: blurIn, fade;
+          animation-name: blurIn, fade;
+}
+
+.animated.blurIn {
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+.animated.scaleXRight {
+  -webkit-transform-origin: left;
+          transform-origin: left;
 }
 
 @-webkit-keyframes fade {
@@ -138,7 +219,6 @@ a {
   to {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
-    opacity: 1;
   }
 }
 
@@ -150,7 +230,6 @@ a {
   to {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
-    opacity: 1;
   }
 }
 
@@ -158,6 +237,7 @@ a {
   from {
     -webkit-transform: scale(0);
             transform: scale(0);
+    opacity: 0;
   }
   to {
     -webkit-transform: scale(1);
@@ -170,11 +250,56 @@ a {
   from {
     -webkit-transform: scale(0);
             transform: scale(0);
+    opacity: 0;
   }
   to {
     -webkit-transform: scale(1);
             transform: scale(1);
     opacity: 1;
+  }
+}
+
+@-webkit-keyframes scaleX {
+  from {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  to {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1)
+  }
+}
+
+@keyframes scaleX {
+  from {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  to {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1)
+  }
+}
+
+@-webkit-keyframes scaleXRight {
+  from {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  to {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}
+
+@keyframes scaleXRight {
+  from {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  to {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
   }
 }
 
@@ -186,7 +311,6 @@ a {
   to {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
-    opacity: 1;
   }
 }
 
@@ -198,7 +322,80 @@ a {
   to {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
-    opacity: 1;
+  }
+}
+
+@-webkit-keyframes scaleToLeft {
+  from {
+    -webkit-transform-origin: right bottom;
+            transform-origin: right bottom;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes scaleToLeft {
+  from {
+    -webkit-transform-origin: right bottom;
+            transform-origin: right bottom;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes scaleToRight {
+  from {
+    -webkit-transform-origin: left bottom;
+            transform-origin: left bottom;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes scaleToRight {
+  from {
+    -webkit-transform-origin: left bottom;
+            transform-origin: left bottom;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes blurIn {
+  from {
+    -webkit-filter: blur(4px);
+            filter: blur(4px);
+  }
+  to {
+    -webkit-filter: blur(0);
+            filter: blur(0);
+  }
+}
+
+@keyframes blurIn {
+  from {
+    -webkit-filter: blur(4px);
+            filter: blur(4px);
+  }
+  to {
+    -webkit-filter: blur(0);
+            filter: blur(0);
   }
 }
 
