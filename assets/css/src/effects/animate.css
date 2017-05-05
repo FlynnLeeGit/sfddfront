@@ -7,7 +7,7 @@
       animation-delay: $(d)ms;
     }
   }
-  @each $name in (fade, slideInUp, slideInDown, scale, scaleX, scaleXRight, scaleToRight, scaleToLeft, blurIn) {
+  @each $name in (slideInUp, slideInDown, scale, scaleX, scaleXRight, scaleToRight, scaleToLeft, blurIn) {
     &.$(name) {
       animation-name: $(name);
       &.fade {
@@ -15,8 +15,11 @@
       }
     }
   }
+  &.fade {
+    animation-name: fade;
+  }
   &.blurIn {
-    animation-duration: 3s;
+    animation-duration: 2s;
   }
   &.scaleXRight {
     transform-origin: left;

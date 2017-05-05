@@ -1,25 +1,44 @@
 <template>
   <div>
-    <section class="assemble-top top">
-      <div container>
-        <h1 class="assemble-top__title"
-            v-lazy.animate="['fade']">低调优雅，独成天地</h1>
-        <h4 class="assemble-top__sub"
-            v-lazy.animate="['fade']">惊鸿一面</h4>
-        <p class="assemble-top__desc"
-           v-lazy.animate="['slideInUp','fade']">风吹晚灯，杜鹃摇曳
-          <br> 一盏茶，一席话，一段情
-          <br> 尘世间独留一片方圆，自成天地
-          <br> 山水是你的眼帘
-          <br> 画与你是我的风景
-          <br> 不恋红尘却难舍这番回忆ß
-          <br> 莲白、湛鸟、墨枝，在屋檐下交织出那年惊鸿一面
-        </p>
+    <section class="ResponsiveBlock">
+      <img v-lazy.animate="['blurIn']"
+           src="~assets/img/assemble/cn/top.jpg"
+           class="ResponsiveBlock__img" />
+    </section>
 
+    <section class="assemble-main"
+             container>
+      <h1 v-lazy.animate="['slideInUp','fade']"
+          class="assemble-main__title">新中式</h1>
+      <p v-lazy.animate="['slideInUp','fade']"
+         class="assemble-main__desc">低调优雅，独成天地</p>
+      <div v-lazy.animate="['slideInUp','fade']"
+           class="assemble-main__price">¥ 2580/㎡</div>
+    </section>
+
+    <section class="ResponsiveBlock">
+      <img v-lazy.animate="['blurIn']"
+           src="~assets/img/assemble/cn/sub.jpg"
+           class="ResponsiveBlock__img" />
+      <div class="ResponsiveBlock__content">
+        <div class="assemble-sub"
+             container>
+          <h2 v-lazy.animate="['slideInUp','fade']"
+              class="assemble-sub__title">惊鸿一面</h2>
+          <div class="assemble-sub__desc">
+            <p v-lazy.animate="['slideInUp','fade']">风吹晚灯，杜鹃摇曳</p>
+            <p v-lazy.animate="['slideInUp','fade']">一盏茶，一席话，一段情</p>
+            <p v-lazy.animate="['slideInUp','fade']">尘世间独留一片方圆，自成天地</p>
+            <p v-lazy.animate="['slideInUp','fade']">山水是你的眼帘</p>
+            <p v-lazy.animate="['slideInUp','fade']">画与你是我的风景</p>
+            <p v-lazy.animate="['slideInUp','fade']">不恋红尘却难舍这番回忆</p>
+            <p v-lazy.animate="['slideInUp','fade']">莲白、湛鸟、墨枝，在屋檐下交织出那年惊鸿一面</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="assemble-space -right hall"
+    <section class="assemble-space -right -first hall"
              grid>
       <img v-lazy.animate="['fade']"
            src="~assets/img/assemble/cn/hall.jpg"
@@ -37,12 +56,8 @@
       </div>
     </section>
 
-    <div class="assemble-bg">
-      <img src="~assets/img/assemble/cn/bg2.jpg"
-           class="assemble-bg__img cn__bg2">
-    </div>
     <!--餐厅-->
-    <section class="assemble-space -left dining-room"
+    <section class="assemble-space -left  dining-room"
              grid>
       <div class="assemble-space__intro">
         <div class="assemble-space__intro-content">
@@ -60,34 +75,38 @@
            alt="cn-dining" />
     </section>
 
-    <div class="assemble-bg">
-      <img src="~assets/img/assemble/cn/bg3.jpg"
-           alt=""
-           class="assemble-bg__img cn__bg3">
-      <!--卧室-->
-      <section class="assemble-space -right bedroom"
-               grid>
-        <img v-lazy.animate="['fade']"
-             src="~assets/img/assemble/cn/bedroom.jpg"
-             class="assemble-space__img"
-             alt="cn-bedroom" />
-        <div class="assemble-space__intro">
-          <div class="assemble-space__intro-content">
-            <h2 class="assemble-space__title"
-                v-lazy.animate="['slideInUp','fade']">卧室</h2>
-            <p class="assemble-space__desc"
-               v-lazy.animate="['slideInUp','fade']">
-              卧室延续了客厅的花鸟和餐厅的水墨画装饰，色调也是如出一辙的优雅大气，在中式的基础上，加入了现代飘窗元素，花朵的装饰给整个空间添上了温馨的气息，在低调中缓缓道来生活与艺术的真理。地面换成了木板，不仅舒适度倍增，还赋有自然的纹理，符合中国人一贯的“天人合一”追求。
-            </p>
-          </div>
+    <!--卧室-->
+    <section class="assemble-space -right bedroom"
+             grid>
+      <img v-lazy.animate="['fade']"
+           src="~assets/img/assemble/cn/bedroom.jpg"
+           class="assemble-space__img"
+           alt="cn-bedroom" />
+      <div class="assemble-space__intro">
+        <div class="assemble-space__intro-content">
+          <h2 class="assemble-space__title"
+              v-lazy.animate="['slideInUp','fade']">卧室</h2>
+          <p class="assemble-space__desc"
+             v-lazy.animate="['slideInUp','fade']">
+            卧室延续了客厅的花鸟和餐厅的水墨画装饰，色调也是如出一辙的优雅大气，在中式的基础上，加入了现代飘窗元素，花朵的装饰给整个空间添上了温馨的气息，在低调中缓缓道来生活与艺术的真理。地面换成了木板，不仅舒适度倍增，还赋有自然的纹理，符合中国人一贯的“天人合一”追求。
+          </p>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
 
-    <section class="assemble-ft ft"
-             v-lazy.animate="['fade']">
-      尘世嚣嚣，欲望横流，你是否还坚持心中那一份最初的悸动。
-      <br> 坐卧进这一片港湾，无论潮起潮落，任千年的故事顺指尖流淌。独在这片雅静天空，寻找心灵的平静。
+    <section class="ResponsiveBlock">
+      <img src="~assets/img/assemble/cn/ft.jpg"
+           class="ResponsiveBlock__img" />
+      <div class="ResponsiveBlock__content">
+        <div class="assemble-ft"
+             container>
+          <h2 v-lazy.animate="['fade']">设计师寄语</h2>
+          <p v-lazy.animate="['fade']">尘世嚣嚣，欲望横流，你是否还坚持心中那一份最初的悸动。
+            <br> 坐卧进这一片港湾，无论潮起潮落，任千年的故事顺指尖流淌。
+            <br> 独在这片雅静天空，寻找心灵的平静。
+          </p>
+        </div>
+      </div>
     </section>
 
   </div>

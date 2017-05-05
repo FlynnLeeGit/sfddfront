@@ -1,27 +1,47 @@
 <template>
   <div class="simple">
-    <div class="assemble-bg">
-      <img v-lazy.animate="['scaleToLeft']"
-           class="assemble-bg__img simple__bg1"
-           src="~assets/img/assemble/simple/bg1.png">
-      <section class="assemble-top top">
-        <div container>
-          <h1 v-lazy.animate="['fade']"
-              class="assemble-top__title">品味纯净，因你动心</h1>
-          <h4 v-lazy.animate="['fade']"
-              class="assemble-top__sub">邂逅精致</h4>
-          <p v-lazy.animate="['slideInUp','fade']"
-             class="assemble-top__desc">喜欢碧空之上云卷云舒， 喜欢杯中咖啡袅袅生香，
-            <br> 在每一个温润的气候里，静静欣赏飞鸟划过的轨迹。
-            <br> 在一本书的尾页，灯光搅乱了如墨般黑夜，
-            <br> 伴着星光点点呼吸清冽的空气，
-            <br> 你来，或者不来，我都在这里。
-          </p>
 
+    <section class="ResponsiveBlock">
+      <img v-lazy.animate="['blurIn']"
+           src="~assets/img/assemble/simple/top.jpg"
+           class="ResponsiveBlock__img" />
+    </section>
+
+    <section class="assemble-main"
+             container>
+      <h1 v-lazy.animate="['slideInUp','fade']"
+          class="assemble-main__title">现代简约</h1>
+      <p v-lazy.animate="['slideInUp','fade']"
+         class="assemble-main__desc">品味纯净，因你动心</p>
+      <div v-lazy.animate="['slideInUp','fade']"
+           class="assemble-main__price">¥ 2580/㎡</div>
+    </section>
+
+    <section class="ResponsiveBlock">
+      <img v-lazy.animate="['blurIn']"
+           src="~assets/img/assemble/simple/sub.jpg"
+           class="ResponsiveBlock__img" />
+      <div class="ResponsiveBlock__content">
+        <div class="assemble-sub simple__sub"
+             container>
+          <h2 v-lazy.animate="['slideInUp','fade']"
+              class="assemble-sub__title">邂逅精致</h2>
+          <div class="assemble-sub__desc">
+            <p v-lazy.animate="['slideInUp','fade']">喜欢碧空之上云卷云舒， 喜欢杯中咖啡袅袅生香，</p>
+            <p v-lazy.animate="['slideInUp','fade']">在每一个温润的气候里，静静欣赏飞鸟划过的轨迹。</p>
+            <p v-lazy.animate="['slideInUp','fade']">在一本书的尾页，灯光搅乱了如墨般黑夜，伴着星光点点呼吸清冽的空气，</p>
+            <p v-lazy.animate="['slideInUp','fade']">你来，或者不来，我都在这里。</p>
+          </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="assemble-space -right hall"
+    <!--客厅-->
+    <div class="assemble-bg">
+      <img v-lazy.animate="['scaleToLeft','delay200']"
+           class="assemble-bg__img simple__bg1"
+           src="~assets/img/assemble/simple/bg-hall.png">
+      <section class="assemble-space -right -first hall"
                grid>
         <img v-lazy.animate="['fade']"
              src="~assets/img/assemble/simple/hall.jpg"
@@ -40,10 +60,11 @@
       </section>
     </div>
 
+    <!--餐厅-->
     <div class="assemble-bg">
       <img v-lazy.animate="['scaleToRight','delay200']"
            class="assemble-bg__img simple__bg2"
-           src="~assets/img/assemble/simple/bg2.png">
+           src="~assets/img/assemble/simple/bg-dining-room.png">
       <section class="assemble-space -left dining-room"
                grid>
         <div class="assemble-space__intro">
@@ -63,11 +84,11 @@
       </section>
     </div>
 
+    <!--卧室-->
     <div class="assemble-bg">
       <img v-lazy.animate="['scaleToLeft','delay400']"
            class="assemble-bg__img simple__bg3"
-           src="~assets/img/assemble/simple/bg3.png">
-      <!--卧室-->
+           src="~assets/img/assemble/simple/bg-bedroom.png">
       <section class="assemble-space -right bedroom"
                grid>
         <img v-lazy.animate="['fade']"
@@ -86,13 +107,22 @@
         </div>
 
       </section>
-
-      <section class="assemble-ft ft"
-               v-lazy.animate="['fade']">
-        一杯白开水，一本没有结局的书，世上那么多的纯粹，是不问缘由。
-        <br> 剪一片心情挂在窗外，远方的风轻轻拂过，带来遥远的问候。卸下平日的思绪万千，将手边的物什雕琢成精致的模样，简约又不简单的活着，就能邂逅最美的自己。
-      </section>
     </div>
+
+    <section class="ResponsiveBlock">
+      <img src="~assets/img/assemble/simple/ft.jpg"
+           class="ResponsiveBlock__img" />
+      <div class="ResponsiveBlock__content">
+        <div class="assemble-ft"
+             container>
+          <h2 v-lazy.animate="['fade']">设计师寄语</h2>
+          <p v-lazy.animate="['fade']">一杯白开水，一本没有结局的书，世上那么多的纯粹，是不问缘由。
+            <br> 剪一片心情挂在窗外，远方的风轻轻拂过，带来遥远的问候。卸下平日的思绪万千，将手边的物什雕琢成精致的模样，
+            <br> 简约又不简单的活着，就能邂逅最美的自己。
+          </p>
+        </div>
+      </div>
+    </section>
 
   </div>
 </template>

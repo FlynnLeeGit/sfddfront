@@ -1,28 +1,50 @@
 <template>
   <div class="classic">
 
+    <section class="ResponsiveBlock">
+      <img v-lazy.animate="['blurIn']"
+           src="~assets/img/assemble/classic/top.jpg"
+           class="ResponsiveBlock__img" />
+    </section>
+
+    <section class="assemble-main"
+             container>
+      <h1 v-lazy.animate="['slideInUp','fade']"
+          class="assemble-main__title">新古典</h1>
+      <p v-lazy.animate="['slideInUp','fade']"
+         class="assemble-main__desc">新式古典，引领风骚</p>
+      <div v-lazy.animate="['slideInUp','fade']"
+           class="assemble-main__price">¥ 2580/㎡</div>
+    </section>
+
+    <section class="ResponsiveBlock">
+      <img v-lazy.animate="['blurIn']"
+           src="~assets/img/assemble/classic/sub.jpg"
+           class="ResponsiveBlock__img" />
+      <div class="ResponsiveBlock__content">
+        <div class="assemble-sub"
+             container>
+          <h2 v-lazy.animate="['slideInUp','fade']"
+              class="assemble-sub__title">情调绅士</h2>
+          <div class="assemble-sub__desc">
+            <p v-lazy.animate="['slideInUp','fade']">曾流连于塞纳河旁，蓝色流水舒缓无声， </p>
+            <p v-lazy.animate="['slideInUp','fade']">漫步过香榭丽舍大街，梧桐树声窸窸窣窣。</p>
+            <p v-lazy.animate="['slideInUp','fade']">半轮落日，一杯拿铁，一缕幽香，</p>
+            <p v-lazy.animate="['slideInUp','fade']">就在某个不经意的时间节点，</p>
+            <p v-lazy.animate="['slideInUp','fade']">忘却一切烦扰。</p>
+            <p v-lazy.animate="['slideInUp','fade']">留声机一圈一圈唱着小情调，雕花大门开了又关，</p>
+            <p v-lazy.animate="['slideInUp','fade']">有人频频回首，不知是听风，还是等雨停。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <div class="assemble-bg">
       <img v-lazy.animate="['slideInDown']"
-           src="~assets/img/assemble/classic/bg1.png"
+           src="~assets/img/assemble/classic/bg-hall.png"
            class="assemble-bg__img classic__bg1">
-      <section class="assemble-top top">
-        <div container>
-          <h1 v-lazy.animate="['fade']"
-              class="assemble-top__title">新式古典，引领风骚</h1>
-          <h4 v-lazy.animate="['fade']"
-              class="assemble-top__sub">情调绅士</h4>
-          <p v-lazy.animate="['slideInUp','fade']"
-             class="assemble-top__desc">曾流连于塞纳河旁，蓝色流水舒缓无声， 漫步过香榭丽舍大街，梧桐树声窸窸窣窣。
-            <br> 半轮落日，一杯拿铁，
-            <br> 一缕幽香，就在某个不经意的时间节点，忘却一切烦扰。
-            <br> 留声机一圈一圈唱着小情调，
-            <br> 雕花大门开了又关，有人频频回首，
-            <br> 不知是听风，还是等雨停。。
-          </p>
-        </div>
-      </section>
 
-      <section class="assemble-space -right hall"
+      <section class="assemble-space -first -right hall"
                grid>
         <img v-lazy.animate="['fade']"
              src="~assets/img/assemble/classic/hall.jpg"
@@ -42,8 +64,9 @@
     </div>
 
     <div class="assemble-bg">
-      <img class="assemble-bg__img classic__bg2"
-           src="~assets/img/assemble/classic/bg2.png">
+      <img v-lazy.animate="['scaleToRight']"
+           class="assemble-bg__img classic__bg2"
+           src="~assets/img/assemble/classic/bg-dining-room.png">
       <section class="assemble-space -left dining-room"
                grid>
         <div class="assemble-space__intro">
@@ -65,8 +88,8 @@
 
     <div class="assemble-bg">
       <img class="assemble-bg__img classic__bg3"
-           src="~assets/img/assemble/classic/bg3.png">
-      <section class="assemble-space -right dining-room"
+           src="~assets/img/assemble/classic/bg-bedroom.png">
+      <section class="assemble-space -right bedroom"
                grid>
         <img v-lazy.animate="['fade']"
              src="~assets/img/assemble/classic/dining-room.jpg"
@@ -87,16 +110,16 @@
 
     <div class="assemble-bg">
       <img class="assemble-bg__img classic__bg4"
-           src="~assets/img/assemble/classic/bg4.png">
-      <section class="assemble-space -left dining-room"
+           src="~assets/img/assemble/classic/bg-whole.png">
+      <section class="assemble-space -left whole"
                grid>
         <div class="assemble-space__intro">
           <div class="assemble-space__intro-content">
             <h2 v-lazy.animate="['slideInUp','fade']"
-                class="assemble-space__title">餐厅</h2>
+                class="assemble-space__title">全景图</h2>
             <p v-lazy.animate="['slideInUp','fade']"
                class="assemble-space__desc">
-              奢华的嵌入式沙发椅，不论从面料还是质感都能牢牢吸住目光，再加上静谧蓝和微蓝绿的色彩选择，具备了古典与现代的双重审美效果，使人在享受美味的同时也满足了视觉审美。挂满画框的墨绿墙面与纵深视觉的黑白装饰墙相对，提升了整体的空间层次感。
+              新古典设计风格，是用简化的手法、现代的材料和加工技术去追求传统样式的大致轮廓特点；注重装饰效果，用室内陈设品来增强历史文脉特色。整套设计空间布置合理，色彩和材质的大致风格尽量做到一致，从简单到繁杂、从整体到局部都一丝不苟，且摒弃了过于复杂的肌理和装饰，简化线条。
             </p>
           </div>
         </div>
@@ -105,13 +128,22 @@
              class="assemble-space__img"
              alt="classic-dining" />
       </section>
-
-      <section class="assemble-ft"
-               v-lazy.animate="['fade']">
-        电影里那个被紧紧追随的背影，永远是领结袖扣、西装笔挺，在羡艳的目光中，走在圆拱门下。
-        <br> 无数人站在门外，踟蹰踱步、相顾无言。没有人是唯一的绅士，只需迈出一步，演绎经典，成就人生。
-      </section>
     </div>
+
+    <section class="ResponsiveBlock">
+      <img src="~assets/img/assemble/classic/ft.jpg"
+           class="ResponsiveBlock__img" />
+      <div class="ResponsiveBlock__content">
+        <div class="assemble-ft"
+             container>
+          <h2 v-lazy.animate="['fade']">设计师寄语</h2>
+          <p v-lazy.animate="['fade']">电影里那个被紧紧追随的背影，永远是领结袖扣、
+            <br> 西装笔挺，在羡艳的目光中，走在圆拱门下。无数人站在门外，踟蹰踱步、相顾无言。
+            <br> 没有人是唯一的绅士，只需迈出一步，演绎经典，成就人生。
+          </p>
+        </div>
+      </div>
+    </section>
 
   </div>
 </template>

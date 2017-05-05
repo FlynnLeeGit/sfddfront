@@ -18,20 +18,21 @@
   }
 }
 
-@b top {
-  background-image: url('~assets/img/assemble/cn/bg1.jpg');
-  background-size: cover;
-  animation: bgX 4s infinite alternate linear;
+@b hall {
+  background-image: url('~assets/img/assemble/cn/mountain1.jpg');
+  animation: bgX 5s infinite alternate;
 }
 
-@b hall {}
+@b dining-room {
+  background-image: url('~assets/img/assemble/cn/mountain2.jpg');
+  animation: bgX 8s infinite alternate;
+  background-size: 150%;
+  background-position: left center;
+}
 
-@b dining-room {}
-
-@b bedroom {}
-
-@b ft {
-  background-image: url('~assets/img/assemble/cn/bg4.jpg');
-  background-size: cover;
-  background-position-y: -100%;
+@b bedroom {
+  background-image: url('~assets/img/assemble/cn/mountain3.jpg');
+  animation: bgX 8s infinite alternate;
+  background-size: 150%;
+  background-position: right;
 }

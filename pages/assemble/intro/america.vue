@@ -1,30 +1,51 @@
 <template>
   <div class="classic">
 
-    <div class="assemble-bg">
-      <img v-lazy.animate="['scaleToLeft']"
-           src="~assets/img/assemble/america/bg1.png"
-           class="assemble-bg__img america__bg1">
+    <section class="ResponsiveBlock">
+      <img v-lazy.animate="['blurIn']"
+           src="~assets/img/assemble/america/top.jpg"
+           class="ResponsiveBlock__img" />
+    </section>
 
-      <section class="assemble-top top">
-        <div container>
-          <h1 v-lazy.animate="['fade']"
-              class="assemble-top__title">华美世界，自由至上</h1>
-          <h4 v-lazy.animate="['fade']"
-              class="assemble-top__sub">遇见魅力</h4>
-          <p v-lazy.animate="['slideInUp','fade']"
-             class="assemble-top__desc">华灯初上，星夜璀璨
-            <br> 斑斓的光点映在害羞女孩的脸庞
-            <br> 倚车观望，杯中红酒跳跃
-            <br> 优雅先生第一次透过一双眼，窥到整个世界
-            <br> 簇拥一个她，拥有一个家
-            <br> 一霎那，遇见此生最好的美好
-            <br> 天空中绝响的，是一首关于自由的赞美诗
-          </p>
+    <section class="assemble-main"
+             container>
+      <h1 v-lazy.animate="['slideInUp','fade']"
+          class="assemble-main__title">简 美</h1>
+      <p v-lazy.animate="['slideInUp','fade']"
+         class="assemble-main__desc">华美世界，自由至上</p>
+      <div v-lazy.animate="['slideInUp','fade']"
+           class="assemble-main__price">¥ 2580/㎡</div>
+    </section>
+
+    <section class="ResponsiveBlock">
+      <img v-lazy.animate="['blurIn']"
+           src="~assets/img/assemble/america/sub.jpg"
+           class="ResponsiveBlock__img" />
+      <div class="ResponsiveBlock__content">
+        <div class="assemble-sub"
+             container>
+          <h2 v-lazy.animate="['slideInUp','fade']"
+              class="assemble-sub__title">遇见魅力</h2>
+          <div class="assemble-sub__desc">
+            <p v-lazy.animate="['slideInUp','fade']">华灯初上，星夜璀璨</p>
+            <p v-lazy.animate="['slideInUp','fade']">斑斓的光点映在害羞女孩的脸庞</p>
+            <p v-lazy.animate="['slideInUp','fade','delay200']">倚车观望，杯中红酒跳跃</p>
+            <p v-lazy.animate="['slideInUp','fade','delay200']">优雅先生第一次透过一双眼，窥到整个世界</p>
+            <p v-lazy.animate="['slideInUp','fade','delay400']">簇拥一个她，拥有一个家</p>
+            <p v-lazy.animate="['slideInUp','fade','delay400']">一霎那，遇见此生最好的美好</p>
+            <p v-lazy.animate="['slideInUp','fade','delay600']">天空中绝响的，是一首关于自由的赞美诗</p>
+          </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="assemble-space -right hall"
+    <div class="assemble-bg">
+
+      <img v-lazy.animate="['scaleToLeft']"
+           class="assemble-bg__img america__bg1"
+           src="~assets/img/assemble/america/bg-hall.png">
+
+      <section class="assemble-space -right -first hall"
                grid>
         <img v-lazy.animate="['fade']"
              src="~assets/img/assemble/america/hall.jpg"
@@ -46,7 +67,7 @@
     <div class="assemble-bg">
       <img v-lazy.animate="['scaleToRight']"
            class="assemble-bg__img america__bg2"
-           src="~assets/img/assemble/america/bg2.png">
+           src="~assets/img/assemble/america/bg-dining-room.png">
       <section class="assemble-space -left dining-room"
                grid>
         <div class="assemble-space__intro">
@@ -69,10 +90,10 @@
     <div class="assemble-bg">
       <img v-lazy.animate="['scaleToLeft','delay200']"
            class="assemble-bg__img america__bg3"
-           src="~assets/img/assemble/america/bg3.png">
+           src="~assets/img/assemble/america/bg-bedroom1.png">
       <img v-lazy.animate="['scaleToLeft']"
            class="assemble-bg__img america__bg4"
-           src="~assets/img/assemble/america/bg4.png">
+           src="~assets/img/assemble/america/bg-bedroom2.png">
 
       <section class="assemble-space -right bedroom"
                grid>
@@ -92,12 +113,22 @@
         </div>
       </section>
 
-      <section class="assemble-ft"
-               v-lazy.animate="['fade']">
-        在乱花渐欲中叩首自问，怎样才是最向往的生活，不屈于柴米油盐，不臣于鸡毛蒜皮。
-        <br> 将漫长岁月里的日子抓一把在手，精于心、简于形。生活与爱情都是自己创造的，只有自由的追求是永不停息。你、家、和自由，都该用心去遇见。
-      </section>
     </div>
+
+    <section class="ResponsiveBlock">
+      <img src="~assets/img/assemble/america/ft.jpg"
+           class="ResponsiveBlock__img" />
+      <div class="ResponsiveBlock__content">
+        <div class="assemble-ft"
+             container>
+          <h2 v-lazy.animate="['fade']">设计师寄语</h2>
+          <p v-lazy.animate="['fade']"> 在乱花渐欲中叩首自问，怎样才是最向往的生活，不屈于柴米油盐，不臣于鸡毛蒜皮。
+            <br> 将漫长岁月里的日子抓一把在手，精于心、简于形。生活与爱情都是自己创造的，只有自由的追求是永不停息。
+            <br> 你、家、和自由，都该用心去遇见。
+          </p>
+        </div>
+      </div>
+    </section>
 
   </div>
 </template>
