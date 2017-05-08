@@ -1,6 +1,6 @@
 {
   "apps": [{
-    "name": "sfddfe-prod",
+    "name": "fe-prod",
 
     "script": "./serverStatic.js", // 脚本
     // "args": ["--custome"], // 脚本本身参数传参

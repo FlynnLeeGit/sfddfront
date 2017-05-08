@@ -1,6 +1,6 @@
 {
   "apps": [{
-    "name": "sfddfe-staging",
+    "name": "fe-staging",
 
     "script": "./serverStatic.js", // 脚本
     // "args": ["--custome"], // 脚本本身参数传参
