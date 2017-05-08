@@ -37,6 +37,10 @@ module.exports = {
   dynamicRoutes: [
     '/assemble/vr/:style',
     '/assemble/material/:style',
-    '/article/:id'
+    '/article/:id',
+    '/custom-design/vrlist',
+    '/custom-design/insperation',
+    '/return-visit',
+    '/view-point'
   ]
 }
