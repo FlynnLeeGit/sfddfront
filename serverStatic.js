@@ -15,9 +15,9 @@ app.use(logger('dev'))
 
 dynamicRoutes.forEach(dynamicRoute => {
   app.get(dynamicRoute, (req, res) => {
-    console.log('dynamicRoute hitted', req.path) // eslint-disable-line
+    console.log('dynamicRoute hitted', req.url) // eslint-disable-line
     nuxt
-      .renderRoute(req.path)
+      .renderRoute(req.url)
       .then(({ html, error, redirected }) => {
         if (html) {
           res.end(html, 'utf-8')
