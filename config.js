@@ -32,5 +32,6 @@ module.exports = {
         }
       }
     }
-  }
+  },
+  dynamicRoutes: ['/assemble/vr/:style', '/assemble/material/:style', '/article/:id']
 }

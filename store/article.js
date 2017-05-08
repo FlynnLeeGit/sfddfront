@@ -48,6 +48,7 @@ const actions = {
     return axios
       .get('/_fapi/article/viewpoint/cate')
       .then(({ data }) => {
+        console.log(data)
         store.commit('SET_VIEW_CATE', data)
       })
       .catch(e => {

@@ -2,7 +2,7 @@
   "apps": [{
     "name": "sfddfe-staging",
 
-    "script": "./server.js", // 脚本
+    "script": "./serverStatic.js", // 脚本
     // "args": ["--custome"], // 脚本本身参数传参
     "exec_interpreter": "node", // 执行脚本程序
 
