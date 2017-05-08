@@ -1,7 +1,7 @@
 <template>
   <transition name='fade'>
     <div class="Overlay"
-         @click.self='close()'
+         @click.self='closeAndEmit()'
          v-if="show">
     </div>
   </transition>
@@ -19,6 +19,9 @@ export default {
     close () {
       this.show = false
       document.body.style.overflow = 'auto'
+    },
+    closeAndEmit () {
+      this.close()
       this.$emit('close')
     }
   }

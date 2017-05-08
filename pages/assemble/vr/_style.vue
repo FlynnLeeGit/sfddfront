@@ -1,6 +1,6 @@
 <template>
   <div class="vr">
-    <iframe src="/virtual_reality/scene/1"
+    <iframe :src="vrUrl"
             width="100%"
             height="100%"
             frameborder="0"></iframe>
@@ -12,7 +12,17 @@
 }
 </style>
 <script>
+import { mapGetters } from 'vuex'
 export default {
+  asyncData ({ store, params }) {
+    return store.dispatch('getAssembleStyles', params.style)
+  },
+  computed: {
+    ...mapGetters(['assembleStyleId']),
+    vrUrl () {
+      return `/virtual_reality/scene/${this.assembleStyleId}`
+    }
+  },
   created () {
     this.$root.$emit('FooterClose')
   },

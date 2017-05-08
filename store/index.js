@@ -7,6 +7,7 @@ Vue.use(Vuex)
 import ui from './ui'
 import inspiration from './inspiration'
 import article from './article'
+import assemble from './assemble'
 
 const store = new Vuex.Store({
   state: {
@@ -21,7 +22,8 @@ const store = new Vuex.Store({
   modules: {
     ui,
     inspiration,
-    article
+    article,
+    assemble
   }
 })
 

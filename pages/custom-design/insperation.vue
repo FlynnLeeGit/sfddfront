@@ -26,13 +26,13 @@
 
     </section>
 
-    <modal ref='imgModal'
-           width='95%'>
+    <modal ref='imgModal' :src="currentImg">
       <div class="modal">
         <pulse-loader class="modal__loader" />
-        <img :src="currentImg"
-             width="100%"
-             alt="modalImg">
+        <img class="modal__img"
+             :src="currentImg"
+             :width="modalImgWidth"
+             :height="modalImgHeight">
       </div>
     </modal>
 
@@ -61,16 +61,37 @@ export default {
     pulseLoader
   },
   data: () => ({
-    currentImg: ''
+    currentImg: '',
+    modalImgWidth: 'auto',
+    modalImgHeight: 'auto'
   }),
   methods: {
     getSrc (fname) {
       return hozzyImgFilter(fname, 'case600')
     },
     openModal (fname) {
-      this.currentImg = hozzyImgFilter(fname,'default')
+      this.currentImg = hozzyImgFilter(fname, 'default')
       this.$refs.imgModal.open()
+      const img = new Image()
+      img.src = this.currentImg
+      const maxWidth = this.$refs.imgModal.getMaxWidth()
+      const maxHeight = this.$refs.imgModal.getMaxHeight()
+      const maxRatio = maxWidth / maxHeight
+      const timer = setInterval(() => {
+        if (img.width) {
+          clearInterval(timer)
+          const imgRatio = img.width / img.height
+          // 图片过高
+          if (imgRatio <= maxRatio) {
+            this.modalImgHeight = `${maxHeight}px`
+          }
+          if (imgRatio > maxRatio) {
+            this.modalImgWidth = `${maxWidth}px`
+          }
+        }
+      }, 40)
     }
+
   },
   computed: {
     ...mapGetters(['insStyles', 'insRooms', 'insPaginate']),

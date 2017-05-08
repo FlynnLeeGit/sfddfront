@@ -2,14 +2,26 @@
   <div>
     <transition name='modal'>
       <div class="Modal"
-           :style='modalStyle'
            v-if='show'>
+        <div class="Modal__hd">
+          <div class="Modal__title"></div>
+          <div class="Modal__icon"
+               @click='iconClose()'>
+            <i class="iconfont icon-close"></i>
+          </div>
+          <a class="Modal__icon"
+             :href='src'
+             target="_blank">
+            <i class="iconfont icon-fullscreen"></i>
+          </a>
+        </div>
         <div class="Modal__content">
           <slot></slot>
         </div>
       </div>
     </transition>
-    <modal-overlay ref='overlay' @close='close()' />
+    <modal-overlay ref='overlay'
+                   @close='close()' />
   </div>
 </template>
 <style src='./Modal.css'></style>
@@ -20,28 +32,31 @@ export default {
     ModalOverlay
   },
   props: {
-    width: {
+    src: {
       type: String,
-      default: '80%'
+      default: ''
     }
   },
   data: () => ({
     show: false
   }),
-  computed: {
-    modalStyle () {
-      return {
-        width: this.width
-      }
-    }
-  },
   methods: {
     open () {
-      this.$refs.overlay.open()
       this.show = true
+      this.$refs.overlay.open()
     },
     close () {
       this.show = false
+    },
+    iconClose () {
+      this.show = false
+      this.$refs.overlay.close()
+    },
+    getMaxWidth () {
+      return window.innerWidth - 20
+    },
+    getMaxHeight () {
+      return window.innerHeight - 80
     }
   }
 }
