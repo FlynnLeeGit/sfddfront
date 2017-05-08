@@ -33,5 +33,10 @@ module.exports = {
       }
     }
   },
-  dynamicRoutes: ['/assemble/vr/:style', '/assemble/material/:style', '/article/:id']
+  // 需要动态vueRender的路由
+  dynamicRoutes: [
+    '/assemble/vr/:style',
+    '/assemble/material/:style',
+    '/article/:id'
+  ]
 }
