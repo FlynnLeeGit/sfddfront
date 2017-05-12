@@ -1,6 +1,7 @@
 .animated {
   animation-duration: 1s;
   animation-fill-mode: both;
+  animation-delay: .3s;
   visibility: visible !important;
   @each $d in (200, 400, 600, 800) {
     &.delay$(d) {
