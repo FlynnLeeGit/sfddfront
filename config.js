@@ -2,7 +2,7 @@ const ENV = process.env.NODE_ENV
 module.exports = {
   HOZZY_SERVER: '//dn-st.baogaoyezhu.com',
   IMG_SERVER: {
-    development: 'http://ocefx1x5d.bkt.clouddn.com',
+    development: '//ocefx1x5d.bkt.clouddn.com',
     staging: 'https://dn-st.baogaoyezhu.com',
     production: 'https://dn-st.baogaoyezhu.com'
   }[ENV],
@@ -37,7 +37,7 @@ module.exports = {
   dynamicRoutes: [
     '/assemble/vr/:style',
     '/assemble/material/:style',
-    'material/:style/:sid',
+    '/assemble/material/:style/:sid',
     '/article/:id',
     '/custom-design/vrlist',
     '/custom-design/insperation',
