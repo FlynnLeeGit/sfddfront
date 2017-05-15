@@ -29,12 +29,12 @@ export default {
 </script>
 <style>
 .Overlay {
-  position: fixed;
+  position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
   top: 0;
   background: color(#000 alpha(.5));
-  z-index: 1000;
+  z-index: 1;
 }
 </style>

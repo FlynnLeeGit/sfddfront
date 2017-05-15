@@ -37,6 +37,7 @@ module.exports = {
   dynamicRoutes: [
     '/assemble/vr/:style',
     '/assemble/material/:style',
+    'material/:style/:sid',
     '/article/:id',
     '/custom-design/vrlist',
     '/custom-design/insperation',

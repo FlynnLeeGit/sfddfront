@@ -1,6 +1,7 @@
 <template>
-  <div class="modal-wrapper">
-    <transition name='modal'>
+  <div class="modal-wrapper" v-show='showWrapper'>
+    <transition name='modal'
+                @after-leave='toggleWrapper'>
       <div class="Modal"
            v-if='show'>
         <div class="Modal__hd">
@@ -36,10 +37,15 @@ export default {
     }
   },
   data: () => ({
-    show: false
+    show: false,
+    showWrapper: false
   }),
   methods: {
+    toggleWrapper () {
+      this.showWrapper = false
+    },
     open () {
+      this.showWrapper = true
       this.show = true
       this.$refs.overlay.open()
     },

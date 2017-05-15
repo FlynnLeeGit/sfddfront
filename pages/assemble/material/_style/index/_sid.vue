@@ -6,7 +6,8 @@
         <li col
             v-for='m in pageMaterials'
             class="m-list__item">
-          <div class="m-list__img"
+          <div @click='showDetail(m)'
+               class="m-list__img"
                v-lazy.bg="imgFilter(m.img,'case600')"></div>
           <p class="m-list__name">{{m.name}}</p>
         </li>
@@ -16,6 +17,25 @@
       <pagination :total='assembleMaterials.length'
                   :num-items-per-page='numItemsPerPage'></pagination>
     </div>
+    <modal ref='mModal'>
+      <div class="modal"
+           slot='content'
+           grid>
+        <div class="modal__left">
+          <div class="modal__img"
+               v-lazy.bg="imgFilter(currentMaterial.img,'case600')"></div>
+        </div>
+        <div class="modal__right">
+          <h3 class="detail__name">{{currentMaterial.name}}</h3>
+          <ul class="detail__ul">
+            <li>产品描述</li>
+          </ul>
+          <div class="detail__desc">
+            {{currentMaterial.description}}
+          </div>
+        </div>
+      </div>
+    </modal>
   </div>
 </template>
 <style src='./sid.css' scoped></style>
@@ -24,11 +44,13 @@
 import { mapGetters } from 'vuex'
 import { imgFilter } from '~/middleware/filters'
 import Pagination from '~components/Pagination'
+import Modal from '~components/Modal'
 
 export default {
   middleware: ['assembleSpace'],
   components: {
-    Pagination
+    Pagination,
+    Modal
   },
   asyncData ({store, params, redirect}) {
     let sid = params.sid
@@ -41,7 +63,8 @@ export default {
   },
   data () {
     return {
-      numItemsPerPage: 6
+      numItemsPerPage: 6,
+      currentMaterial: {}
     }
   },
   computed: {
@@ -54,7 +77,11 @@ export default {
     }
   },
   methods: {
-    imgFilter
+    imgFilter,
+    showDetail (m) {
+      this.currentMaterial = m
+      this.$refs.mModal.open()
+    }
   }
 }
 </script>
