@@ -439,8 +439,6 @@ a {
           animation-duration: 1s;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
-  -webkit-animation-delay: .3s;
-          animation-delay: .3s;
   visibility: visible !important
 }
 
@@ -482,6 +480,26 @@ a {
 .animated.slideInDown.fade {
   -webkit-animation-name: slideInDown, fade;
           animation-name: slideInDown, fade;
+}
+
+.animated.slideInLeft {
+  -webkit-animation-name: slideInLeft;
+          animation-name: slideInLeft;
+}
+
+.animated.slideInLeft.fade {
+  -webkit-animation-name: slideInLeft, fade;
+          animation-name: slideInLeft, fade;
+}
+
+.animated.slideInRight {
+  -webkit-animation-name: slideInRight;
+          animation-name: slideInRight;
+}
+
+.animated.slideInRight.fade {
+  -webkit-animation-name: slideInRight, fade;
+          animation-name: slideInRight, fade;
 }
 
 .animated.scale {
@@ -557,6 +575,50 @@ a {
 .animated.scaleXRight {
   -webkit-transform-origin: left;
           transform-origin: left;
+}
+
+@-webkit-keyframes slideInLeft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
 }
 
 @-webkit-keyframes fade {

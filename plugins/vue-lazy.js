@@ -10,9 +10,11 @@ class LoadEl {
 
     this.isBg = binding.modifiers.bg
     this.isAnimate = binding.modifiers.animate
+    this.judge = 1
 
     if (this.isAnimate) {
       this.el.style.visibility = 'hidden'
+      this.judge = 0.8
     }
 
     this.loaded = false
@@ -25,7 +27,7 @@ class LoadEl {
   }
   canLoad () {
     const { top, bottom } = this.el.getBoundingClientRect()
-    return top < window.innerHeight * 1 && bottom > 0 && !this.loaded
+    return top < window.innerHeight * this.judge && bottom > 0 && !this.loaded
   }
   loadBg () {
     this.el.style.backgroundImage = `url(${this.binding.value})`

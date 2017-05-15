@@ -15,12 +15,11 @@
 import { mapGetters } from 'vuex'
 export default {
   asyncData ({ store, params }) {
-    return store.dispatch('getAssembleStyles', params.style)
   },
   computed: {
-    ...mapGetters(['assembleStyleId']),
+    ...mapGetters(['assembleCurrentStyleId']),
     vrUrl () {
-      return `/virtual_reality/scene/${this.assembleStyleId}`
+      return `/virtual_reality/scene/${this.assembleCurrentStyleId}`
     }
   },
   created () {

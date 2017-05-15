@@ -18,8 +18,7 @@
     </section>
 
     <section class="ResponsiveBlock">
-      <img v-lazy.animate="['blurIn']"
-           src="~assets/img/assemble/classic/sub.jpg"
+      <img src="~assets/img/assemble/classic/sub.jpg"
            class="ResponsiveBlock__img" />
       <div class="ResponsiveBlock__content">
         <div class="assemble-sub"

@@ -40,7 +40,7 @@
 
     <section class="assemble-space -right -first hall"
              grid>
-      <img v-lazy.animate="['fade']"
+      <img v-lazy.animate="['fade','slideInLeft']"
            src="~assets/img/assemble/cn/hall.jpg"
            class="assemble-space__img"
            alt="cn_hall" />
@@ -57,7 +57,7 @@
     </section>
 
     <!--餐厅-->
-    <section class="assemble-space -left  dining-room"
+    <section class="assemble-space -left dining-room"
              grid>
       <div class="assemble-space__intro">
         <div class="assemble-space__intro-content">
@@ -69,7 +69,7 @@
           </p>
         </div>
       </div>
-      <img v-lazy.animate="['fade']"
+      <img v-lazy.animate="['fade','slideInRight']"
            src="~assets/img/assemble/cn/dining-room.jpg"
            class="assemble-space__img"
            alt="cn-dining" />
@@ -78,7 +78,7 @@
     <!--卧室-->
     <section class="assemble-space -right bedroom"
              grid>
-      <img v-lazy.animate="['fade']"
+      <img v-lazy.animate="['fade','slideInLeft']"
            src="~assets/img/assemble/cn/bedroom.jpg"
            class="assemble-space__img"
            alt="cn-bedroom" />

@@ -26,11 +26,20 @@
 
     </section>
 
-    <modal ref='imgModal' :src="currentImg">
-      <div class="modal">
+    <modal ref='imgModal'>
+
+      <a :href="currentImg"
+         slot='tool'
+         class="Modal__icon"
+         target="_blank">
+        <i class="iconfont icon-fullscreen"></i>
+      </a>
+
+      <div class="modal"
+           slot='content'>
         <pulse-loader class="modal__loader" />
         <img class="modal__img"
-             :src="currentImg"
+             :src='currentImg'
              :width="modalImgWidth"
              :height="modalImgHeight">
       </div>

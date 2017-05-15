@@ -1,22 +1,20 @@
 <template>
-  <div>
+  <div class="modal-wrapper">
     <transition name='modal'>
       <div class="Modal"
            v-if='show'>
         <div class="Modal__hd">
           <div class="Modal__title"></div>
-          <div class="Modal__icon"
-               @click='iconClose()'>
-            <i class="iconfont icon-close"></i>
+          <div class="Modal__tools">
+            <div class="Modal__icon"
+                 @click='iconClose()'>
+              <i class="iconfont icon-close"></i>
+            </div>
+            <slot name='tool'></slot>
           </div>
-          <a class="Modal__icon"
-             :href='src'
-             target="_blank">
-            <i class="iconfont icon-fullscreen"></i>
-          </a>
         </div>
         <div class="Modal__content">
-          <slot></slot>
+          <slot name='content'></slot>
         </div>
       </div>
     </transition>

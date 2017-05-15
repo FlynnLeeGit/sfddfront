@@ -1,0 +1,32 @@
+@b content {
+  @e bd {
+    min-height: 650px;
+  }
+  @e ft {
+    text-align: center;
+  }
+}
+
+@b m-list {
+  @e item {
+    width: 33.3%;
+    padding-left: 20px;
+    margin-bottom: 70px;
+  }
+  @e img {
+    background-size: auto 100%;
+    background-position: center;
+    width: 100%;
+    height: 280px;
+    cursor: pointer;
+    transition: background .5s;
+    &:hover {
+      background-size: auto 105%;
+    }
+  }
+  @e name {
+    font-size: 16px;
+    margin-top: 12px;
+    line-height: 24px;
+  }
+}

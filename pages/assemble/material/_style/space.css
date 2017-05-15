@@ -1,0 +1,31 @@
+@b material {
+  padding-top: 180px;
+  padding-bottom: 50px;
+}
+
+@b aside {
+  width: 100px;
+  line-height: 36px;
+  @e title {
+    font-size: 24px;
+  }
+  @e spaces {
+    padding-top: 20px;
+    li {
+      margin-top: 27px;
+    }
+    a {
+      display: block;
+      font-size: 16px;
+      &:hover,
+      &.active {
+        color: #a4a4a4;
+      }
+    }
+  }
+}
+
+@b main {
+  width: 1060px;
+  padding-left: 160px;
+}

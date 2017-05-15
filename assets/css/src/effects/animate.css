@@ -1,14 +1,13 @@
 .animated {
   animation-duration: 1s;
   animation-fill-mode: both;
-  animation-delay: .3s;
   visibility: visible !important;
   @each $d in (200, 400, 600, 800) {
     &.delay$(d) {
       animation-delay: $(d)ms;
     }
   }
-  @each $name in (slideInUp, slideInDown, scale, scaleX, scaleXRight, scaleToRight, scaleToLeft, blurIn) {
+  @each $name in (slideInUp, slideInDown, slideInLeft, slideInRight, scale, scaleX, scaleXRight, scaleToRight, scaleToLeft, blurIn) {
     &.$(name) {
       animation-name: $(name);
       &.fade {
@@ -24,6 +23,24 @@
   }
   &.scaleXRight {
     transform-origin: left;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
   }
 }
 
