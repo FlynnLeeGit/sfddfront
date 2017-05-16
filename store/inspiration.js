@@ -3,7 +3,7 @@ import errorHandler from '~plugins/errorHandler'
 import { toListMap } from '~plugins/utils'
 
 const state = {
-  insPaginate: {},
+  insList: [],
   insStyles: {
     list: [],
     map: {},
@@ -27,8 +27,15 @@ const state = {
   }
 }
 const mutations = {
-  SET_INS_PAGINATE (state, paginate) {
-    state.insPaginate = paginate
+  SET_INS_LIST (state, items) {
+    state.isInitIns = false
+    state.insList = items
+  },
+  INIT_INS_START (state) {
+    state.isInitIns = true
+  },
+  SET_INS_LIST_MORE (state, items) {
+    state.insList = [...state.insList, ...items]
   },
   SET_INS_STYLES (state, styleMap) {
     if (!state.insStyles.seted) {
@@ -78,9 +85,21 @@ const actions = {
         params: query
       })
       .then(({ data }) => {
-        store.commit('SET_INS_PAGINATE', data.paginate)
+        store.commit('SET_INS_LIST', data.paginate.items)
         store.commit('SET_INS_STYLES', data.styles)
         store.commit('SET_INS_ROOMS', data.rooms)
+      })
+      .catch(e => {
+        errorHandler(store, e)
+      })
+  },
+  getInspirationMore (store, query) {
+    return axios
+      .get('/_fapi/inspiration/img', {
+        params: query
+      })
+      .then(({ data }) => {
+        store.commit('SET_INS_LIST_MORE', data.paginate.items)
       })
       .catch(e => {
         errorHandler(store, e)
@@ -123,7 +142,7 @@ const actions = {
 const getters = {
   insStyles: state => state.insStyles,
   insRooms: state => state.insRooms,
-  insPaginate: state => state.insPaginate,
+  insList: state => state.insList,
   vrListAll: state => state.vrListAll,
   vrSpaces: state => state.vrSpaces,
   vrStyles: state => state.vrStyles

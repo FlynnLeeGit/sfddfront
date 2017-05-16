@@ -22,7 +22,7 @@ export default {
       return `/virtual_reality/scene/${this.assembleCurrentStyleId}`
     }
   },
-  created () {
+  mounted () {
     this.$root.$emit('FooterClose')
   },
   destroyed () {

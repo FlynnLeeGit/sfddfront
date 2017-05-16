@@ -24,6 +24,7 @@
 <script>
 import { mapGetters } from 'vuex'
 export default {
+  scrollToTop: false,
   computed: {
     ...mapGetters(['assembleSpaces'])
   },

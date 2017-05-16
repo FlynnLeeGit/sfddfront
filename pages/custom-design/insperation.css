@@ -2,32 +2,8 @@
 @b inspiration {
   padding-top: 60px;
   @e bd {
+    min-height: calc(100vh - 230px);
     padding-top: 30px;
-    padding-bottom: 30px;
-  }
-  @e ft {
-    border-top: 1px solid var(--color-border);
-    padding: 40px 0;
-    text-align: center;
-  }
-}
-
-@b imgs {
-  @e item {
-    width: 540px;
-    height: 315px;
-    cursor: pointer;
-    margin-bottom: 20px;
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, .1);
-    &:nth-child(even) {
-      margin-left: 40px;
-    }
-  }
-  @e loader {
-    position: relative;
-    text-align: center;
-    padding-top: 25%;
-    z-index: -1;
   }
 }
 
@@ -39,4 +15,16 @@
     transform: translate(-50%, -50%);
     z-index: -1;
   }
+}
+
+@b load-modal {
+  display: flex;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  align-items: center;
+  justify-content: center;
 }

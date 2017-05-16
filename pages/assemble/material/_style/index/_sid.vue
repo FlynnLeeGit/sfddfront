@@ -5,6 +5,7 @@
           grid>
         <li col
             v-for='m in pageMaterials'
+            :key='m.id'
             class="m-list__item">
           <div @click='showDetail(m)'
                class="m-list__img"
@@ -52,7 +53,7 @@ export default {
     Pagination,
     Modal
   },
-  asyncData ({store, params, redirect}) {
+  asyncData ({ store, params, redirect }) {
     let sid = params.sid
     if (!sid) {
       sid = store.state.assemble.spaces[0].id

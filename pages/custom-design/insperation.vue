@@ -4,26 +4,15 @@
 
     <section class='inspiration__bd'
              container>
-      <ul class='imgs'
-          grid='2'>
-        <li :key='item.id'
-            class='imgs__item'
-            @click.stop='openModal(item.src)'
-            v-for='item in insPaginate.items'
-            v-lazy.bg="getSrc(item.src)">
-          <div class="imgs__loader">
-            <pulse-loader />
-          </div>
-        </li>
-      </ul>
-      <frag-no-result v-if='!insPaginate.totalCount' />
-    </section>
+      <waterfall v-if='insList.length'
+                 :col-num='3'
+                 @click-item='clickImg'
+                 :needmore='loadmore'
+                 :list='insList'
+                 :src-filter='waterfallSrc'>
+      </waterfall>
 
-    <section class="inspiration__ft"
-             v-if='insPaginate.totalCount'>
-      <pagination :num-items-per-page='16'
-                  :total='insPaginate.totalCount' />
-
+      <frag-no-result v-else />
     </section>
 
     <modal ref='imgModal'>
@@ -44,27 +33,34 @@
              :height="modalImgHeight">
       </div>
     </modal>
+    <transition v-if='isLoadmore'>
+      <div class="load-modal">
+        <pulse-loader />
+      </div>
+    </transition>
 
   </div>
 </template>
 <script>
 import TableFilter from '~components/TableFilter'
-import Pagination from '~components/Pagination'
 import Modal from '~components/Modal'
+import Waterfall from '~components/Waterfall'
 import pulseLoader from 'vue-spinner/src/PulseLoader'
 
 import fragNoResult from '~components/frag/no-result'
 
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import { hozzyImgFilter } from '~/middleware/filters'
 
 export default {
   asyncData ({ store, route }) {
-    return store.dispatch('getInspiration', route.query)
+    return store.dispatch('getInspiration', route.query).then(() => {
+      return { page: 1 }
+    })
   },
   components: {
     TableFilter,
-    Pagination,
+    Waterfall,
     Modal,
     fragNoResult,
     pulseLoader
@@ -72,11 +68,23 @@ export default {
   data: () => ({
     currentImg: '',
     modalImgWidth: 'auto',
-    modalImgHeight: 'auto'
+    modalImgHeight: 'auto',
+    isLoadmore: false
   }),
   methods: {
-    getSrc (fname) {
-      return hozzyImgFilter(fname, 'case600')
+    ...mapActions(['getInspirationMore']),
+    clickImg (item) {
+      this.openModal(item.src)
+    },
+    waterfallSrc (src) {
+      return hozzyImgFilter(src, 'case380')
+    },
+    loadmore () {
+      this.isLoadmore = true
+      return this.getInspirationMore(Object.assign({}, this.$route.query, { page: ++this.page }))
+        .then(() => {
+          this.isLoadmore = false
+        })
     },
     openModal (fname) {
       this.currentImg = hozzyImgFilter(fname, 'default')
@@ -100,10 +108,9 @@ export default {
         }
       }, 40)
     }
-
   },
   computed: {
-    ...mapGetters(['insStyles', 'insRooms', 'insPaginate']),
+    ...mapGetters(['insStyles', 'insRooms', 'insList']),
     tabs () {
       return [{
         tag: 'room',
@@ -117,6 +124,12 @@ export default {
         filterMap: this.insStyles.map
       }]
     }
+  },
+  mounted () {
+    this.$root.$emit('FooterClose')
+  },
+  destroyed () {
+    this.$root.$emit('FooterOpen')
   }
 }
 </script>

@@ -1,0 +1,32 @@
+@b Waterfall {
+  &.is-2>.Waterfall__column {
+    width: 50%;
+  }
+  &.is-3>.Waterfall__column {
+    width: 33.3333%;
+  }
+  &.is-4>.Waterfall__column {
+    width: 25%;
+  }
+  &.is-5>.Waterfall__column {
+    width: 20%;
+  }
+  @e column {
+    display: inline-block;
+    vertical-align: top;
+    img {
+      vertical-align: top;
+    }
+  }
+  @e item {
+    padding: 5px;
+  }
+  @e item-content {
+    position: relative;
+  }
+  @e img {
+    cursor: pointer;
+    min-height: 100px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, .1);
+  }
+}

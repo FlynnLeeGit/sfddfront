@@ -14,13 +14,13 @@
     margin-bottom: 70px;
   }
   @e img {
-    background-color: #f7f7f7;
     background-size: auto 100%;
     background-position: center;
+    background-repeat: no-repeat;
     width: 100%;
-    height: 280px;
+    height: 172px;
     cursor: pointer;
-    transition: background .5s;
+    transition: background-size .5s;
     &:hover {
       background-size: auto 105%;
     }
@@ -38,9 +38,10 @@
     width: 480px;
   }
   @e img {
-    height: 480px;
+    height: 300px;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
   }
   @e right {
     width: 320px;

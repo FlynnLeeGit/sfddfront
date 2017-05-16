@@ -1,5 +1,21 @@
-import { throttle } from '~plugins/utils'
+import {
+  throttle
+} from '~plugins/utils'
 import Vue from 'vue'
+
+const getEdgeColor = url => new Promise((resolve, reject) => {
+  let ctx = document.createElement('canvas').getContext('2d')
+  let img = new Image()
+  img.crossOrigin = true
+  img.src = url
+  img.onload = () => {
+    ctx.drawImage(img, 0, 0, img.width, img.height)
+    const [r, g, b, a] = ctx.getImageData(0, 0, 1, 1).data
+    img = null
+    ctx = null
+    resolve(`rgba(${r},${g},${b},${a})`)
+  }
+})
 
 // 图片懒加载
 const elHashMap = {}
@@ -10,6 +26,7 @@ class LoadEl {
 
     this.isBg = binding.modifiers.bg
     this.isAnimate = binding.modifiers.animate
+    this.isEdge = binding.modifiers.edge
     this.judge = 1
 
     if (this.isAnimate) {
@@ -26,11 +43,19 @@ class LoadEl {
     }
   }
   canLoad () {
-    const { top, bottom } = this.el.getBoundingClientRect()
+    const {
+      top,
+      bottom
+    } = this.el.getBoundingClientRect()
     return top < window.innerHeight * this.judge && bottom > 0 && !this.loaded
   }
   loadBg () {
     this.el.style.backgroundImage = `url(${this.binding.value})`
+  }
+  loadEdge () {
+    getEdgeColor(this.binding.value).then(rgba => {
+      this.el.style.backgroundColor = rgba
+    })
   }
   loadAnimate () {
     this.el.classList.add('animated')
@@ -47,6 +72,9 @@ class LoadEl {
       this.loaded = true
       if (this.isBg) {
         this.loadBg()
+      }
+      if (this.isEdge) {
+        this.loadEdge()
       }
       if (this.isAnimate) {
         this.loadAnimate()
