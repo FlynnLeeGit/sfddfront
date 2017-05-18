@@ -27,18 +27,34 @@
               操作
             </div>
           </li>
-          <li class="jobs__item" v-for='j in jobs'>
-            <div class="jobs__td">
-              {{j.name}}
+          <li class="jobs__item -tr"
+              ref='job'
+              :key='jobIdx'
+              v-for='(job,jobIdx) in jobs'
+              :active='jobIdx===currentJobIdx'>
+            <div class="jobs__line"
+                 @click='clickJob(jobIdx)'>
+              <div class="jobs__td">
+                {{job.name}}
+              </div>
+              <div class="jobs__td">
+                {{job.desc}}
+              </div>
+              <div class="jobs__td">
+                {{job.address}}
+              </div>
+              <div class="jobs__td">
+                <i class="iconfont icon-less"></i>
+              </div>
             </div>
-            <div class="jobs__td">
-              {{j.desc}}
-            </div>
-            <div class="jobs__td">
-              {{j.address}}
-            </div>
-            <div class="jobs__td">
-              操作
+            <div class="jobs__content">
+              <div class="jobs__content-item"
+                   v-for='demand in job.demands'>
+                <h4>{{demand.title}}</h4>
+                <ol>
+                  <li v-for='detail in demand.details'>{{detail}}</li>
+                </ol>
+              </div>
             </div>
           </li>
         </ul>
@@ -49,6 +65,7 @@
 <style src='./job.css' scoped></style>
 <script>
 import TabHeader from '~components/TabHeader'
+import jobs from './job.js'
 export default {
   components: {
     TabHeader
@@ -58,12 +75,42 @@ export default {
       tabs: [
         { to: '/job', name: '工作机会' }
       ],
-      jobs: [
-        // { name: 'UED', desc: '辅助我门做辅助我门做辅助我门做辅助我门做辅助我门做辅助我门做辅助我门做辅助我门做辅助我门做辅助我门做辅助我门做辅助我门做', address: '上海市闵行区东川路kkk' },
-        // { name: 'UED', desc: '辅助我门做辅助我门做辅助我门做辅助我门做辅助我门做辅助我门做', address: '上海市闵行区东川路kkk' },
-        // { name: 'UED', desc: '辅助我门做辅助我门做辅助我门做辅助我门做辅助我门做辅助我门做', address: '上海市闵行区东川路kkk' },
-        // { name: 'UED', desc: '辅助我门做辅助我门做辅助我门做辅助我门做辅助我门做辅助我门做', address: '上海市闵行区东川路kkk' }
-      ]
+      currentJobIdx: -1,
+      jobs
+    }
+  },
+  methods: {
+    clickJob (jobIdx) {
+      if (jobIdx === this.currentJobIdx) {
+        this.currentJobIdx = -1
+      } else {
+        this.currentJobIdx = jobIdx
+        setTimeout(() => {
+          let el = this.$refs.job[jobIdx]
+          let elSt = 0
+          while (el.offsetParent) {
+            elSt += el.offsetTop
+            el = el.offsetParent
+          }
+          this.scrollTo(elSt - 60)
+        }, 500)
+      }
+    },
+    scrollTo (st) {
+      let req = null
+      const stRender = () => {
+        let docST = document.body.scrollTop || document.documentElement.scrollTop
+        if (st < docST - 30) {
+          this.docTo(docST - 30)
+          req = window.requestAnimationFrame(stRender)
+        } else {
+          window.cancelAnimationFrame(req)
+        }
+      }
+      req = window.requestAnimationFrame(stRender)
+    },
+    docTo (st) {
+      document.body.scrollTop = document.documentElement.scrollTop = st
     }
   }
 }

@@ -35,7 +35,8 @@ const mutations = {
     state.isInitIns = true
   },
   SET_INS_LIST_MORE (state, items) {
-    state.insList = [...state.insList, ...items]
+    // 直接push 不要重新赋值
+    [].push.apply(state.insList, items)
   },
   SET_INS_STYLES (state, styleMap) {
     if (!state.insStyles.seted) {

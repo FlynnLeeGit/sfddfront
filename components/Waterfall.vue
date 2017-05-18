@@ -71,11 +71,9 @@ export default {
     },
     append (col) {
       if (this.itemIdx < this.list.length) {
-        console.log('load')
         col.push(this.list[this.itemIdx++])
       }
       if (this.itemIdx === this.list.length && this.list.length > 0) {
-        console.log('more')
         this.needmore().then(() => {
           this.appendDetect()
         })
@@ -106,7 +104,7 @@ export default {
   mounted () {
     window.addEventListener('scroll', () => {
       const scrollTop = document.documentElement.scrollTop || document.body.scrollTop
-      if (Math.abs(scrollTop - this.scrollTop) > 100) {
+      if (Math.abs(scrollTop - this.scrollTop) > 50) {
         this.scrollTop = scrollTop
         this.appendDetect()
       }

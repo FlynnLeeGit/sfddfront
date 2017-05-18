@@ -5,7 +5,7 @@
     <section class='inspiration__bd'
              container>
       <waterfall v-if='insList.length'
-                 :col-num='3'
+                 :col-num='4'
                  @click-item='clickImg'
                  :needmore='loadmore'
                  :list='insList'

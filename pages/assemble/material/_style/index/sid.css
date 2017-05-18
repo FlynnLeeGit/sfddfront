@@ -55,6 +55,10 @@
     line-height: 24px;
     margin-bottom: 28px;
   }
+  @e price {
+    float: right;
+    font-size: 0.8em;
+  }
   @e ul {
     font-size: 12px;
     line-height: 48px;

@@ -10,14 +10,18 @@
           <div @click='showDetail(m)'
                class="m-list__img"
                v-lazy.bg="imgFilter(m.img,'case600')"></div>
-          <p class="m-list__name">{{m.name}}</p>
+          <p class="m-list__name">
+            {{m.name}}
+          </p>
         </li>
       </ul>
     </div>
+
     <div class="content__ft">
       <pagination :total='assembleMaterials.length'
                   :num-items-per-page='numItemsPerPage'></pagination>
     </div>
+
     <modal ref='mModal'>
       <div class="modal"
            slot='content'
@@ -27,7 +31,12 @@
                v-lazy.bg="imgFilter(currentMaterial.img,'case600')"></div>
         </div>
         <div class="modal__right">
-          <h3 class="detail__name">{{currentMaterial.name}}</h3>
+          <h3 class="detail__name">
+            {{currentMaterial.name}}
+            <span class="detail__price">
+              {{currentMaterial.price}}元
+            </span>
+          </h3>
           <ul class="detail__ul">
             <li>产品描述</li>
           </ul>
@@ -37,6 +46,7 @@
         </div>
       </div>
     </modal>
+
   </div>
 </template>
 <style src='./sid.css' scoped></style>

@@ -20,7 +20,7 @@ module.exports = {
       {
         rel: 'stylesheet',
         type: 'text/css',
-        href: '//at.alicdn.com/t/font_fbd0i8sajj8dj9k9.css'
+        href: '//at.alicdn.com/t/font_zr1vv4p6yiizfr.css'
       }
     ]
   },
