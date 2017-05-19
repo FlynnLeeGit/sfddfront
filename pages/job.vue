@@ -11,7 +11,10 @@
       <section class="job__list _tc"
                container>
         <h1 class="Intro__title">职位列表</h1>
-        <p class="Intro__desc">以下职位长期招聘，欢迎简历投递至：</p>
+        <p class="Intro__desc">以下职位长期招聘，欢迎简历投递至：
+          <a class="job__mail"
+             href="mailto:michelle.li@sfdd.com">michelle.li@sfdd.com</a>
+        </p>
         <ul class="jobs">
           <li class="jobs__item -th">
             <div class="jobs__td">

@@ -3,6 +3,10 @@
   @e list {
     margin-top: 50px;
   }
+  @e mail {
+    font-size: 0.8em;
+    color: var(--color-primary);
+  }
 }
 
 @b jobs {
