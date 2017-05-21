@@ -15,7 +15,10 @@
           </li>
           <li class="header__link">
             <nuxt-link to="/assemble"
-                       event='noop'>成品整装 · 2017春季</nuxt-link>
+                       event='noop'
+                       @click.native="to('/assemble/intro/cn')">
+              成品整装 · 2017春季
+            </nuxt-link>
             <ul class="header__dropdown">
               <li class="header__dropdonw-item">
                 <nuxt-link to='/assemble/intro/cn'>新中式</nuxt-link>
@@ -39,7 +42,10 @@
           </li>
           <li class="header__link">
             <nuxt-link to="/about"
-                       event='noop'>关于我们</nuxt-link>
+                       event='noop'
+                       @click.native="to('/about/ideas/design')">
+              关于我们
+            </nuxt-link>
             <ul class="header__dropdown">
               <li class="header__dropdonw-item">
                 <nuxt-link to='/about/ideas/design'>中孚整装理念</nuxt-link>
@@ -77,6 +83,11 @@ export default {
     this.$root.$on('HeaderFixed', () => {
       this.notFixed = false
     })
+  },
+  methods: {
+    to (url) {
+      this.$router.push(url)
+    }
   }
 }
 </script>

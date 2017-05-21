@@ -71,10 +71,15 @@
 
     <section class="beauty"
              grid='2,middle'>
-      <img v-lazy.animate="['blurIn']"
-           col
-           src="~assets/img/index/beauty.png"
-           alt="beauty-bg.png">
+      <picture col>
+        <source type="image/webp"
+                srcset='~assets/img/index/webp/beauty.webp'>
+        <img v-lazy.animate="['blurIn']"
+             width="100%"
+             src="~assets/img/index/beauty.png"
+             alt="beauty-bg.png">
+      </picture>
+
       <div col
            class='beauty__desc'>
         <h1 v-lazy.animate="['slideInUp','fade']">美感 · 低价 · 高质</h1>
