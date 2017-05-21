@@ -1,9 +1,13 @@
 <template>
   <div>
     <section class="ResponsiveBlock top">
-      <img class="ResponsiveBlock__img"
-           src="~assets/img/ideas/quality/top.jpg"
-           alt="quality-top">
+      <picture>
+        <source type="image/webp"
+                srcset='~assets/img/ideas/quality/webp/top.webp'>
+        <img class="ResponsiveBlock__img"
+             src="~assets/img/ideas/quality/top.jpg"
+             alt="quality-top">
+      </picture>
       <div class="ResponsiveBlock__content">
         <div class='top__content _tc'>
           <p>我们知道客户对于质量的高度关注与自身责任之重大，质量优先的理念扎根在我们每个工作人员心中，
@@ -23,7 +27,8 @@
         <br> 同时放线于现场，清晰的标示材质、尺寸，能提早暴露现场问题，
         <br> 高效协调我们与各材料商、分包商之间的工作范围，确保施工一气呵成。
       </p>
-      <v-video class="line__video" src='//video.baogaoyezhu.com/video/sfdd/2.mp4' />
+      <v-video class="line__video"
+               src='//video.baogaoyezhu.com/video/sfdd/2.mp4' />
     </section>
 
     <section class="high-precision _tc"
@@ -34,7 +39,8 @@
         <br> 尺寸详细标注、立面完整表达、材质标识清晰，收口与大样与剖面一张不漏，
         <br> 这些用心不仅为我们效率大幅提升，更为您家的效果落地保驾护航。
       </p>
-      <v-video class="high-precision__video" src='//video.baogaoyezhu.com/video/sfdd/3.mp4' />
+      <v-video class="high-precision__video"
+               src='//video.baogaoyezhu.com/video/sfdd/3.mp4' />
     </section>
 
     <section class="tri-check _tc">
@@ -43,9 +49,13 @@
         <br> 独创了品控的三检制度，施工员自检、项目经理自检、质检员全检，三检完成后提报验收，
         <br> 每次验收时均用仪器采集数据，用数据判定合规标准。
       </p>
-      <img class="tri-check__img"
-           src="~assets/img/ideas/quality/tri_check.png"
-           alt="tri-check">
+      <picture>
+        <source type="image/webp"
+                srcset='~assets/img/ideas/quality/webp/tri_check.webp'>
+        <img class="tri-check__img"
+             src="~assets/img/ideas/quality/tri_check.png"
+             alt="tri-check">
+      </picture>
     </section>
 
     <section class="team _tc">
@@ -55,8 +65,12 @@
         <br> 下载中孚空间常见质量通病预防。
       </p>
       <div class="team__img-wrap">
-        <img src="~assets/img/ideas/quality/team.png"
-             alt="team">
+        <picture>
+          <source type="image/webp"
+                  srcset='~assets/img/ideas/quality/webp/team.webp'>
+          <img src="~assets/img/ideas/quality/team.png"
+               alt="team">
+        </picture>
       </div>
     </section>
 

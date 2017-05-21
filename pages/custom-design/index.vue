@@ -50,17 +50,17 @@
            alt="flow2">
     </section>
 
-    <frag-market-know-previous />
+    <frag-know-previous />
   </div>
 </template>
 
 <style scoped src='./index.css'></style>
 
 <script>
-import fragMarketKnowPrevious from '~components/frag/market-know-previous'
+import fragKnowPrevious from '~components/frag/know-previous'
 export default {
   components: {
-    fragMarketKnowPrevious
+    fragKnowPrevious
   }
 }
 </script>

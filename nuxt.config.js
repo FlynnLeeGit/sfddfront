@@ -22,8 +22,7 @@ module.exports = {
         type: 'text/css',
         href: '//at.alicdn.com/t/font_zr1vv4p6yiizfr.css'
       }
-    ],
-    script: [{ src: '/modernizr-custom.js' }]
+    ]
   },
   /*
    ** Global CSS

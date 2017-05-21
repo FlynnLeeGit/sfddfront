@@ -1,9 +1,13 @@
 <template>
   <div class="loan">
     <section class="ResponsiveBlock">
-      <img class="ResponsiveBlock__img"
-           src="~assets/img/services/loan/top.jpg"
-           alt="loan-top">
+      <picture>
+        <source type="image/webp"
+                srcset='~assets/img/services/loan/webp/top.webp'>
+        <img class="ResponsiveBlock__img"
+             src="~assets/img/services/loan/top.jpg"
+             alt="loan-top">
+      </picture>
       <div class="ResponsiveBlock__content">
         <div class="top"
              grid='middle'>

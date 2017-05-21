@@ -19,15 +19,23 @@
         <br>不论是占地许多的南北货，还是难得一用的旅行箱，
         <br>我们都在细节中予以规划考虑。
       </p>
-      <img class="space__img"
-           src="~assets/img/ideas/design/space.jpg"
-           alt="space">
+      <picture>
+        <source type="image/webp"
+                srcset='~assets/img/ideas/design/webp/space.webp'>
+        <img class="space__img"
+             src="~assets/img/ideas/design/space.jpg"
+             alt="space">
+      </picture>
     </section>
 
     <section class="ResponsiveBlock">
-      <img class="ResponsiveBlock__img"
-           src="~assets/img/ideas/design/taste.jpg"
-           alt="taste">
+      <picture>
+        <source type="image/webp"
+                srcset='~assets/img/ideas/design/webp/taste.webp'>
+        <img class="ResponsiveBlock__img"
+             src="~assets/img/ideas/design/taste.jpg"
+             alt="taste">
+      </picture>
       <div class="ResponsiveBlock__content">
         <div class="taste _tc"
              container>
@@ -47,15 +55,23 @@
         <br> 从床边USB充电插座，到客厅的电视预埋管，从卫生间的浴霸，到厨房的凉霸，
         <br> 我们全力以赴，只为您入住后的一个点赞。
       </p>
-      <img class='detail__img'
-           src="~assets/img/ideas/design/detail.jpg"
-           alt="detail">
+      <picture>
+        <source type="image/webp"
+                srcset='~assets/img/ideas/design/webp/detail.webp'>
+        <img class='detail__img'
+             src="~assets/img/ideas/design/detail.jpg"
+             alt="detail">
+      </picture>
     </section>
 
     <section class="ResponsiveBlock">
-      <img class="ResponsiveBlock__img"
-           src="~assets/img/ideas/design/light.jpg"
-           alt="light">
+      <picture>
+        <source type="image/webp"
+                srcset='~assets/img/ideas/design/webp/light.webp'>
+        <img class="ResponsiveBlock__img"
+             src="~assets/img/ideas/design/light.jpg"
+             alt="light">
+      </picture>
       <div class="ResponsiveBlock__content">
         <div class="light _tc"
              container>
@@ -77,9 +93,13 @@
         <br> 每个系列中，我们制作了三款产品，近似的格调，严选的精品，确保低价。
         <br>
       </p>
-      <img class='budget__img'
-           src="~assets/img/ideas/design/budget.jpg"
-           alt="budget">
+      <picture>
+        <source type="image/webp"
+                srcset='~assets/img/ideas/design/webp/budget.webp'>
+        <img class='budget__img'
+             src="~assets/img/ideas/design/budget.jpg"
+             alt="budget">
+      </picture>
     </section>
 
   </div>

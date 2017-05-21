@@ -3,16 +3,16 @@
     <tab-header title='中孚整装理念'
                 :tabs="tabs" />
     <nuxt-child />
-    <frag-market-contained></frag-market-contained>
+    <frag-count-down />
   </div>
 </template>
 <script>
 import TabHeader from '~components/TabHeader'
-import fragMarketContained from '~components/frag/market-contained'
+import fragCountDown from '~components/frag/count-down'
 export default {
   components: {
     TabHeader,
-    fragMarketContained
+    fragCountDown
   },
   data () {
     return {

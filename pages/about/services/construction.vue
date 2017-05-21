@@ -1,9 +1,13 @@
 <template>
   <div class="contruction">
     <section class="ResponsiveBlock">
-      <img class="ResponsiveBlock__img"
-           src="~assets/img/services/contruction/key.jpg"
-           alt="key">
+      <picture>
+        <source type="image/webp"
+                srcset='~assets/img/services/contruction/webp/key.webp'>
+        <img class="ResponsiveBlock__img"
+             src="~assets/img/services/contruction/key.jpg"
+             alt="key">
+      </picture>
       <div class="ResponsiveBlock__content">
         <div class="key"
              container>

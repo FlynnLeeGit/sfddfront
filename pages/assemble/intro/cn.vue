@@ -1,9 +1,13 @@
 <template>
   <div>
     <section class="ResponsiveBlock">
-      <img v-lazy.animate="['blurIn']"
-           src="~assets/img/assemble/cn/top.jpg"
-           class="ResponsiveBlock__img" />
+      <picture>
+        <source type="image/webp"
+                srcset='~assets/img/assemble/cn/webp/top.webp'>
+        <img v-lazy.animate="['blurIn']"
+             src="~assets/img/assemble/cn/top.jpg"
+             class="ResponsiveBlock__img" />
+      </picture>
     </section>
 
     <section class="assemble-main"
@@ -17,9 +21,13 @@
     </section>
 
     <section class="ResponsiveBlock">
-      <img v-lazy.animate="['blurIn']"
-           src="~assets/img/assemble/cn/sub.jpg"
-           class="ResponsiveBlock__img" />
+      <picture>
+        <source type="image/webp"
+                srcset='~assets/img/assemble/cn/webp/sub.webp'>
+        <img v-lazy.animate="['blurIn']"
+             src="~assets/img/assemble/cn/sub.jpg"
+             class="ResponsiveBlock__img" />
+      </picture>
       <div class="ResponsiveBlock__content">
         <div class="assemble-sub"
              container>
@@ -40,10 +48,15 @@
 
     <section class="assemble-space -right -first hall"
              grid>
-      <img v-lazy.animate="['fade','slideInLeft']"
-           src="~assets/img/assemble/cn/hall.jpg"
-           class="assemble-space__img"
-           alt="cn_hall" />
+      <picture class="assemble-space__img">
+        <source type="image/webp"
+                srcset='~assets/img/assemble/cn/webp/hall.webp'>
+        <img v-lazy.animate="['fade','slideInLeft']"
+             src="~assets/img/assemble/cn/hall.jpg"
+             width="100%"
+             alt="cn_hall" />
+      </picture>
+
       <div class="assemble-space__intro">
         <div class="assemble-space__intro-content">
           <h2 class="assemble-space__title"
@@ -69,10 +82,14 @@
           </p>
         </div>
       </div>
-      <img v-lazy.animate="['fade','slideInRight']"
-           src="~assets/img/assemble/cn/dining-room.jpg"
-           class="assemble-space__img"
-           alt="cn-dining" />
+      <picture class="assemble-space__img">
+        <source type="image/webp"
+                srcset='~assets/img/assemble/cn/webp/dining-room.webp'>
+        <img v-lazy.animate="['fade','slideInRight']"
+             src="~assets/img/assemble/cn/dining-room.jpg"
+             width="100%"
+             alt="cn-dining" />
+      </picture>
     </section>
 
     <!--卧室-->
@@ -95,8 +112,12 @@
     </section>
 
     <section class="ResponsiveBlock">
-      <img src="~assets/img/assemble/cn/ft.jpg"
-           class="ResponsiveBlock__img" />
+      <picture>
+        <source type="image/webp"
+                srcset='~assets/img/assemble/cn/webp/ft.webp'>
+        <img src="~assets/img/assemble/cn/ft.jpg"
+             class="ResponsiveBlock__img" />
+      </picture>
       <div class="ResponsiveBlock__content">
         <div class="assemble-ft"
              container>

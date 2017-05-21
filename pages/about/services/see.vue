@@ -1,9 +1,13 @@
 <template>
   <div class="see">
     <section class="ResponsiveBlock">
-      <img class="ResponsiveBlock__img"
-           src="~assets/img/services/see/preview.jpg"
-           alt="see-preview">
+      <picture>
+        <source type="image/webp"
+                srcset='~assets/img/services/see/webp/preview.webp'>
+        <img class="ResponsiveBlock__img"
+             src="~assets/img/services/see/preview.jpg"
+             alt="see-preview">
+      </picture>
     </section>
 
     <section class="scene"

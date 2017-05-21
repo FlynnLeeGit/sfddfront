@@ -23,22 +23,26 @@
         <label class="Radio">
           <input type="radio"
                  :value='1'
-                 v-model='currentStyle'><i></i> 新中式风格
+                 v-model='currentStyle'>
+          <i></i> 新中式风格
         </label>
         <label class="Radio">
           <input type="radio"
                  :value='2'
-                 v-model='currentStyle'><i></i> 美式风格
+                 v-model='currentStyle'>
+          <i></i> 美式风格
         </label>
         <label class="Radio">
           <input type="radio"
                  :value='3'
-                 v-model='currentStyle'><i></i> 现代简约
+                 v-model='currentStyle'>
+          <i></i> 现代简约
         </label>
         <label class="Radio">
           <input type="radio"
                  :value='4'
-                 v-model='currentStyle'><i></i> 新古典
+                 v-model='currentStyle'>
+          <i></i> 新古典
         </label>
 
       </div>
@@ -87,12 +91,14 @@
           <label class="Radio">
             <input type="radio"
                    v-model='currentLayout'
-                   :value='1'><i></i> 两房
+                   :value='1'>
+            <i></i> 两房
           </label>
           <label class="Radio">
             <input type="radio"
                    v-model='currentLayout'
-                   :value='2'><i></i> 三房
+                   :value='2'>
+            <i></i> 三房
           </label>
         </div>
         <ul class="layout__list"
@@ -139,21 +145,19 @@
 
     </section>
 
-    <market title='了解中孚空间整体装修预案'
-            to='/customDesign/vrlist'
-            name="plan" />
+    <frag-plan />
   </div>
 </template>
 
 <style scoped src='./dragon.css'></style>
 
 <script>
-import Market from '~components/Market'
 import vVideo from '~components/Video'
 import fragPayFlow from '~components/frag/payFlow'
+import fragPlan from '~components/frag/plan'
 export default {
   components: {
-    Market,
+    fragPlan,
     vVideo,
     fragPayFlow
   },

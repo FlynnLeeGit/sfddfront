@@ -2,18 +2,29 @@
   <div>
     <section class="logos"
              container>
-      <h1 v-lazy.animate="['fade']">精选国内外一线品牌<br />采用集采预定的方式对供应商下单</h1>
-      <h4 v-lazy.animate="['slideInUp']">材料的挑选是工程质量的基础，我们拥有强大的供应链和严格的供应链考评机制，精选符合设计的国内外一线品牌，<br>从质量稳定、环保、价格、配送及时、安装合规、产能稳定这七个维度，以季度为单位进行评测，<br>采用集采预定的方式对供应商下单，确保我们的采购成本优势能体现自在整装预案之内。</h4>
-      <img src="~assets/img/ideas/material/logos.jpg"
-           class="logos__img"
-           alt="材料供应商">
+      <h1 v-lazy.animate="['fade']">精选国内外一线品牌
+        <br />采用集采预定的方式对供应商下单</h1>
+      <h4 v-lazy.animate="['slideInUp']">材料的挑选是工程质量的基础，我们拥有强大的供应链和严格的供应链考评机制，精选符合设计的国内外一线品牌，
+        <br>从质量稳定、环保、价格、配送及时、安装合规、产能稳定这七个维度，以季度为单位进行评测，
+        <br>采用集采预定的方式对供应商下单，确保我们的采购成本优势能体现自在整装预案之内。</h4>
+      <picture>
+        <source type="image/webp"
+                srcset='~assets/img/ideas/material/webp/logos.webp'>
+        <img src="~assets/img/ideas/material/logos.jpg"
+             class="logos__img"
+             alt="材料供应商">
+      </picture>
     </section>
 
     <section class="ResponsiveBlock">
-      <img v-lazy.animate="['blurIn']"
-           class="ResponsiveBlock__img"
-           src="~assets/img/ideas/material/forest.jpg"
-           alt="forest">
+      <picture>
+        <source type="image/webp"
+                srcset='~assets/img/ideas/material/webp/forest.webp'>
+        <img v-lazy.animate="['blurIn']"
+             class="ResponsiveBlock__img"
+             src="~assets/img/ideas/material/forest.jpg"
+             alt="forest">
+      </picture>
       <div class="ResponsiveBlock__content">
         <div v-lazy.animate="['fade']"
              container
@@ -30,10 +41,14 @@
     </section>
 
     <section class="ResponsiveBlock">
-      <img v-lazy.animate="['blurIn']"
-           class="ResponsiveBlock__img"
-           src="~assets/img/ideas/material/paint.jpg"
-           alt="paint">
+      <picture>
+        <source type="image/webp"
+                srcset='~assets/img/ideas/material/webp/paint.webp'>
+        <img v-lazy.animate="['blurIn']"
+             class="ResponsiveBlock__img"
+             src="~assets/img/ideas/material/paint.jpg"
+             alt="paint">
+      </picture>
       <div class="ResponsiveBlock__content">
         <div v-lazy.animate="['fade']"
              class="m-content -paint">
@@ -48,10 +63,14 @@
     </section>
 
     <section class="ResponsiveBlock">
-      <img v-lazy.animate="['blurIn']"
-           class="ResponsiveBlock__img"
-           src="~assets/img/ideas/material/woodwork.jpg"
-           alt="woodwork">
+      <picture>
+        <source type="image/webp"
+                srcset='~assets/img/ideas/material/webp/woodwork.webp'>
+        <img v-lazy.animate="['blurIn']"
+             class="ResponsiveBlock__img"
+             src="~assets/img/ideas/material/woodwork.jpg"
+             alt="woodwork">
+      </picture>
       <div class="ResponsiveBlock__content">
         <div v-lazy.animate="['fade']"
              class="m-content -woodwork">
@@ -65,10 +84,14 @@
     </section>
 
     <section class="ResponsiveBlock">
-      <img v-lazy.animate="['blurIn']"
-           class="ResponsiveBlock__img"
-           src="~assets/img/ideas/material/bath.jpg"
-           alt="bath">
+      <picture>
+        <source type="image/webp"
+                srcset='~assets/img/ideas/material/webp/bath.webp'>
+        <img v-lazy.animate="['blurIn']"
+             class="ResponsiveBlock__img"
+             src="~assets/img/ideas/material/bath.jpg"
+             alt="bath">
+      </picture>
       <div class="ResponsiveBlock__content">
         <div v-lazy.animate="['fade']"
              class="m-content -bath">
@@ -83,10 +106,14 @@
     </section>
 
     <section class="ResponsiveBlock">
-      <img v-lazy.animate="['blurIn']"
-           class="ResponsiveBlock__img"
-           src="~assets/img/ideas/material/floor.jpg"
-           alt="floor">
+      <picture>
+        <source type="image/webp"
+                srcset='~assets/img/ideas/material/webp/floor.webp'>
+        <img v-lazy.animate="['blurIn']"
+             class="ResponsiveBlock__img"
+             src="~assets/img/ideas/material/floor.jpg"
+             alt="floor">
+      </picture>
       <div class="ResponsiveBlock__content">
         <div v-lazy.animate="['fade']"
              class="m-content -floor">
@@ -101,10 +128,14 @@
     </section>
 
     <section class="ResponsiveBlock">
-      <img v-lazy.animate="['blurIn']"
-           class="ResponsiveBlock__img"
-           src="~assets/img/ideas/material/tile.jpg"
-           alt="tile">
+      <picture>
+        <source type="image/webp"
+                srcset='~assets/img/ideas/material/webp/tile.webp'>
+        <img v-lazy.animate="['blurIn']"
+             class="ResponsiveBlock__img"
+             src="~assets/img/ideas/material/tile.jpg"
+             alt="tile">
+      </picture>
       <div class="ResponsiveBlock__content">
         <div v-lazy.animate="['fade']"
              class="m-content -tile">
