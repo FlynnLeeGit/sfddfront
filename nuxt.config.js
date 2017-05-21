@@ -22,7 +22,8 @@ module.exports = {
         type: 'text/css',
         href: '//at.alicdn.com/t/font_zr1vv4p6yiizfr.css'
       }
-    ]
+    ],
+    script: [{ src: '/modernizr-custom.js' }]
   },
   /*
    ** Global CSS
@@ -35,8 +36,6 @@ module.exports = {
   },
   plugins: [
     { src: '~plugins/vue-lazy', ssr: false }
-    // { src: '~plugins/globalMixins', ssr: false }
-    // { src: '~plugins/filters' }
   ],
   router: {
     base: '/',
@@ -57,7 +56,7 @@ module.exports = {
     vendor: ['axios', 'lru-cache'],
     loaders: [
       {
-        test: /\.(png|jpe?g|gif|svg|mp4)$/,
+        test: /\.(png|jpe?g|gif|svg|mp4|webp)$/,
         loader: 'url-loader',
         query: {
           limit: 10000, // upto10K
@@ -72,6 +71,16 @@ module.exports = {
           name: 'fonts/[name].[hash:7].[ext]'
         }
       }
-    ]
+    ],
+    extend (config) {
+      // vue options here https://vue-loader.vuejs.org/zh-cn/options.html
+      const vueOptions = config.module.rules[0].query
+      vueOptions.transformToRequire = {
+        img: 'src',
+        image: 'xlink:href',
+        // to transform src attrs to require
+        source: 'srcset'
+      }
+    }
   }
 }

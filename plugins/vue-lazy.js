@@ -31,7 +31,7 @@ class LoadEl {
 
     if (this.isAnimate) {
       this.el.style.visibility = 'hidden'
-      this.judge = 0.8
+      this.judge = 0.9
     }
 
     this.loaded = false
@@ -39,7 +39,7 @@ class LoadEl {
     this.handler = () => {
       throttle(() => {
         this.update()
-      }, 500)
+      }, 100)
     }
   }
   canLoad () {

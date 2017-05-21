@@ -2,16 +2,21 @@
   <div>
     <!--banner 轮播图-->
     <section class='banner'>
-      <img v-lazy.animate="['blurIn']"
-           class="banner__placeholder"
-           src="~assets/img/index/banner.png"
-           alt="banner-img">
+      <picture>
+        <source type='image/webp'
+                srcset='~assets/img/index/webp/banner.webp'>
+        <img v-lazy.animate="['blurIn']"
+             class="banner__placeholder"
+             src='~assets/img/index/banner.jpg'
+             alt="banner-img" />
+      </picture>
       <ul class="banner__slide">
         <li class="banner__slide-item"
             grid='middle,center,1'>
           <div col>
             <h1 v-lazy.animate="['fade']">2017春季 · 成品整装方案</h1>
-            <h3 v-lazy.animate="['fade']">走心设计，最美表达，预案式整装方案，设计、硬装、软装、设备一体化 <br />低至 ¥1399/m² 起</h3>
+            <h3 v-lazy.animate="['fade']">走心设计，最美表达，预案式整装方案，设计、硬装、软装、设备一体化
+              <br />低至 ¥1399/m² 起</h3>
             <nuxt-link to='/detail'
                        class='Btn -white'>查看详情</nuxt-link>
           </div>
@@ -23,7 +28,9 @@
     <section class="feature"
              container>
       <h1 v-lazy.animate="['slideInUp','fade']">中孚空间 · 预案式成品整装</h1>
-      <h3 v-lazy.animate="['slideInUp','fade']">已为您规划好完整的设计预案，从硬装到软装的造价清单，从制图到全景展示，预案中一应俱全。<br>帮你把关选材搭配，预算控制，氛围意境。选择我们的当季预案，<br>来匹配您的房型，设计费仅以2折收取</h3>
+      <h3 v-lazy.animate="['slideInUp','fade']">已为您规划好完整的设计预案，从硬装到软装的造价清单，从制图到全景展示，预案中一应俱全。
+        <br>帮你把关选材搭配，预算控制，氛围意境。选择我们的当季预案，
+        <br>来匹配您的房型，设计费仅以2折收取</h3>
     </section>
 
     <section class="video"
@@ -79,10 +86,14 @@
 
     <section class="standard -design"
              container>
-      <img v-lazy.animate="['slideInDown','fade']"
-           class='standard__img'
-           src="~assets/img/index/house.png"
-           alt="design standard">
+      <picture>
+        <source type='image/webp'
+                srcset='~assets/img/index/webp/house.webp'>
+        <img v-lazy.animate="['slideInDown','fade']"
+             class='standard__img'
+             src="~assets/img/index/house.png"
+             alt="design standard">
+      </picture>
       <img v-lazy.animate="['scale']"
            class='standard__number'
            src="~assets/img/index/01.png"
@@ -102,10 +113,14 @@
 
     <section class="standard -quality"
              container>
-      <img v-lazy.animate="['fade']"
-           class="standard__img"
-           src="~assets/img/index/mac.png"
-           alt="mac">
+      <picture>
+        <source type="image/webp"
+                srcset='~assets/img/index/webp/mac.webp'>
+        <img v-lazy.animate="['fade']"
+             class="standard__img"
+             src="~assets/img/index/mac.png"
+             alt="mac">
+      </picture>
       <img v-lazy.animate="['scale']"
            class="standard__number"
            src="~assets/img/index/02.png"
@@ -125,10 +140,14 @@
 
     <section class="standard -material"
              container>
-      <img class="standard__img"
-           v-lazy.animate="['fade']"
-           src="~assets/img/index/wood.png"
-           alt="wood">
+      <picture>
+        <source type='image/webp'
+                srcset='~assets/img/index/webp/wood.webp'>
+        <img class="standard__img"
+             v-lazy.animate="['fade']"
+             src="~assets/img/index/wood.png"
+             alt="wood">
+      </picture>
       <img class="standard__number"
            v-lazy.animate="['scale']"
            src="~assets/img/index/03.png"
@@ -170,20 +189,20 @@
       </div>
     </section>
 
-    <frag-market-contained></frag-market-contained>
+    <frag-count-down />
 
   </div>
 </template>
 
 <script>
-import fragMarketContained from '~components/frag/market-contained'
+import fragCountDown from '~components/frag/count-down'
 import vVideo from '~components/Video'
 
 const TIME = [2.5, 10, 14.2, 20, 22]
 
 export default {
   components: {
-    fragMarketContained,
+    fragCountDown,
     vVideo
   },
   data () {
