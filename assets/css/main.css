@@ -840,7 +840,6 @@ a {
 }
 
 .z-hover-1, .z-hover-2, .z-hover-3 {
-  -webkit-transition: box-shadow .5s;
   transition: box-shadow .5s;
   cursor: pointer;
 }
@@ -848,7 +847,6 @@ a {
 /*页面过渡*/
 
 .page-leave-active, .page-enter-active {
-  -webkit-transition: opacity .1s;
   transition: opacity .1s;
 }
 
@@ -857,7 +855,6 @@ a {
 }
 
 .fade-enter-active, .fade-leave-active {
-  -webkit-transition: opacity .3s;
   transition: opacity .3s;
   will-change: opacity;
 }
@@ -867,7 +864,6 @@ a {
 }
 
 .modal-enter-active, .modal-leave-active {
-  -webkit-transition: all .5s;
   transition: all .5s;
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0) scaleX(1);
@@ -887,7 +883,6 @@ a {
 }
 
 .slide-top-enter-active {
-  -webkit-transition: all .3s;
   transition: all .3s;
 }
 
@@ -991,7 +986,6 @@ a {
       -ms-flex-pack: center;
           justify-content: center;
   padding: .8em 2em;
-  -webkit-transition: all .3s;
   transition: all .3s
 }
 
@@ -1029,7 +1023,6 @@ a {
 .Link {
   color: #fff;
   opacity: 0.5;
-  -webkit-transition: all .3s;
   transition: all .3s
 }
 
@@ -1065,7 +1058,6 @@ a {
     vertical-align: text-top;
     position: relative;
     border: 2px solid #e2e2e2;
-    -webkit-transition: all .3s;
     transition: all .3s
   }
   i:after {
@@ -1080,7 +1072,6 @@ a {
     border-right: 0;
     -webkit-transform: rotate(-45deg) scale(0);
             transform: rotate(-45deg) scale(0);
-    -webkit-transition: -webkit-transform .3s;
     transition: -webkit-transform .3s;
     transition: transform .3s;
     transition: transform .3s, -webkit-transform .3s;

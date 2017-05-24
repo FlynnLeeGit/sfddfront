@@ -6,6 +6,14 @@ export const hozzyImgFilter = (fname, suffix) => {
   return `${HOZZY_SERVER}/${fname}_${suffix}`
 }
 
+export const hozzyImageViewFilter = (fname, opts) => {
+  const viewOptArr = []
+  Object.keys(opts).forEach(key => {
+    viewOptArr.push(`${key}/${opts[key]}`)
+  })
+  return `${HOZZY_SERVER}/${fname}?imageView2/2/${viewOptArr.join('/')}`
+}
+
 export const imgFilter = (fname, suffix = '') => {
   return `${IMG_SERVER}/${fname}${suffix && '_' + suffix}`
 }

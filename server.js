@@ -1,5 +1,4 @@
 const Nuxt = require('nuxt')
-
 const express = require('express')
 const app = express()
 

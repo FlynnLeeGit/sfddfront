@@ -32,16 +32,5 @@ module.exports = {
         }
       }
     }
-  },
-  // 需要动态vueRender的路由
-  dynamicRoutes: [
-    '/assemble/vr/:style',
-    '/assemble/material/:style',
-    '/assemble/material/:style/:sid',
-    '/article/:id',
-    '/custom-design/vrlist',
-    '/custom-design/insperation',
-    '/return-visit',
-    '/view-point'
-  ]
+  }
 }
