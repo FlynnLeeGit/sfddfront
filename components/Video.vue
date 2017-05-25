@@ -3,7 +3,8 @@
        @click='toggleVideoPlay()'>
     <div class="Video__placeholder"
          :active='isPlaying'></div>
-    <video ref='videoEl'
+    <video playsinline
+           ref='videoEl'
            class="Video__el"
            :src="src">
     </video>
