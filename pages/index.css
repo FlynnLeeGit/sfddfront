@@ -2,6 +2,7 @@
 @b banner {
   position: relative;
   min-width: 1200px;
+  min-height: 400px;
   @e placeholder {
     width: 100%;
   }

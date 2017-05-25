@@ -74,8 +74,7 @@
       <picture col>
         <source type="image/webp"
                 srcset='~assets/img/index/webp/beauty.webp'>
-        <img v-lazy.animate="['blurIn']"
-             width="100%"
+        <img width="100%"
              src="~assets/img/index/beauty.png"
              alt="beauty-bg.png">
       </picture>

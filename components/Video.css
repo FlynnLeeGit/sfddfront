@@ -2,9 +2,12 @@
 @b Video {
   position: relative;
   cursor: pointer;
+  background-color: rgba(0, 0, 0, 1);
   @e placeholder {
+    z-index: 2;
     @mixin overlay;
     transition: all .3s;
+    background-color: rgba(0, 0, 0, 0.3);
     &[active] {
       opacity: 0;
     }

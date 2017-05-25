@@ -1081,6 +1081,7 @@ a {
 @b ResponsiveBlock {
   position: relative;
   min-width: 1200px;
+  min-height: 400px;
   @e img {
     width: 100%;
     vertical-align: top;
