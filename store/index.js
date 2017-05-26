@@ -4,6 +4,8 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
+import { REQ_HOST } from '../config'
+
 import ui from './ui'
 import inspiration from './inspiration'
 import article from './article'
@@ -18,7 +20,11 @@ const store = new Vuex.Store({
       state.ajaxErrors.push(e)
     }
   },
-  actions: {},
+  actions: {
+    nuxtServerInit ({ commit }, { req }) {
+      process.env.REQ_HOST = `${req.protocol}://${req.host}`
+    }
+  },
   modules: {
     ui,
     inspiration,
