@@ -17,7 +17,7 @@
             <h1 v-lazy.animate="['fade']">2017春季 · 成品整装方案</h1>
             <h3 v-lazy.animate="['fade']">走心设计，最美表达，预案式整装方案，设计、硬装、软装、设备一体化
               <br />低至 ¥1399/m² 起</h3>
-            <nuxt-link to='/detail'
+            <nuxt-link to='/assemble/intro/cn'
                        class='Btn -white'>查看详情</nuxt-link>
           </div>
         </li>

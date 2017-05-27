@@ -34,14 +34,12 @@
           </li>
         </ul>
         <ul class="footer__list">
-          <li class="footer__list-title">关注</li>
-          <li class='footer__item'>
-            <a class='Link'
-               href='javascript:;'>官方微博</a>
-          </li>
-          <li class='footer__item'>
-            <a class='Link'
-               href='javascript:;'>官方微信</a>
+          <li class="footer__list-title">关注公众号</li>
+          <li class="footer__qr">
+            <img src="~assets/img/qr.jpg"
+                 width="100px"
+                 alt="qr">
+
           </li>
         </ul>
         <ul class="footer__list">
@@ -57,12 +55,12 @@
         <a class="Link"
            href='//www.miitbeian.gov.cn'
            target="_blank">
-                      沪ICP备12039245号
-                    </a>
+          沪ICP备12039245号
+        </a>
         <span>／</span>
-        <a class="Link"
-           href='/any'
-           target='_blank'>站长统计</a>
+        <!--<a class="Link"
+             href='/any'
+             target='_blank'>站长统计</a>-->
       </section>
     </div>
 
