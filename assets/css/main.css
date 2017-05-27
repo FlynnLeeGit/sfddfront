@@ -438,8 +438,7 @@ a {
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
   -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-  visibility: visible !important
+          animation-fill-mode: both
 }
 
 .animated.delay200 {
@@ -463,101 +462,51 @@ a {
 }
 
 .animated.slideInUp {
-  -webkit-animation-name: slideInUp;
-          animation-name: slideInUp;
-}
-
-.animated.slideInUp.fade {
   -webkit-animation-name: slideInUp, fade;
           animation-name: slideInUp, fade;
 }
 
 .animated.slideInDown {
-  -webkit-animation-name: slideInDown;
-          animation-name: slideInDown;
-}
-
-.animated.slideInDown.fade {
   -webkit-animation-name: slideInDown, fade;
           animation-name: slideInDown, fade;
 }
 
 .animated.slideInLeft {
-  -webkit-animation-name: slideInLeft;
-          animation-name: slideInLeft;
-}
-
-.animated.slideInLeft.fade {
   -webkit-animation-name: slideInLeft, fade;
           animation-name: slideInLeft, fade;
 }
 
 .animated.slideInRight {
-  -webkit-animation-name: slideInRight;
-          animation-name: slideInRight;
-}
-
-.animated.slideInRight.fade {
   -webkit-animation-name: slideInRight, fade;
           animation-name: slideInRight, fade;
 }
 
 .animated.scale {
-  -webkit-animation-name: scale;
-          animation-name: scale;
-}
-
-.animated.scale.fade {
   -webkit-animation-name: scale, fade;
           animation-name: scale, fade;
 }
 
 .animated.scaleX {
-  -webkit-animation-name: scaleX;
-          animation-name: scaleX;
-}
-
-.animated.scaleX.fade {
   -webkit-animation-name: scaleX, fade;
           animation-name: scaleX, fade;
 }
 
 .animated.scaleXRight {
-  -webkit-animation-name: scaleXRight;
-          animation-name: scaleXRight;
-}
-
-.animated.scaleXRight.fade {
   -webkit-animation-name: scaleXRight, fade;
           animation-name: scaleXRight, fade;
 }
 
 .animated.scaleToRight {
-  -webkit-animation-name: scaleToRight;
-          animation-name: scaleToRight;
-}
-
-.animated.scaleToRight.fade {
   -webkit-animation-name: scaleToRight, fade;
           animation-name: scaleToRight, fade;
 }
 
 .animated.scaleToLeft {
-  -webkit-animation-name: scaleToLeft;
-          animation-name: scaleToLeft;
-}
-
-.animated.scaleToLeft.fade {
   -webkit-animation-name: scaleToLeft, fade;
           animation-name: scaleToLeft, fade;
 }
 
 .animated.blurIn {
-  -webkit-animation-name: blurIn;
-          animation-name: blurIn;
-}
-
-.animated.blurIn.fade {
   -webkit-animation-name: blurIn, fade;
           animation-name: blurIn, fade;
 }

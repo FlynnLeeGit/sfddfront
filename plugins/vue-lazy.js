@@ -30,7 +30,7 @@ class LoadEl {
     this.judge = 1
 
     if (this.isAnimate) {
-      this.el.style.visibility = 'hidden'
+      this.el.style.opacity = '0'
       this.judge = 0.9
     }
 

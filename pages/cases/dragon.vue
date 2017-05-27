@@ -68,7 +68,7 @@
                      :key='k'
                      tag='li'
                      :to='item.to'
-                     v-lazy.animate="['slideInUp','fade','delay'+k*200]"
+                     v-lazy.animate="['slideInUp' ,'delay'+k*200]"
                      class="budget__item">
             <div class="budget__icon-wrap"
                  grid='middle'>

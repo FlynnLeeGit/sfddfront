@@ -1,7 +1,6 @@
 .animated {
   animation-duration: 1s;
   animation-fill-mode: both;
-  visibility: visible !important;
   @each $d in (200, 400, 600, 800) {
     &.delay$(d) {
       animation-delay: $(d)ms;
@@ -9,10 +8,7 @@
   }
   @each $name in (slideInUp, slideInDown, slideInLeft, slideInRight, scale, scaleX, scaleXRight, scaleToRight, scaleToLeft, blurIn) {
     &.$(name) {
-      animation-name: $(name);
-      &.fade {
-        animation-name: $(name), fade;
-      }
+      animation-name: $(name), fade;
     }
   }
   &.fade {
