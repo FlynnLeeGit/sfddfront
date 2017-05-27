@@ -4,8 +4,6 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-import { REQ_HOST } from '../config'
-
 import ui from './ui'
 import inspiration from './inspiration'
 import article from './article'
