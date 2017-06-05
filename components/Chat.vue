@@ -14,24 +14,24 @@
            class="Chat__modal-content">
         <form @submit.prevent='submitAppoint'>
 
-          <h3 class="Chat__modal-title _mb20 animated slideInLeft">
+          <h3 class="Chat__modal-title _mb20 delay200 animated slideInRight">
             可以邀请您
             <br> 来店里坐坐吗?
           </h3>
           <input type="text"
                  v-model='appoint.name'
-                 class="Input _w220 _mb20 animated slideInUp delay200"
+                 class="Input _w220 _mb20 animated slideInUp delay400"
                  maxlength="12"
                  placeholder="如何称呼您">
           <br>
           <input type="text"
-                 class="Input _w220 _mb30 animated slideInUp delay200"
+                 class="Input _w220 _mb30 animated slideInUp delay400"
                  v-model='appoint.mobile'
                  maxlength="11"
                  placeholder="手机号码">
           <br>
           <input type="submit"
-                 class="Btn -modal animated slideInUp delay400"
+                 class="Btn -modal animated slideInUp delay600"
                  value='预约' />
           <span v-text='errMsg'
                 class="Chat__modal-msg">

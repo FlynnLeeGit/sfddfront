@@ -2,6 +2,7 @@
   position: fixed;
   right: 32px;
   bottom: 100px;
+  z-index: 3;
 
   @e txt {
     color: #fff;
