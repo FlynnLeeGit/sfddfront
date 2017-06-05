@@ -18,7 +18,17 @@ axios.interceptors.response.use(
             message: error.response.data.message
           })
           break
+        case 500:
+          Message({
+            type: 'error',
+            message: '服务器内部错误'
+          })
+          break
         default:
+          Message({
+            type: 'error',
+            message: '未知错误'
+          })
           break
       }
     }
