@@ -34,7 +34,8 @@ module.exports = {
     height: '2px'
   },
   plugins: [
-    { src: '~plugins/vue-lazy', ssr: false }
+    { src: '~plugins/vue-lazy', ssr: false },
+    { src: '~plugins/element-ui' }
   ],
   router: {
     base: '/',

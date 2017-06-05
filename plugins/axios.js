@@ -1,7 +1,30 @@
 import axios from 'axios'
 import configApi from './config-api'
+import { Message } from 'element-ui'
 
 // const isProd = process.env.NODE_ENV === 'production'
+
+// 拦截错误响应
+axios.interceptors.response.use(
+  response => {
+    return response
+  },
+  error => {
+    if (error.response) {
+      switch (error.response.status) {
+        case 400:
+          Message({
+            type: 'error',
+            message: error.response.data.message
+          })
+          break
+        default:
+          break
+      }
+    }
+    return Promise.reject(error)
+  }
+)
 
 export default {
   get (url, options) {

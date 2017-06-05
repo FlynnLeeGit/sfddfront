@@ -63,7 +63,8 @@ export default {
     submitAppoint () {
       axios.post(`/_fapi/appointments`, this.appoint)
         .then(res => {
-          console.log(res)
+          this.$message.success('预约成功')
+          this.$refs.chatModal.iconClose()
         })
     }
   },
