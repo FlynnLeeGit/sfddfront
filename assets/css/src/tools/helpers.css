@@ -2,22 +2,40 @@
   ._tr {
     text-align: right;
   }
+
   ._tc {
     text-align: center;
   }
+
   ._f48 {
     font-size: 48px;
   }
+
   ._f18 {
     font-size: 18px;
   }
+
   ._lh2 {
     line-height: 2;
   }
+
   ._color-primary {
     color: var(--color-primary);
   }
+
   ._1em {
     margin-left: 1em;
+  }
+
+  ._w220 {
+    width: 220px;
+  }
+
+  ._mb20 {
+    margin-bottom: 20px;
+  }
+
+  ._mb30 {
+    margin-bottom: 30px;
   }
 }

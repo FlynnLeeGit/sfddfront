@@ -12,8 +12,7 @@
     "start": "cross-env NODE_ENV=staging node server.js",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "staging": "pm2 startOrRestart eco-staging.json --env staging",
-    "prod": "pm2 startOrRestart eco-prod.json --env production",
-    "s":"git push && cd ../deploy/ && npm run fe-staging"
+    "prod": "pm2 startOrRestart eco-prod.json --env production"
   },
   "dependencies": {
     "axios": "0.15.3",

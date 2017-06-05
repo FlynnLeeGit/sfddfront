@@ -77,10 +77,10 @@ export default {
     }
   },
   created () {
-    this.$root.$on('FooterClose', () => {
+    this.$root.$on('Footer:hide', () => {
       this.ftShow = false
     })
-    this.$root.$on('FooterOpen', () => {
+    this.$root.$on('Footer:show', () => {
       this.ftShow = true
     })
   }

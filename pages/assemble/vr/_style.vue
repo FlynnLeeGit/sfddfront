@@ -22,11 +22,14 @@ export default {
       return `/virtual_reality/scene/${this.assembleCurrentStyleId}`
     }
   },
-  mounted () {
-    this.$root.$emit('FooterClose')
+  created () {
+    this.$root.$emit('Footer:hide')
+    this.$root.$emit('Chat:hide')
   },
-  destroyed () {
-    this.$root.$emit('FooterOpen')
+  beforeRouteLeave (to, from, next) {
+    this.$root.$emit('Footer:show')
+    this.$root.$emit('Chat:show')
+    next()
   }
 }
 </script>
