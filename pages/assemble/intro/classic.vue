@@ -91,7 +91,7 @@
       <section class="assemble-space -right bedroom"
                grid>
         <img v-lazy.animate="['fade']"
-             src="~assets/img/assemble/classic/dining-room.jpg"
+             src="~assets/img/assemble/classic/bedroom.jpg"
              class="assemble-space__img"
              alt="classic-dining" />
         <div class="assemble-space__intro">
